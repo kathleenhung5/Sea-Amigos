@@ -1,0 +1,10 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    top: 0px;
+    left: 0px;
+    display: fixed;
+    background-image: url("Otter_SVGs/OtterHabitat.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
