@@ -40,10 +40,14 @@
 #land {
     left: 10%;
     top: 30%; 
+    opacity: 1;
+    transition: opacity 0.5s;
 }
 
 #ocean {
     right: 10%;
-    bottom: 30%;
+    bottom: 20%;
+    opacity: 1;
+    transition: opacity 0.5s;
 }
 
