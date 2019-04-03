@@ -1,9 +1,13 @@
 var app = document.getElementById("app");
+var sun = document.querySelector(".sun");
+
 
 function goLand (){
-    app.backgroundPosition = "left";
+    app.style.backgroundPosition = "left";
+    sun.style.left = "70%";
 }
 
 function goOcean (){
-    app.backgroundPosition = "right";
+    app.style.backgroundPosition = "right";
+    sun.style.left = "-5%";
 }

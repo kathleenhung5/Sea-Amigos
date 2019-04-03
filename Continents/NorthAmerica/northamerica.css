@@ -16,7 +16,7 @@
     top: 0px;
     background-image: url(images/Amazon-bg.svg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: auto 115%;
     background-position:center;
     transition: background-position 1s;
 }
@@ -28,6 +28,7 @@
     left:30%;
     animation: rotate 5s infinite;
     animation-timing-function: linear;
+    transition: left 1s;
 }
 
 .button {
