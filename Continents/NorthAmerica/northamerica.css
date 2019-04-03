@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'Montserrat Semi-Bold';
+    src: url(../../fonts/Montserrat/Montserrat-Medium.ttf);
+}
+
+@keyframes rotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+#app {
+    width: 100vw;
+    height: 100vh;
+    position:fixed;
+    left: 0px;
+    top: 0px;
+    background-image: url(images/Amazon-bg.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+    transition: background-position 1s;
+}
+
+.sun {
+    width: 40%;
+    position: absolute;
+    top: -8%;
+    left:30%;
+    animation: rotate 5s infinite;
+    animation-timing-function: linear;
+}
+
+.button {
+    height: 10%;
+    width: auto;
+    position: fixed;
+}
+
+#land {
+    left: 10%;
+    top: 30%; 
+}
+
+#ocean {
+    right: 10%;
+    bottom: 30%;
+}
+
