@@ -13,11 +13,32 @@
             <img class="sun" src="images/Amazon-sun.svg" alt="sun" />
             <img class="button" id="land" src="images/land-button.svg" alt="land button" onclick="goLand()"/>
             <img class="button" id="ocean" src="images/ocean-button.svg" alt="ocean button" onclick="goOcean()"/>
-        </div>
-        
-        <div class="landAni">
             
-        
+            
+            <div class="land-animals">
+              <div class="beaver">
+                <img src="images/beaver-silouette.svg" alt="beaver" onclick="goBeaver()"/>
+                <button class="buttons" onclick="goBeaver()">Prey</button>
+              </div>  
+              <div class="otter">
+                <img src="images/otter-silouette.svg" alt="beaver" onclick="goOtter()" />
+                <button class="buttons" onclick="goOtter()" type="button">Predator</button>
+              </div>   
+            </div>
+            
+            
+            <div class="ocean-animals">
+              <div class="jellyfish">
+                <button class="buttons" onclick="goJellyfish()">Prey</button>
+                <img  src="images/jellyfish-silouette.svg" alt="jelly fish" onclick="goJellyfish()"/> 
+              </div>    
+              <div class="orca">
+               <button class="buttons" onclick="goOrca()">Predator</button>
+               <img src="images/orca-silouette.svg" alt="orca" onclick="goOrca()"/>
+               
+              </div>
+               
+            </div>
         </div>
         
         

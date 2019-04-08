@@ -35,6 +35,7 @@
     height: 10%;
     width: auto;
     position: fixed;
+    z-index: 4;
 }
 
 #land {
@@ -51,3 +52,53 @@
     transition: opacity 0.5s;
 }
 
+.buttons {
+    font-size: 1.5em;
+    font-family: 'Montserrat Semi-Bold';
+    background-color: #F78330;
+    color: white;
+    padding: 7px 20px;
+    border-radius: 30px;
+    box-shadow: 4px 4px 0px white;
+    margin: 20px 0px;
+}
+
+.land-animals, .ocean-animals {
+    z-index: 3;
+    width: 80%;
+    display:flex;
+    flex-direction: row;
+    justify-content:space-around;
+    position: absolute;
+    left: 10%;
+}
+
+.land-animals {
+    top: 35%;
+    align-items: flex-end;
+    transition: left 1s;
+    left: -200%;
+}
+
+.ocean-animals {
+    top: 50%;
+    align-items: flex-start;
+    transition: left 1s;
+    left: 150%;
+}
+
+.otter {
+    width:50%;
+}
+
+.beaver {
+    width: 45%;
+}
+
+.jellyfish {
+    width: 30%;
+}
+
+.orca {
+    width: 40%;
+}
