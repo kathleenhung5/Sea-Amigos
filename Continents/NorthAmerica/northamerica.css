@@ -61,6 +61,7 @@
     border-radius: 30px;
     box-shadow: 4px 4px 0px white;
     margin: 20px 0px;
+    border: none;
 }
 
 .land-animals, .ocean-animals {
