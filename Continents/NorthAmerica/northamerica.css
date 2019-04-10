@@ -14,10 +14,10 @@
     position:fixed;
     left: 0px;
     top: 0px;
-    background-image: url(images/Amazon-bg.svg);
+    background-image: url(images/NA-bg.svg);
     background-repeat: no-repeat;
     background-size: auto 115%;
-    background-position:center;
+    background-position: center;
     transition: background-position 1s;
 }
 
@@ -75,10 +75,10 @@
 }
 
 .land-animals {
-    top: 35%;
+    top: 38%;
     align-items: flex-end;
     transition: left 1s;
-    left: -200%;
+    left: -100%;
 }
 
 .ocean-animals {
@@ -88,16 +88,29 @@
     left: 150%;
 }
 
+
+.otter, .beaver, .jellyfish, .orca {
+       display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .otter {
     width:50%;
 }
 
 .beaver {
-    width: 45%;
+    width: 40%;
+    padding-left: 30px;
 }
 
 .jellyfish {
     width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .orca {
