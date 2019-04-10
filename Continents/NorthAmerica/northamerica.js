@@ -3,7 +3,10 @@ var sun = document.querySelector(".sun");
 var landAni = document.querySelector(".land-animals"),
     oceanAni = document.querySelector(".ocean-animals");
 var landBut = document.getElementById("land"),
-    oceanBut = document.getElementById("ocean");
+    oceanBut = document.getElementById("ocean"),
+    cloudR = document.querySelector(".cloud-right"),
+    cloudM = document.querySelector(".cloud-middle"),
+    cloudL = document.querySelector(".cloud-left");
 
 function goLand(){
     app.style.backgroundPosition = "left";
@@ -12,6 +15,9 @@ function goLand(){
     oceanBut.style.opacity = "1";
     oceanAni.style.left = "260%";
     landAni.style.left = "10%";
+    cloudR.style.left = "170%";
+    cloudM.style.left = "120%";
+    cloudL.style.left = "5%";
 }
 
 function goOcean(){
@@ -21,6 +27,9 @@ function goOcean(){
     landBut.style.opacity = "1";
     landAni.style.left = "-200%";
     oceanAni.style.left = "10%";
+    cloudR.style.left = "10%";
+    cloudM.style.left = "-10%";
+    cloudL.style.left = "-150%";
 }
 
 function goOtter(){

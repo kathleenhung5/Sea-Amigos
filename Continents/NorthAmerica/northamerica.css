@@ -8,6 +8,12 @@
     to {transform: rotate(360deg);}
 }
 
+@keyframes cloud-anima {
+    0% {transform:translate(0px, 0px);}
+    50% {transform:translate(20px, 0px);}
+    100% {transform:translate(0px, 0px);}
+}
+
 #app {
     width: 100vw;
     height: 100vh;
@@ -21,6 +27,32 @@
     transition: background-position 1s;
 }
 
+.cloud{
+    position:absolute;
+    animation: cloud-anima 3s infinite;
+    z-index: 10;
+    transition: left 1s;
+}
+
+.cloud-right {
+    width: 80%;
+    top: 10%;
+    left: 70%;
+}
+
+.cloud-middle {
+    width:50%;
+    top: 5%;
+    left: 30%;
+}
+
+.cloud-left {
+    width:80%;
+    top: 5%;
+    left: -100%;
+}
+
+
 .sun {
     width: 40%;
     position: absolute;
@@ -31,6 +63,7 @@
     transition: left 1s;
 }
 
+
 .button {
     height: 10%;
     width: auto;
@@ -40,14 +73,14 @@
 
 #land {
     left: 10%;
-    top: 30%; 
+    top: 35%; 
     opacity: 1;
     transition: opacity 0.5s;
 }
 
 #ocean {
     right: 10%;
-    bottom: 20%;
+    bottom: 10%;
     opacity: 1;
     transition: opacity 0.5s;
 }
