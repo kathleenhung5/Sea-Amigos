@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+        <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+        <title> Sea Amigos | North America </title>
+        <link href="../Continents/NorthAmerica/northamerica.css" rel="stylesheet"/>
+    </head>
+    
+    <body>
+        <div id="app">
+            <img class="sun" src="../Continents/NorthAmerica/images/Amazon-sun.svg" alt="sun" />
+            <img class="button" id="land" src="../Continents/NorthAmerica/images/land-button.svg" alt="land button" onclick="goLand()"/>
+            <img class="button" id="ocean" src="../Continents/NorthAmerica/images/ocean-button.svg" alt="ocean button" onclick="goOcean()"/>
+            
+            <img class="cloud cloud-right" src="../Continents/NorthAmerica/images/Cloud.svg" alt="cloud"/>
+            <img class="cloud cloud-middle" src="../Continents/NorthAmerica/images/Cloud.svg" alt="cloud"/>
+            <img class="cloud cloud-left" src="../Continents/NorthAmerica/images/Cloud.svg" alt="cloud"/>
+            
+            
+            
+            <div class="land-animals">
+              <div class="otter">
+                <img src="../Continents/NorthAmerica/images/otter-silouette.svg" alt="otter" onclick="tutorialOtter()" />
+                <button class="buttons" onclick="tutorialOtter()" type="button">Predator</button>
+              </div>
+              <div class="beaver">
+                <img src="../Continents/NorthAmerica/images/beaver-silouette.svg" alt="beaver"/>
+                <button class="buttons">Prey</button>
+              </div>  
+            </div>
+            
+            
+            <div class="ocean-animals">
+              <div class="jellyfish">
+                <button class="buttons">Prey</button>
+                <img  src="../Continents/NorthAmerica/images/jellyfish-silouette.svg" alt="jelly fish"/> 
+              </div>    
+              <div class="orca">
+               <button class="buttons">Predator</button>
+               <img src="../Continents/NorthAmerica/images/orca-silouette.svg" alt="orca"/>
+               
+              </div>
+               
+            </div>
+        </div>
+        
+        
+        <script src="../Continents/NorthAmerica/northamerica.js"></script>
+        <script src="tutorial.js"></script>
+    </body>
+</html>

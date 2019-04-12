@@ -3,5 +3,5 @@ function toMap (){
 }
 
 function toTutorial(){
-    window.location.href = "./Tutorial/tutorial-welcome.html";
+    window.location.href = "./ATutorial/tutorial-welcome.html";
 }
