@@ -5,26 +5,81 @@
         <meta name="viewport" content="width = device-width, initial-scale = 1.0">
         <meta http-equiv="X-UA-Compatible" content = "ie=edge">
         <title>Sea Amigos | Welcome </title>
-        <link href="home/home.css" rel="stylesheet"/>
+        <link href="css/home.css" rel="stylesheet"/>
     </head>
-    
+
     <body>
-        <div class="page">
-           <div class="main">
-                <img class="logo" src="home/img/logo.svg" alt="Sea Amigos Logo"/>
-            
-                <div class="buttons-container">
-                <button class="button" id="button-start" onclick="toMap()">Start</button>
-                <button class="button" id="button-tutorial" onclick="toTutorial()">Tutorial</button>
+      <!--      Homepage       -->
+        <div class="homepage">
+           <div class="homepage-container">
+                <img class="logo" src="img/logo.svg" alt="Sea Amigos Logo"/>
+                <div class="homepage-buttons-container">
+                <button  id="button-start" onclick="toMap()">Start</button>
+                <button  id="button-tutorial" onclick="toTutorial()">Tutorial</button>
                 </div>
-            
-               <div class="des">
+               <div class="homepage-des">
                 Hello there, welcome to Sea Amigos! We're going to teach you about sea life around the world. Have fun!
                </div>
-          </div> 
+          </div>
         </div>
-        
-        
-        <script src="home/home.js"></script>
+
+
+        <!--      Map page        -->
+        <div class="map-page">
+            <div class="map-container">
+                <img src="img/map-map.svg" alt="world map" class="map"/>
+                <div class="map-button-container">
+                    <button id="north-america-button" onclick="toNA()">North America</button>
+                    <button id="north-pole-button">North Pole</button>
+                    <button id="amazon-button">Amazon/ SE Asia</button>
+                    <button id="antarctica-button">Antarctica</button>
+                </div>
+            </div>
+        </div>
+
+        <!--   Land and Ocean Page   -->
+        <div class="L-n-O-page">
+          <div class="L-n-O-pagewrap">
+            <img class="sun" src="img/northamerica/Amazon-sun.svg" alt="sun" />
+            <!-- land and ocean buttons -->
+            <img class="LnO-button" id="land" src="img/northamerica/land-button.svg" alt="land button" onclick="goLand()"/>
+            <img class="LnO-button" id="ocean" src="img/northamerica/ocean-button.svg" alt="ocean button" onclick="goOcean()"/>
+            <!-- clouds -->
+            <img class="cloud cloud-right" src="img/northamerica/Cloud.svg" alt="cloud"/>
+            <img class="cloud cloud-middle" src="img/northamerica/Cloud.svg" alt="cloud"/>
+            <img class="cloud cloud-left" src="img/northamerica/Cloud.svg" alt="cloud"/>
+
+
+            <!-- land animals -->
+            <div class="land-animals">
+              <div class="otter">
+                <img src="img/northamerica/otter-silouette.svg" alt="beaver" onclick="goOtter()" />
+                <button onclick="goOtter()" type="button">Predator</button>
+              </div>
+              <div class="beaver">
+                <img src="img/northamericabeaver-silouette.svg" alt="beaver" onclick="goBeaver()"/>
+                <button onclick="goBeaver()">Prey</button>
+              </div>
+            </div>
+
+            <!-- ocean animals -->
+            <div class="ocean-animals">
+              <div class="jellyfish">
+                <button onclick="goJellyfish()">Prey</button>
+                <img  src="img/northamericajellyfish-silouette.svg" alt="jelly fish" onclick="goJellyfish()"/>
+              </div>
+              <div class="orca">
+               <button onclick="goOrca()">Predator</button>
+               <img src="img/northamericaorca-silouette.svg" alt="orca" onclick="goOrca()"/>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+
+        <script src="js/home.js"></script>
     </body>
 </html>
