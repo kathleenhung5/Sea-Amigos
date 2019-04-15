@@ -9,13 +9,42 @@
     </head>
     
     <body>
-        <div id="app"> </div>
-        <div class="buttons"> 
-            <img src="Otter_SVGs/TalkDefault_NA.svg" class="buttons"> 
-            <img src="Otter_SVGs/FeedDefault_NA.svg" class="buttons"> 
-            <img src="Otter_SVGs/QuizDefault_NA.svg" class="buttons"> 
-                 
-        
+        <div id="app"> 
+            <div class="otter">
+                <img src="Otter_SVGs/otter.svg" id="otter"> 
+            </div> 
+        <div class="food">
+            <div class="foodMenu">
+            <div id="foodItem"> 
+            <img src="Otter_SVGs/Fish.svg" id="fish">
+            </div>
+            <div id="foodItem"> 
+            <img src="Otter_SVGs/Fruit.svg" id="fruit">
+            </div>
+            <div id="foodItem"> 
+            <img src="Otter_SVGs/Seaweed.svg" id="seaweed">
+            </div>
+            <div id="foodItem"> 
+            <img src="Otter_SVGs/Plankton.svg" id="plankton">
+            </div>
+            </div>
         </div>
+        <div class="buttons"> 
+            <div id="button">
+                 <img src="Otter_SVGs/TalkDefault_NA.svg" id="talkButton">
+                 <p> Talk </p> 
+                  </div>
+           <div id="button"> 
+            <img src="Otter_SVGs/FeedDefault_NA.svg" id="feedButton"> 
+            <p> Feed </p>
+            </div>
+            <div id="button"> 
+            <img src="Otter_SVGs/QuizDefault_NA.svg" id="quizButton">             
+                <p> Quiz </p>
+            </div>
+        </div>
+       
+        </div>
+        <script src="otter.js"> </script>
     </body>
 </html>
