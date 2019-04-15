@@ -12,12 +12,15 @@ talkBut.addEventListener("touchend", function() {
  });
 
 
-feedBut.addEventListener("touchstart", function() {
-    if(feedBut.src = "Otter_SVGs/FeedDefault_NA.svg") {
-        feedBut.src = "Otter_SVGs/FeedSelected_NA.svg"
-    } else if (feedBut.src = "Otter_SVGs/FeedSelected_NA.svg"){
-        feedBut.src = "Otter_SVGs/FeedDefault_NA.svg"
-    };
+feedBut.addEventListener("click", function() {
+        feedBut.src = "Otter_SVGs/FeedSelected_NA.svg";
+        foodMenu.style.display = "none";
+        console.log("click 1");
+    if(feedBut.src = "Otter_SVGs/FeedSelected_NA.svg") {
+        console.log("clickagain");
+        feedBut.src = "Otter_SVGs/FeedDefault_NA.svg";
+        foodMenu.style.display = "flex";
+    }
  }); 
  
 // foodMenu.style.display = "flex";
