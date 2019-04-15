@@ -19,6 +19,23 @@ body {
     display: flex;
 }
 
+#speechbubble {
+    background-color: white;
+    border: #F78330 solid 3px;
+    border-radius: 30px;
+    width: 90%;
+    margin-left: 3.5%;
+    margin-top: 10%;
+    position: absolute;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 0px 10px 10px;
+    font-size: 14pt;
+    overflow: auto;
+}
+
 .otter {
     height: 75%;
     width: 100%;
@@ -43,7 +60,7 @@ body {
 
 .foodMenu {
     background-color: white;
-    border: darkorange solid 3px;
+    border: #F78330 solid 3px;
     border-radius: 500px;
     display: flex;
     max-width: 80%;
@@ -54,14 +71,15 @@ body {
     padding-right: 20px;
 }
 
-#foodItem > img {
-    display: inherit;
+.foodItem > img {
+    z-index: 5;
     height: 7vh;
     padding: 20px 10px 20px 10px;
     margin: -10px;
 }
 
 .buttons {
+    z-index: -1;
     display: flex;
     position: fixed;
     justify-content: center;
