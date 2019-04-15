@@ -13,7 +13,6 @@
         <div class="homepage">
            <div class="homepage-container">
                 <img class="logo" src="img/logo.svg" alt="Sea Amigos Logo"/>
-
                 <div class="homepage-buttons-container">
                 <button  id="button-start" onclick="toMap()">Start</button>
                 <button  id="button-tutorial" onclick="toTutorial()">Tutorial</button>
@@ -38,8 +37,46 @@
             </div>
         </div>
 
+        <!--   Land and Ocean Page   -->
+        <div class="L-n-O-page">
+          <div class="L-n-O-pagewrap">
+            <img class="sun" src="img/northamerica/Amazon-sun.svg" alt="sun" />
+            <!-- land and ocean buttons -->
+            <img class="LnO-button" id="land" src="img/northamerica/land-button.svg" alt="land button" onclick="goLand()"/>
+            <img class="LnO-button" id="ocean" src="img/northamerica/ocean-button.svg" alt="ocean button" onclick="goOcean()"/>
+            <!-- clouds -->
+            <img class="cloud cloud-right" src="img/northamerica/Cloud.svg" alt="cloud"/>
+            <img class="cloud cloud-middle" src="img/northamerica/Cloud.svg" alt="cloud"/>
+            <img class="cloud cloud-left" src="img/northamerica/Cloud.svg" alt="cloud"/>
 
 
+            <!-- land animals -->
+            <div class="land-animals">
+              <div class="otter">
+                <img src="img/northamerica/otter-silouette.svg" alt="beaver" onclick="goOtter()" />
+                <button onclick="goOtter()" type="button">Predator</button>
+              </div>
+              <div class="beaver">
+                <img src="img/northamericabeaver-silouette.svg" alt="beaver" onclick="goBeaver()"/>
+                <button onclick="goBeaver()">Prey</button>
+              </div>
+            </div>
+
+            <!-- ocean animals -->
+            <div class="ocean-animals">
+              <div class="jellyfish">
+                <button onclick="goJellyfish()">Prey</button>
+                <img  src="img/northamericajellyfish-silouette.svg" alt="jelly fish" onclick="goJellyfish()"/>
+              </div>
+              <div class="orca">
+               <button onclick="goOrca()">Predator</button>
+               <img src="img/northamericaorca-silouette.svg" alt="orca" onclick="goOrca()"/>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
 
 
 

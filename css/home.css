@@ -173,3 +173,148 @@
 #antarctica-button {
     background-color: #8A77B5;
 }
+
+
+/* ------- Land and Ocean Page ------------- z-index 5-10 */
+.L-n-O-page {
+  z-index: 5;
+  width:100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+}
+
+.L-n-O-pagewrap {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-image: url(../img/northamerica/NA-bg.svg);
+    background-repeat: no-repeat;
+    background-size: auto 115%;
+    background-position: center;
+    transition: background-position 1s;
+}
+
+.cloud{
+    position:absolute;
+    animation: cloud-anima 3s infinite;
+    z-index: 10;
+    transition: left 1s;
+}
+
+.cloud-right {
+    width: 80%;
+    top: 10%;
+    left: 70%;
+}
+
+.cloud-middle {
+    width:50%;
+    top: 5%;
+    left: 30%;
+}
+
+.cloud-left {
+    width:80%;
+    top: 5%;
+    left: -100%;
+}
+
+.sun {
+    width: 40%;
+    position: absolute;
+    top: -8%;
+    left:30%;
+    animation: rotate 5s infinite;
+    animation-timing-function: linear;
+    transition: left 1s;
+}
+
+.LnO-button {
+    height: 10%;
+    width: auto;
+    position: fixed;
+    z-index: 4;
+}
+
+#land {
+    left: 10%;
+    top: 35%;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+#ocean {
+    right: 10%;
+    bottom: 10%;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.land-animals button, .ocean-animals button {
+    font-size: 1.5em;
+    font-family: 'Montserrat Semi-Bold';
+    background-color: #F78330;
+    color: white;
+    padding: 7px 20px;
+    border-radius: 30px;
+    box-shadow: 4px 4px 0px white;
+    margin: 20px 0px;
+    border: none;
+}
+
+.land-animals, .ocean-animals {
+    z-index: 3;
+    width: 80%;
+    display:flex;
+    flex-direction: row;
+    justify-content:space-around;
+    position: absolute;
+    left: 10%;
+}
+
+.land-animals {
+    top: 38%;
+    align-items: flex-end;
+    transition: left 1s;
+    left: -100%;
+}
+
+.ocean-animals {
+    top: 50%;
+    align-items: flex-start;
+    transition: left 1s;
+    left: 150%;
+}
+
+
+.otter, .beaver, .jellyfish, .orca {
+       display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.otter {
+    width:50%;
+}
+
+.beaver {
+    width: 40%;
+    padding-left: 30px;
+}
+
+.jellyfish {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.orca {
+    width: 40%;
+}
