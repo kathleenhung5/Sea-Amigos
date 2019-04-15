@@ -13,12 +13,14 @@
     src: url(../fonts/Righteous/Righteous-Regular.ttf);
 }
 
-.page {
+/* ------- HOMEPAGE -------- z-index 0 */
+.homepage {
+    index:0;
     width:100vw;
     height:100%;
     top:0px;
     left:0px;
-    background-image: url(img/home-background.svg);
+    background-image: url(../img/home-background.svg);
     background-repeat: no-repeat;
     position: fixed;
     background-size: cover;
@@ -34,8 +36,7 @@
             align-items: center;
 }
 
-
-.main {
+.homepage-container {
     width: 70%;
     height: 80%;
     -webkit-box-orient: vertical;
@@ -56,22 +57,21 @@
             flex: 2;
 }
 
-
-.buttons-container {
+.homepage-buttons-container {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
     width: 100%;
 }
 
-.button {
+.homepage-buttons-container button {
     display: block;
     width: 100%;
     color: white;
     font-family: 'Righteous';
     font-size: 2.5em;
     padding: 3px 0px;
-    border-radius: 20px;
+    border-radius: 30px;
     -webkit-box-shadow: 2px 5px 0px white;
             box-shadow: 2px 5px 0px white;
     border: none;
@@ -86,8 +86,7 @@
     background-color: #F7931E;
 }
 
-
-.des {
+.homepage-des {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
@@ -97,4 +96,80 @@
     text-align: center;
     color: white;
     margin-top: 10%;
+}
+
+
+
+/* ------ MAP PAGE -------z-index 1-5*/
+
+.map-page,.map-button-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+
+.map-page {
+  z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    left: 100%;
+    background-image: url(../img/map-bg.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: left 0.5s;
+}
+
+
+.map-container {
+    width: 90%;
+}
+
+.map {
+    margin-bottom: 30%;
+    z-index: 1;
+}
+
+.map-button-container button {
+    z-index: 3;
+    width: 100%;
+    text-align: center;
+    font-family: 'Montserrat Semi-Bold';
+    font-size: 1.7em;
+    color: white;
+    padding: 8px;
+    margin: 7px 0px;
+    border: none;
+    border-radius: 30px;
+    -webkit-box-shadow: 3px 5px 0px white;
+            box-shadow: 3px 5px 0px white;
+}
+
+#north-america-button {
+    background-color: #F78330 ;
+}
+
+#north-pole-button {
+    background-color: #45ABE1;
+}
+
+#amazon-button {
+    background-color: #5FD92B;
+}
+
+#antarctica-button {
+    background-color: #8A77B5;
 }

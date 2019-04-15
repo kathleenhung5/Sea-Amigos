@@ -5,26 +5,44 @@
         <meta name="viewport" content="width = device-width, initial-scale = 1.0">
         <meta http-equiv="X-UA-Compatible" content = "ie=edge">
         <title>Sea Amigos | Welcome </title>
-        <link href="home/home.css" rel="stylesheet"/>
+        <link href="css/home.css" rel="stylesheet"/>
     </head>
-    
+
     <body>
-        <div class="page">
-           <div class="main">
-                <img class="logo" src="home/img/logo.svg" alt="Sea Amigos Logo"/>
-            
-                <div class="buttons-container">
-                <button class="button" id="button-start" onclick="toMap()">Start</button>
-                <button class="button" id="button-tutorial" onclick="toTutorial()">Tutorial</button>
+      <!--      Homepage       -->
+        <div class="homepage">
+           <div class="homepage-container">
+                <img class="logo" src="img/logo.svg" alt="Sea Amigos Logo"/>
+
+                <div class="homepage-buttons-container">
+                <button  id="button-start" onclick="toMap()">Start</button>
+                <button  id="button-tutorial" onclick="toTutorial()">Tutorial</button>
                 </div>
-            
-               <div class="des">
+               <div class="homepage-des">
                 Hello there, welcome to Sea Amigos! We're going to teach you about sea life around the world. Have fun!
                </div>
-          </div> 
+          </div>
         </div>
-        
-        
-        <script src="home/home.js"></script>
+
+
+        <!--      Map page        -->
+        <div class="map-page">
+            <div class="map-container">
+                <img src="img/map-map.svg" alt="world map" class="map"/>
+                <div class="map-button-container">
+                    <button id="north-america-button" onclick="toNA()">North America</button>
+                    <button id="north-pole-button">North Pole</button>
+                    <button id="amazon-button">Amazon/ SE Asia</button>
+                    <button id="antarctica-button">Antarctica</button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <script src="js/home.js"></script>
     </body>
 </html>
