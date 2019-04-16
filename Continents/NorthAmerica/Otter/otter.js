@@ -5,20 +5,33 @@ var foodMenu = document.querySelector(".food");
 var But = 0;
 var otterTalk = ["I have the thickest fur of all animals.", "I like to carry one small rock with me all the time.", "I use rocks to smash open shells.", "I keep the same rock with me for my whole life!", "When I go to sleep, I like to wrap myself and my family in seaweed and float together with them."]
 
-var mtimer = setTimeout(function() {
-            speech.style.display = "none";
-        }, 5000);
+//var mtimer = setTimeout(function() {
+//            speech.style.display = "none";
+//        }, 5000);
 
-talkBut.addEventListener("touchstart", function() {
-    clearTimeout(mtimer);
-   talkBut.src = "Otter_SVGs/TalkSelected_NA.svg";
+var mtimer = null;
+
+talkBut.addEventListener("touchstart", function(){
+     talkBut.src = "Otter_SVGs/TalkSelected_NA.svg";
+     
     var talkRes = otterTalk[Math.floor(Math.random() * otterTalk.length)];
-        speech.style.display = "flex";
-        speech.innerHTML = talkRes;
-    var mtimer = setTimeout(function() {
+     speech.style.display = "flex";
+     speech.innerHTML = talkRes;
+    console.log("start");
+    if (mtimer == null){
+            mtimer = setTimeout(function() {
             speech.style.display = "none";
+            mtimer = null;
+            console.log("stop");
         }, 5000);
-
+    } else {
+        clearTimeout(mtimer);
+        console.log("force stop and restart");
+        mtimer = setTimeout(function() {
+            speech.style.display = "none";
+            console.log("stop");
+            },5000);
+    }
 });
 
 talkBut.addEventListener("touchend", function() {
