@@ -65,35 +65,76 @@ feedBut.addEventListener("click", function() {
         var yes = posRes[Math.floor(Math.random() * posRes.length)];
         speech.style.display = "flex";
         speech.innerHTML = yes;
-        speechTimeout = setTimeout(function() {
+        if (mtimer == null){
+            mtimer = setTimeout(function() {
             speech.style.display = "none";
+            mtimer = null;
+            console.log("stop");
         }, 5000);
-    });
+        } else {
+        clearTimeout(mtimer);
+        console.log("force stop and restart");
+        mtimer = setTimeout(function() {
+            speech.style.display = "none";
+            console.log("stop");
+            },5000);
+    }});
+        
    fruit.addEventListener("click", function() {
         var no = negRes[Math.floor(Math.random() * negRes.length)];
         speech.style.display = "flex";
         speech.innerHTML = no;
-        setTimeout(function() {
+        if (mtimer == null){
+            mtimer = setTimeout(function() {
             speech.style.display = "none";
+            mtimer = null;
+            console.log("stop");
         }, 5000);
-    });
+        } else {
+        clearTimeout(mtimer);
+        console.log("force stop and restart");
+        mtimer = setTimeout(function() {
+            speech.style.display = "none";
+            console.log("stop");
+            },5000);
+    }});
    seaweed.addEventListener("click", function() {
         var no = negRes[Math.floor(Math.random() * negRes.length)];
         speech.style.display = "flex";
         speech.innerHTML = no;
-        setTimeout(function() {
+        if (mtimer == null){
+            mtimer = setTimeout(function() {
             speech.style.display = "none";
+            mtimer = null;
+            console.log("stop");
         }, 5000);
-    });
+        } else {
+        clearTimeout(mtimer);
+        console.log("force stop and restart");
+        mtimer = setTimeout(function() {
+            speech.style.display = "none";
+            console.log("stop");
+            },5000);
+    }});
    plankton.addEventListener("click", function() {
         var no = negRes[Math.floor(Math.random() * negRes.length)];
         speech.style.display = "flex";
         speech.innerHTML = no;
-        setTimeout(function() {
+        if (mtimer == null){
+            mtimer = setTimeout(function() {
             speech.style.display = "none";
+            mtimer = null;
+            console.log("stop");
         }, 5000);
-    });
+        } else {
+        clearTimeout(mtimer);
+        console.log("force stop and restart");
+        mtimer = setTimeout(function() {
+            speech.style.display = "none";
+            console.log("stop");
+            },5000);
+    }});
 
     function resetTimeout() {
         clearTimeout(speechTimeout);
-    }
+    };
