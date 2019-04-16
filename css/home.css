@@ -13,6 +13,16 @@
     src: url(../fonts/Righteous/Righteous-Regular.ttf);
 }
 
+@-webkit-keyframes rotate {
+  from {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+  to {-webkit-transform: rotate(360deg);transform: rotate(360deg);}
+}
+
+@keyframes rotate {
+  from {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+  to {-webkit-transform: rotate(360deg);transform: rotate(360deg);}
+}
+
 /* ------- HOMEPAGE -------- z-index 0 */
 .homepage {
     index:0;
@@ -130,6 +140,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    -webkit-transition: left 0.5s;
     transition: left 0.5s;
 }
 
@@ -181,8 +192,11 @@
   width:100vw;
   height: 100vh;
   position: fixed;
-  left: 0px;
+  left: 100%;
   top: 0px;
+  -webkit-transition: left 0.5s;
+  transition: left 0.5s;
+  overflow: hidden;
 }
 
 .L-n-O-pagewrap {
@@ -195,13 +209,16 @@
     background-repeat: no-repeat;
     background-size: auto 115%;
     background-position: center;
+    -webkit-transition: background-position 1s;
     transition: background-position 1s;
 }
 
 .cloud{
     position:absolute;
-    animation: cloud-anima 3s infinite;
+    -webkit-animation: cloud-anima 3s infinite;
+            animation: cloud-anima 3s infinite;
     z-index: 10;
+    -webkit-transition: left 1s;
     transition: left 1s;
 }
 
@@ -223,27 +240,32 @@
     left: -100%;
 }
 
+
 .sun {
     width: 40%;
     position: absolute;
     top: -8%;
     left:30%;
-    animation: rotate 5s infinite;
-    animation-timing-function: linear;
+    -webkit-animation: rotate 5s infinite;
+            animation: rotate 5s infinite;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+    -webkit-transition: left 1s;
     transition: left 1s;
 }
 
 .LnO-button {
     height: 10%;
     width: auto;
-    position: fixed;
-    z-index: 4;
+    position: absolute;
+    z-index: 6;
 }
 
 #land {
     left: 10%;
     top: 35%;
     opacity: 1;
+    -webkit-transition: opacity 0.5s;
     transition: opacity 0.5s;
 }
 
@@ -251,6 +273,7 @@
     right: 10%;
     bottom: 10%;
     opacity: 1;
+    -webkit-transition: opacity 0.5s;
     transition: opacity 0.5s;
 }
 
@@ -261,60 +284,91 @@
     color: white;
     padding: 7px 20px;
     border-radius: 30px;
-    box-shadow: 4px 4px 0px white;
+    -webkit-box-shadow: 4px 4px 0px white;
+            box-shadow: 4px 4px 0px white;
     margin: 20px 0px;
     border: none;
 }
 
 .land-animals, .ocean-animals {
-    z-index: 3;
+    z-index: 6;
     width: 80%;
+    display:-webkit-box;
+    display:-ms-flexbox;
     display:flex;
-    flex-direction: row;
-    justify-content:space-around;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack:distribute;
+        justify-content:space-around;
     position: absolute;
     left: 10%;
 }
 
 .land-animals {
     top: 38%;
-    align-items: flex-end;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-transition: left 1s;
     transition: left 1s;
     left: -100%;
 }
 
 .ocean-animals {
     top: 50%;
-    align-items: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-transition: left 1s;
     transition: left 1s;
     left: 150%;
 }
 
 
-.otter, .beaver, .jellyfish, .orca {
+.animal1, .animal2, .animal3, .animal4 {
+       display: -webkit-box;
+       display: -ms-flexbox;
        display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
-.otter {
+.animal1 {
     width:50%;
 }
 
-.beaver {
+.animal2 {
     width: 40%;
     padding-left: 30px;
 }
 
-.jellyfish {
+.animal3 {
     width: 30%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
-.orca {
+.animal4 {
     width: 40%;
 }
