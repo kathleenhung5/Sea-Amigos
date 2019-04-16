@@ -1,5 +1,7 @@
 function toMap (){
     document.querySelector(".map-page").style.left = "0px";
+    document.querySelector(".hbg-menu").style.display = "block";
+    document.querySelector(".hbg-menu-list").style.display = "block";
 }
 
 function toTutorial(){
@@ -8,6 +10,14 @@ function toTutorial(){
 
 function toLnO(){
     document.querySelector(".L-n-O-page").style.left = "0px";
+}
+
+function expMenu(){
+    document.querySelector(".hbg-menu-list").style.top = "0px";
+}
+
+function closeMenu(){
+    document.querySelector(".hbg-menu-list").style.top = "-100%";
 }
 
 // --------- land and ocean page -----------
