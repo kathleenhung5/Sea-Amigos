@@ -132,7 +132,7 @@ body {
     width: 100vw;
     top: -100vh;
     transition: top 0.5s;
-    background-color: rgba(30,30,30,0.6);
+    background-color: rgba(30,30,30,0.8);
     display:none;
 }
 
@@ -146,10 +146,10 @@ body {
 .hbg-menu-item {
     text-align: center;
     font-size: 1.7em;
-    font-family: 'Montserrat Semi-Bold';
+    font-family: 'Montserrat Medium';
     color: white;
     padding: 15px 10px;
-    border-bottom: 2px solid white;
+/*    border-bottom: 2px solid white;*/
 }
 
 
