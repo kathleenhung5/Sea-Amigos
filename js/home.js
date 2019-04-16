@@ -1,18 +1,17 @@
 function toMap (){
     document.querySelector(".map-page").style.left = "0px";
-    console.log("tomap");
 }
 
 function toTutorial(){
-    window.location.href = "./ATutorial/tutorial-welcome.html";
+    //window.location.href = "./ATutorial/tutorial-welcome.html";
 }
 
-function toNA(){
-    window.location.href = "../Continents/NorthAmerica/northamerica.html";
+function toLnO(){
+    document.querySelector(".L-n-O-page").style.left = "0px";
 }
 
 // --------- land and ocean page -----------
-var app = document.getElementById("app");
+var lnoPagewrap = document.querySelector(".L-n-O-pagewrap");
 var sun = document.querySelector(".sun");
 var landAni = document.querySelector(".land-animals"),
     oceanAni = document.querySelector(".ocean-animals");
@@ -23,7 +22,7 @@ var landBut = document.getElementById("land"),
     cloudL = document.querySelector(".cloud-left");
 
 function goLand(){
-    app.style.backgroundPosition = "left";
+    lnoPagewrap.style.backgroundPosition = "left";
     sun.style.left = "70%";
     landBut.style.opacity = "0";
     oceanBut.style.opacity = "1";
@@ -35,7 +34,7 @@ function goLand(){
 }
 
 function goOcean(){
-    app.style.backgroundPosition = "right";
+    lnoPagewrap.style.backgroundPosition = "right";
     sun.style.left = "-5%";
     oceanBut.style.opacity = "0";
     landBut.style.opacity = "1";
@@ -46,22 +45,22 @@ function goOcean(){
     cloudL.style.left = "-150%";
 }
 
-function goOtter(){
-    document.querySelector(".otter img").src = "Otter/Otter_SVGs/Otter.svg";
+function goAni1(){
+    document.querySelector(".animal1 img").src = "img/northamerica/Otter.svg";
     //window.location.href = "";
 }
 
-function goBeaver(){
-    document.querySelector(".beaver img").src = "Beaver/Beaver_SVGs/Beaver.svg";
+function goAni2(){
+    document.querySelector(".animal2 img").src = "img/northamerica/Beaver.svg";
     //window.location.href = "";
 }
 
-function goOrca(){
-    document.querySelector(".orca img").src = "Orca/Orca_SVGs/Orca.svg";
+function goAni3(){
+    document.querySelector(".animal3 img").src = "img/northamerica/jellyfish.svg";
     //window.location.href = "";
 }
 
-function goJellyfish(){
-    document.querySelector(".jellyfish img").src = "Jellyfish/Jellyfish_SVGs/jellyfish.svg";
+function goAni4(){
+    document.querySelector(".animal4 img").src = "img/northamerica/Orca.svg";
     //window.location.href = "";
 }
