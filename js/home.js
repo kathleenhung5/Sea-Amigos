@@ -1,8 +1,8 @@
 function toHome(){
     document.querySelector(".homepage").style.left = "0px";
     document.querySelector(".map-page").style.left = "100%";
-    document.querySelector(".hbg-menu").style.top = "-100%";
-    document.querySelector(".hbg-menu-list").style.display = "none";
+    document.querySelector(".hbg-menu").style.display = "none";
+    document.querySelector(".hbg-menu-list").style.top = "-100%";
     document.querySelector(".L-n-O-page").style.left = "100%";
 }
 
@@ -11,7 +11,7 @@ function toMap (){
     document.querySelector(".map-page").style.left = "0px";
     document.querySelector(".L-n-O-page").style.left = "100%";
     document.querySelector(".hbg-menu").style.display = "block";
-    document.querySelector(".hbg-menu-list").style.display = "block";
+    document.querySelector(".hbg-menu-list").style.top = "-100%";
 }
 
 function toTutorial(){
@@ -22,6 +22,8 @@ function toLnO(){
     document.querySelector(".L-n-O-page").style.left = "0px";
      document.querySelector(".homepage").style.left = "-100%";
     document.querySelector(".map-page").style.left = "-100%px";
+    document.querySelector(".hbg-menu-list").style.top = "-100%";
+    
 }
 
 function expMenu(){
