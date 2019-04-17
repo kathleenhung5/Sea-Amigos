@@ -10,16 +10,7 @@
     
     <body>
         <div id="app"> 
-        <img class="hbg-menu" onclick="expMenu()" src="../img/hbg-menu.svg" alt="menu">
-        <div class="hbg-menu-list">
-            <div class="hbg-menu-item" onclick="toHome()">Home</div>
-            <div class="hbg-menu-item" onclick="toLnO()">North America</div>
-            <div class="hbg-menu-item">North Pole</div>
-            <div class="hbg-menu-item">Amazon / SE Asia</div>
-            <div class="hbg-menu-item">Antarctica</div>
-            <div class="hbg-menu-item" onclick="toTutorial()">Tutorial</div>
-            <div class="closemenu"><img src="../img/hbg-menu-back.svg" onclick="closeMenu()" /></div>
-        </div>
+         <img id="homebut" src="images/homebut.svg" onclick="goHome()"/>
 
             <div id="speechbubble"> </div>
             <div class="otter">
@@ -57,6 +48,10 @@
         </div>
        
         </div>
+        
+        
+        <div id="teachbox">See what the Otter has to say. Try click more than once.</div>
+        
         <script src="otter.js"> </script>
     </body>
 </html>

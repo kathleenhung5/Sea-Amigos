@@ -19,6 +19,50 @@ body {
     display: flex;
 }
 
+/*-----------------*/
+#teachbox {
+    font-size: 1.3em;
+    background-color: white;
+    position: absolute;
+    width: 60%;
+    left: 15%;
+    top:50%;
+    opacity: 1;
+    border: 3px solid #65C8D0;
+    border-radius: 30px;
+    padding: 10px;
+    text-align: center;
+    margin: 0px;
+    animation: fadeIn 1s forwards;
+    animation-delay: 1s;
+    z-index: 10;
+}
+ 
+
+@keyframes upd{
+    0% {transform: scale(1,1);}
+    50% {transform: scale(1.1,1.1);}
+    100% {transform: scale(1,1);}
+}
+
+#talkButton {
+    animation: upd 1s infinite;
+}
+
+#feedBut {
+    animation: none;
+}
+
+
+/*-----------------*/
+#homebut {
+    width: 60px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+}
+
 .hbg-menu {
     z-index: 30;
     position: fixed;

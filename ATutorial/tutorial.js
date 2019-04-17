@@ -1,7 +1,7 @@
 function toAni1(){
    
     document.querySelector(".animal1 img").src = "../img/northamerica/Otter.svg";
-     //window.location.href = "";
+     window.location.href = "./otter.html";
 }
 
 function toNATutorial(){
@@ -15,11 +15,15 @@ function moveToRight(){
 }
 
 var explBut = document.querySelector(".talkbox button");
+
 explBut.addEventListener("click", function(){
     window.location.href = "tutorial-map.html";
 })
 
-var lnoPagewrap = document.querySelector(".tutorial-NA");
+
+
+function goLand(){
+    var lnoPagewrap = document.querySelector(".tutorial-NA");
 var sun = document.querySelector(".sun");
 var landAni = document.querySelector(".land-animals"),
     oceanAni = document.querySelector(".ocean-animals");
@@ -28,8 +32,6 @@ var landBut = document.getElementById("land"),
     cloudR = document.querySelector(".cloud-right"),
     cloudM = document.querySelector(".cloud-middle"),
     cloudL = document.querySelector(".cloud-left");
-
-function goLand(){
     lnoPagewrap.style.backgroundPosition = "left";
     sun.style.left = "70%";
     landBut.style.opacity = "0";

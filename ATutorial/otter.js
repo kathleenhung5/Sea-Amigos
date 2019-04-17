@@ -1,40 +1,5 @@
-function toHome(){
+function goHome(){
     window.location.href = "../index.html";
-    document.querySelector(".homepage").style.left = "0px";
-    document.querySelector(".map-page").style.left = "100%";
-    document.querySelector(".hbg-menu").style.display = "none";
-    document.querySelector(".hbg-menu-list").style.top = "-100vh";
-    document.querySelector(".L-n-O-page").style.left = "100%";
-}
-
-function toMap (){
-    window.location.href = "../index.html";
-    document.querySelector(".homepage").style.left = "-100%";
-    document.querySelector(".map-page").style.left = "0px";
-    document.querySelector(".L-n-O-page").style.left = "100%";
-    document.querySelector(".hbg-menu").style.display = "block";
-    document.querySelector(".hbg-menu-list").style.top = "-100vh";
-}
-
-function toTutorial(){
-    window.location.href = "../ATutorial/tutorial-welcome.html";
-}
-
-function toLnO(){
-    window.location.href = "../index.html";
-    document.querySelector(".L-n-O-page").style.left = "0px";
-     document.querySelector(".homepage").style.left = "-100%";
-    document.querySelector(".map-page").style.left = "-100%px";
-    document.querySelector(".hbg-menu-list").style.top = "-100vh";
-    
-}
-
-function expMenu(){
-    document.querySelector(".hbg-menu-list").style.top = "0px";
-}
-
-function closeMenu(){
-    document.querySelector(".hbg-menu-list").style.top = "-100%";
 }
 
 var talkBut = document.querySelector("#talkButton"),
@@ -51,8 +16,13 @@ var otterTalk = ["I have the thickest fur of all animals.", "I like to carry one
 var mtimer = null;
 
 talkBut.addEventListener("touchstart", function(){
+    talkBut.style.animation = "none";
+    document.getElementById("teachbox").innerHTML = "See what the Otter likes to eat."
+    feedBut.style.animation = "upd 1s infinite";
+    
+    
+    
      talkBut.src = "Otter_SVGs/TalkSelected_NA.svg";
-     
     var talkRes = otterTalk[Math.floor(Math.random() * otterTalk.length)];
      speech.style.display = "flex";
      speech.innerHTML = talkRes;
@@ -79,6 +49,10 @@ talkBut.addEventListener("touchend", function() {
 
 
 feedBut.addEventListener("click", function() {
+    feedBut.style.animation = "none";
+    document.getElementById("teachbox").style.display = "none";
+    
+    
     if(But == 0){
         console.log("clickagain");
         feedBut.src = "Otter_SVGs/FeedSelected_NA.svg";
