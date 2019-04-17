@@ -27,7 +27,7 @@ function toLnO(){
 }
 
 function toAnimal(){
-    window.loction.href= "./Otter/otter.html";
+    window.loction.href= "../Otter/otter.html";
 }
 
 function expMenu(){
