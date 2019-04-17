@@ -419,3 +419,121 @@ body {
 .animal4 {
     width: 40%;
 }
+
+
+/*----------  Aniaml Page ---------- zindex 10+*/
+#aniaml-page {
+    height: 100vh;
+    width: 100vw;
+    top: 0px;
+    left: 100%;
+    position: fixed;
+    background-image: url("../img/northamerica/animal-page/OtterHabitat.svg");
+    background-size: auto 115%;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 9;
+    display: flex;
+   transition: left 0.5s;
+}
+
+#speechbubble {
+    background-color: white;
+    border: #F78330 solid 3px;
+    border-radius: 30px;
+    width: 90%;
+    margin-left: 2%;
+    margin-top: 10%;
+    position: absolute;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 10px 10px 10px;
+    font-size: 14pt;
+    overflow: auto;
+    font-family: 'Montserrat Medium';
+}
+
+/*
+.otter {
+    height: 75%;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+}
+*/
+
+#otter {
+    height: auto;
+    width: 75%;
+    position: absolute;
+    left: 10%;
+    top: 25%;
+}
+
+
+.food {
+    width: 100%;
+    height: auto;
+    display: none;
+    position: fixed;
+    top: 62%;
+    left: 9%;
+
+}
+
+.foodMenu {
+    background-color: white;
+    border: #F78330 solid 3px;
+    border-radius: 500px;
+    display: flex;
+    max-width: 80%;
+    position: absolute;
+    align-content: flex-end;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.foodItem > img {
+    z-index: 15;
+    height: 7vh;
+    padding: 20px 10px 20px 10px;
+    margin: -10px;
+}
+
+.buttons {
+    z-index: 8;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: flex-end;
+    height: 95%;
+    width: 100%;
+}
+
+#button > img {
+    padding: 2vw;
+    flex-direction: row;
+    height: 13vh;
+    bottom: 100px;
+}
+
+#button > p {
+    color: white;
+    font-size: 16pt;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: 'Montserrat Medium';
+}
+
+
+
+
+

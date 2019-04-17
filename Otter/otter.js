@@ -1,4 +1,5 @@
 function toHome(){
+    window.location.href = "../index.html";
     document.querySelector(".homepage").style.left = "0px";
     document.querySelector(".map-page").style.left = "100%";
     document.querySelector(".hbg-menu").style.display = "none";
@@ -7,6 +8,7 @@ function toHome(){
 }
 
 function toMap (){
+    window.location.href = "../index.html";
     document.querySelector(".homepage").style.left = "-100%";
     document.querySelector(".map-page").style.left = "0px";
     document.querySelector(".L-n-O-page").style.left = "100%";
@@ -15,10 +17,11 @@ function toMap (){
 }
 
 function toTutorial(){
-    window.location.href = "./ATutorial/tutorial-welcome.html";
+    window.location.href = "../ATutorial/tutorial-welcome.html";
 }
 
 function toLnO(){
+    window.location.href = "../index.html";
     document.querySelector(".L-n-O-page").style.left = "0px";
      document.querySelector(".homepage").style.left = "-100%";
     document.querySelector(".map-page").style.left = "-100%px";
