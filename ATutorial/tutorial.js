@@ -14,6 +14,11 @@ function moveToRight(){
     document.querySelector("#ocean").style.opacity = "0";
 }
 
+var explBut = document.querySelector(".talkbox button");
+explBut.addEventListener("click", function(){
+    window.location.href = "tutorial-map.html";
+})
+
 var lnoPagewrap = document.querySelector(".tutorial-NA");
 var sun = document.querySelector(".sun");
 var landAni = document.querySelector(".land-animals"),
@@ -35,6 +40,14 @@ function goLand(){
     cloudM.style.left = "120%";
     cloudL.style.left = "5%";
 }
+
+function goHome(){
+    window.location.href = "../index.html";
+}
+
+
+
+
 
 
 

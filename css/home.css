@@ -481,7 +481,7 @@ body {
     position: fixed;
     top: 62%;
     left: 9%;
-
+    z-index: 15;
 }
 
 .foodMenu {
