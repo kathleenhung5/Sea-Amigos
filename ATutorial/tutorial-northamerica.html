@@ -5,53 +5,56 @@
         <meta name="viewport" content="width = device-width, initial-scale = 1.0">
         <meta http-equiv="X-UA-Compatible" content = "ie=edge">
         <title> Sea Amigos | North America </title>
-        <link href="../Continents/NorthAmerica/northamerica.css" rel="stylesheet"/>
+        <link href="../css/home.css" rel="stylesheet"/>
         <link href="tutorial-welcome.css" rel="stylesheet"/>
     </head>
     
     <body>
-        <div id="app">
-            <img class="sun" src="../Continents/NorthAmerica/images/Amazon-sun.svg" alt="sun" />
-            <img class="button" id="land" src="../Continents/NorthAmerica/images/land-button.svg" alt="land button" onclick="goLand(); moveToRight()";/>
-            <img class="button" id="ocean" src="../Continents/NorthAmerica/images/ocean-button.svg" alt="ocean button"/>
-            
-            <img class="cloud cloud-right" src="../Continents/NorthAmerica/images/Cloud.svg" alt="cloud"/>
-            <img class="cloud cloud-middle" src="../Continents/NorthAmerica/images/Cloud.svg" alt="cloud"/>
-            <img class="cloud cloud-left" src="../Continents/NorthAmerica/images/Cloud.svg" alt="cloud"/>
+        <div class="tutorial-NA">
+            <img class="sun" src="../img/northamerica/Amazon-sun.svg" alt="sun" />
+           
+            <img class="LnO-button" id="land" src="../img/northamerica/land-button.svg" alt="land button" onclick="goLand(); moveToRight();"/>
+            <img class="LnO-button" id="ocean" src="../img/northamerica/ocean-button.svg" alt="ocean button"/>
+           
+            <!-- clouds -->
+            <img class="cloud cloud-right" src="../img/northamerica/Cloud.svg" alt="cloud"/>
+            <img class="cloud cloud-middle" src="../img/northamerica/Cloud.svg" alt="cloud"/>
+            <img class="cloud cloud-left" src="../img/northamerica/Cloud.svg" alt="cloud"/>
             
             <img class="turtle-NA" src="images/speedy.svg">
             <div class="talkbox-NA">Let's find the Otter (Predator) on the land.</div>
             
             
             
-            <div class="land-animals">
-              <div class="otter">
-                <img src="../Continents/NorthAmerica/images/otter-silouette.svg" alt="otter" onclick="tutorialOtter()" />
-                <button class="buttons" onclick="tutorialOtter()" type="button">Predator</button>
+           <div class="land-animals">
+              <div class="animal1">
+                <img src="../img/northamerica/otter-silouette.svg" alt="beaver" onclick="toAni1()" />
+                <button onclick="toAni1()" type="button">Predator</button>
               </div>
-              <div class="beaver">
-                <img src="../Continents/NorthAmerica/images/beaver-silouette.svg" alt="beaver"/>
-                <button class="buttons">Prey</button>
-              </div>  
+              <div class="animal2">
+                <img src="../img/northamerica/beaver-silouette.svg" alt="beaver" />
+                <button>Prey</button>
+              </div>
             </div>
-            
-            
+
+            <!-- ocean animals -->
             <div class="ocean-animals">
-              <div class="jellyfish">
-                <button class="buttons">Prey</button>
-                <img  src="../Continents/NorthAmerica/images/jellyfish-silouette.svg" alt="jelly fish"/> 
-              </div>    
-              <div class="orca">
-               <button class="buttons">Predator</button>
-               <img src="../Continents/NorthAmerica/images/orca-silouette.svg" alt="orca"/>
-               
+              <div class="animal3">
+                <button>Prey</button>
+                <img  src="../img/northamerica/jellyfish-silouette.svg" alt="jelly fish"/>
               </div>
+              <div class="animal4">
+               <button>Predator</button>
+               <img src="../img/northamerica/orca-silouette.svg" alt="orca"/>
+
+              </div>
+
+            </div>
                
             </div>
-        </div>
         
         
-        <script src="../Continents/NorthAmerica/northamerica.js"></script>
+        
         <script src="tutorial.js"></script>
     </body>
 </html>

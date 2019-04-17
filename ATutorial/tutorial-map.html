@@ -5,23 +5,23 @@
         <meta name="viewport" content="width = device-width, initial-scale = 1.0">
         <meta http-equiv="X-UA-Compatible" content = "ie=edge">
         <title>Sea Amigos | Map </title>
-        <link href="../Map/worldmap.css" rel="stylesheet" />
+        <link href="../css/home.css" rel="stylesheet" />
         <link href="tutorial-welcome.css" rel="stylesheet"/>
     </head>
     
     <body>
-        <div id="app">
-            <div class="container">
-                <img src="../Map/images/map-map.svg" alt="world map" class="map"/>
+        <div class="app tutorialmap" >
+            <div class="map-container">
+                <img src="../img/map-map.svg" alt="world map" class="map"/>
                 <img src="images/speedy.svg" class="turtle-map" alt="speedy"/>
                 <div class="talkbox-map">
            This is the world map. Let's click on North America to see the animals there.
         </div> 
-                <div class="button-container">
-                    <button id="north-america" class="buttons" onclick="toNATutorial()">North America</button>
-                    <button id="north-pole" class="buttons">North Pole</button>
-                    <button id="amazon" class="buttons">Amazon/ SE Asia</button>
-                    <button id="antarctica" class="buttons">Antarctica</button>
+                <div class="map-button-container">
+                    <button id="north-america-button" onclick="toNATutorial()">North America</button>
+                    <button id="north-pole-button">North Pole</button>
+                    <button id="amazon-button">Amazon/ SE Asia</button>
+                    <button id="antarctica-button">Antarctica</button>
                 </div>
             </div>
         

@@ -23,24 +23,27 @@
           </div>
         </div>
 
+      
+
         <!-- Menu -->
         <img class="hbg-menu" onclick="expMenu()" src="img/hbg-menu.svg" alt="menu">
         <div class="hbg-menu-list">
             <div class="hbg-menu-item" onclick="toHome()">Home</div>
             <div class="hbg-menu-item" onclick="toLnO()">North America</div>
             <div class="hbg-menu-item">North Pole</div>
-            <div class="hbg-menu-item">Amazon / SE Asia</div> 
-            <div class="hbg-menu-item">Antarctica</div> 
-            <div class="hbg-menu-item">Tutorial</div> 
-            <div class="closemenu"><img src="img/hbg-menu-back.svg" onclick="closeMenu()" /></div> 
+            <div class="hbg-menu-item">Amazon / SE Asia</div>
+            <div class="hbg-menu-item">Antarctica</div>
+            <div class="hbg-menu-item" onclick="toTutorial()">Tutorial</div>
+            <div class="closemenu"><img src="img/hbg-menu-back.svg" onclick="closeMenu()" /></div>
         </div>
-        
-        
-        
+
+
+
         <!--    Map page        -->
         <div class="map-page">
             <div class="map-container">
                 <img src="img/map-map.svg" alt="world map" class="map"/>
+
                 <div class="map-button-container">
                     <button id="north-america-button" onclick="toLnO()">North America</button>
                     <button id="north-pole-button">North Pole</button>
@@ -66,8 +69,8 @@
             <!-- land animals -->
             <div class="land-animals">
               <div class="animal1">
-                <img src="img/northamerica/otter-silouette.svg" alt="beaver" onclick="goAni1()" />
-                <button onclick="goAni1()" type="button">Predator</button>
+                <img src="img/northamerica/otter-silouette.svg" alt="beaver" onclick="toAnimal()" />
+                <button onclick="toAnimal()" type="button">Predator</button>
               </div>
               <div class="animal2">
                 <img src="img/northamerica/beaver-silouette.svg" alt="beaver" onclick="goAni2()"/>
