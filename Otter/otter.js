@@ -1,3 +1,39 @@
+function toHome(){
+    document.querySelector(".homepage").style.left = "0px";
+    document.querySelector(".map-page").style.left = "100%";
+    document.querySelector(".hbg-menu").style.display = "none";
+    document.querySelector(".hbg-menu-list").style.top = "-100vh";
+    document.querySelector(".L-n-O-page").style.left = "100%";
+}
+
+function toMap (){
+    document.querySelector(".homepage").style.left = "-100%";
+    document.querySelector(".map-page").style.left = "0px";
+    document.querySelector(".L-n-O-page").style.left = "100%";
+    document.querySelector(".hbg-menu").style.display = "block";
+    document.querySelector(".hbg-menu-list").style.top = "-100vh";
+}
+
+function toTutorial(){
+    window.location.href = "./ATutorial/tutorial-welcome.html";
+}
+
+function toLnO(){
+    document.querySelector(".L-n-O-page").style.left = "0px";
+     document.querySelector(".homepage").style.left = "-100%";
+    document.querySelector(".map-page").style.left = "-100%px";
+    document.querySelector(".hbg-menu-list").style.top = "-100vh";
+    
+}
+
+function expMenu(){
+    document.querySelector(".hbg-menu-list").style.top = "0px";
+}
+
+function closeMenu(){
+    document.querySelector(".hbg-menu-list").style.top = "-100%";
+}
+
 var talkBut = document.querySelector("#talkButton"),
     feedBut = document.querySelector("#feedButton"),
     quizBut = document.querySelector("#quizButton");
