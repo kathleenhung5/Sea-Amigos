@@ -7,6 +7,7 @@ function toHome(){
     document.querySelector(".hbg-menu-list").style.top = "-100vh";
     document.querySelector(".food").style.display = "none";
     document.querySelector(".homepage").style.left = "0px";
+    document.querySelector("#feedButton").src = "../img/northamerica/animal-page/feedDefault_NA.svg";
 }
 
 function toMap (){
@@ -16,7 +17,7 @@ function toMap (){
     document.querySelector(".hbg-menu").style.display = "block";
     document.querySelector(".hbg-menu-list").style.top = "-100vh";
     document.querySelector("#aniaml-page").style.left = "100%";
-    
+    document.querySelector("#feedButton").src = "../img/northamerica/animal-page/feedDefault_NA.svg";
 }
 
 function toTutorial(){
@@ -30,7 +31,7 @@ function toLnO(){
     document.querySelector(".hbg-menu-list").style.top = "-100vh";
     document.querySelector("#aniaml-page").style.left = "100%";
     document.querySelector(".food").style.display = "none";
-    
+    document.querySelector("#feedButton").src = "../img/northamerica/animal-page/feedDefault_NA.svg";
 }
 
 function toAnimal(){
@@ -117,7 +118,7 @@ var talkBut = document.querySelector("#talkButton"),
     quizBut = document.querySelector("#quizButton");
 var foodMenu = document.querySelector(".food");
 var But = 0;
-var otterTalk = ["I have the thickest fur of all animals.", "I like to carry one small rock with me all the time.", "I use rocks to smash open shells.", "I keep the same rock with me for my whole life!", "When I go to sleep, I like to wrap myself and my family in seaweed and float together with them."]
+var otterTalk = [ "Hi! I'm Ophie the Otter!", "I have the thickest fur of all animals.", "I like to carry one small rock with me all the time.", "I use rocks to smash open shells.", "I keep the same rock with me for my whole life!", "When I go to sleep, I like to wrap myself and my family in seaweed and float together with them."]
 
 var mtimer = null;
 
