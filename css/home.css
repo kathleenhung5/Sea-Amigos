@@ -472,7 +472,7 @@ body {
 }
 */
 
-#otter {
+#animal {
     height: auto;
     width: 75%;
     position: absolute;
@@ -521,14 +521,14 @@ body {
     width: 100%;
 }
 
-#button > img {
+.animal-button > img {
     padding: 2vw;
     flex-direction: row;
     height: 13vh;
     bottom: 100px;
 }
 
-#button > p {
+.animal-button > p {
     color: white;
     font-size: 16pt;
     display: flex;

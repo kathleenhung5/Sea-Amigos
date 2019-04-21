@@ -2,7 +2,13 @@
 pkg = {
     page: "home", // home map lno aniaml quiz 
     continent: "none", // NA NP Ant Amzn
-    animal: "none" // 1 2 3 4
+    animal: "none", // 1 2 3 4
+    animalvisit: {
+        otter: 0,
+        beaver: 0,
+        jellyfish: 0,
+        orca: 0
+    } 
 }
 
 
@@ -28,13 +34,13 @@ var handler = {
         }
         
         if(props == "continent"){
-            changeLnOBg(value);
+            changeLnOContent(value);
+        }
+        
+        if(props == "animal"){
+            changeAniamlContent(value);
         }
 
-    
-    
-    
-    
     
     
     
@@ -46,7 +52,7 @@ var proxyPkg = new Proxy(pkg, handler);
 
 //---- Function State ----//
 
-function toMap (){
+function toMap(){
     pkg.page = "map";
     pkg.continent = "none";
     pkg.animal = "none";
@@ -85,6 +91,7 @@ function toAnimal (x){
 }
 
 
+
 function save(){
     localStorage.setItem("pkg",JSON.stringify(pkg));
 }
@@ -118,6 +125,8 @@ function toTutorial(){
     window.location.href = "./ATutorial/tutorial-welcome.html";
 }
 
+
+
 function toLnOUI(){
     document.querySelector(".L-n-O-page").style.left = "0px";
      document.querySelector(".homepage").style.left = "-100%";
@@ -126,16 +135,25 @@ function toLnOUI(){
     document.querySelector("#aniaml-page").style.left = "100%";
     document.querySelector(".food").style.display = "none";
     document.querySelector("#feedButton").src = "../img/northamerica/animal-page/feedDefault_NA.svg";
-    
-    
-    
 }
 
-function changeLnOBg(x){
+var animal1 = document.querySelector(".animal1 img"),
+    animal2 = document.querySelector(".animal2 img"),
+    animal3 = document.querySelector(".animal3 img"),
+    animal4 = document.querySelector(".animal4 img");
+
+function changeLnOContent(x){
     if (x == "NA"){
+        console.log("animals");
         document.querySelector(".L-n-O-pagewrap").style.backgroundImage = "url(../img/northamerica/NA-bg.svg)";
+        animal1.src = "img/northamerica/otter-silouette.svg";
+        animal2.src = "img/northamerica/beaver-silouette.svg";
+        animal3.src = "img/northamerica/jellyfish-silouette.svg";
+        animal4.src = "img/northamerica/orca-silouette.svg";
     }
 }
+
+
 
 function toAnimalUI(x){
     document.querySelector(".homepage").style.left = "-100%";
@@ -143,12 +161,32 @@ function toAnimalUI(x){
     document.querySelector(".L-n-O-page").style.left = "-100%";
     document.querySelector(".hbg-menu").style.display = "block";
     document.querySelector(".hbg-menu-list").style.top = "-100vh";
-    document.querySelector("#aniaml-page").style.left = "0px";
-    
-    if(x == 1 && pkg.continent )
-    
+    document.querySelector("#aniaml-page").style.left = "0px"; 
 }
 
+var talkBut = document.querySelector("#talkButton"),
+    feedBut = document.querySelector("#feedButton"),
+    quizBut = document.querySelector("#quizButton"),
+    theAnimal = document.querySelector("#animal");
+
+function changeAniamlContent(x){
+    if (pkg.continent == "NA"){
+        //north american buttons
+        console.log("NA talk buttons");
+        talkBut.src = "img/northamerica/animal-page/TalkDefault_NA.svg";
+        feedBut.src = "img/northamerica/animal-page/FeedDefault_NA.svg";
+        quizBut.src = "img/northamerica/animal-page/QuizDefault_NA.svg";
+        
+        //the animal
+        if (x == 1){
+            console.log("got otter");
+            theAnimal.src = "img/northamerica/Otter.svg";
+        }
+        if (x == 2){
+            theAnimal.src = "img/northamerica/Beaver.svg";
+        }
+    }
+}
 
 
 function expMenu(){
@@ -194,12 +232,7 @@ function goOcean(){
     cloudL.style.left = "-150%";
 }
 
-function goAni1(){
-    document.querySelector("#aniaml-page").style.left = "0px";
-    document.querySelector(".L-n-O-page").style.left = "-100%";
-    document.querySelector(".animal1 img").src = "img/northamerica/Otter.svg";
-    
-}
+//
 
 //function goAni2(){
 //    document.querySelector(".animal2 img").src = "img/northamerica/Beaver.svg";
@@ -221,9 +254,7 @@ function goAni1(){
 
 
 //--------  Aniaml Page ------------//
-var talkBut = document.querySelector("#talkButton"),
-    feedBut = document.querySelector("#feedButton"),
-    quizBut = document.querySelector("#quizButton");
+
 var foodMenu = document.querySelector(".food");
 var But = 0;
 var otterTalk = [ "Hi! I'm Ophie the Otter!", "I have the thickest fur of all animals.", "I like to carry one small rock with me all the time.", "I use rocks to smash open shells.", "I keep the same rock with me for my whole life!", "When I go to sleep, I like to wrap myself and my family in seaweed and float together with them."]
