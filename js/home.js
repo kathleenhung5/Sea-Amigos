@@ -1,7 +1,8 @@
 //----- State ----- //
 pkg = {
     page: "home", // home map lno aniaml quiz 
-    continent: "none"
+    continent: "none", // NA NP Ant Amzn
+    animal: "none" // 1 2 3 4
 }
 
 
@@ -21,11 +22,15 @@ var handler = {
             if (value == "lno"){
                 toLnOUI();
             }
+            if (value == "animal"){
+                toAnimalUI(value);
+            }
         }
         
         if(props == "continent"){
             changeLnOBg(value);
         }
+
     
     
     
@@ -44,32 +49,41 @@ var proxyPkg = new Proxy(pkg, handler);
 function toMap (){
     pkg.page = "map";
     pkg.continent = "none";
+    pkg.animal = "none";
     proxyPkg.page = pkg.page;
     proxyPkg.continent = pkg.continent;
+    proxyPkg.animal = pkg.animal;
     save();
 }
 
 function toHome (){
     pkg.page = "home";
     pkg.continent = "none";
+    pkg.animal = "none";
     proxyPkg.page = pkg.page;
     proxyPkg.continent = pkg.continent;
+    proxyPkg.animal = pkg.animal;
     save();
 }
 
 function toLnO (x){
     pkg.page = "lno";
     pkg.continent = x;
+    pkg.animal = "none";
     proxyPkg.page = pkg.page;
     proxyPkg.continent = pkg.continent;
+    proxyPkg.animal = pkg.animal;
     save();
 }
 
-function toAnimal (){
+function toAnimal (x){
     pkg.page = "animal";
+    pkg.animal = x;
     proxyPkg.page = pkg.page;
+    proxyPkg.animal = pkg.animal;
     save();
 }
+
 
 function save(){
     localStorage.setItem("pkg",JSON.stringify(pkg));
@@ -112,6 +126,9 @@ function toLnOUI(){
     document.querySelector("#aniaml-page").style.left = "100%";
     document.querySelector(".food").style.display = "none";
     document.querySelector("#feedButton").src = "../img/northamerica/animal-page/feedDefault_NA.svg";
+    
+    
+    
 }
 
 function changeLnOBg(x){
@@ -120,14 +137,19 @@ function changeLnOBg(x){
     }
 }
 
-function toAnimalUI(){
+function toAnimalUI(x){
     document.querySelector(".homepage").style.left = "-100%";
     document.querySelector(".map-page").style.left = "-100%";
     document.querySelector(".L-n-O-page").style.left = "-100%";
     document.querySelector(".hbg-menu").style.display = "block";
     document.querySelector(".hbg-menu-list").style.top = "-100vh";
     document.querySelector("#aniaml-page").style.left = "0px";
+    
+    if(x == 1 && pkg.continent )
+    
 }
+
+
 
 function expMenu(){
     document.querySelector(".hbg-menu-list").style.top = "0px";
@@ -179,20 +201,20 @@ function goAni1(){
     
 }
 
-function goAni2(){
-    document.querySelector(".animal2 img").src = "img/northamerica/Beaver.svg";
-    //window.location.href = "";
-}
-
-function goAni3(){
-    document.querySelector(".animal3 img").src = "img/northamerica/jellyfish.svg";
-    //window.location.href = "";
-}
-
-function goAni4(){
-    document.querySelector(".animal4 img").src = "img/northamerica/Orca.svg";
-    //window.location.href = "";
-}
+//function goAni2(){
+//    document.querySelector(".animal2 img").src = "img/northamerica/Beaver.svg";
+//    //window.location.href = "";
+//}
+//
+//function goAni3(){
+//    document.querySelector(".animal3 img").src = "img/northamerica/jellyfish.svg";
+//    //window.location.href = "";
+//}
+//
+//function goAni4(){
+//    document.querySelector(".animal4 img").src = "img/northamerica/Orca.svg";
+//    //window.location.href = "";
+//}
 
 
 

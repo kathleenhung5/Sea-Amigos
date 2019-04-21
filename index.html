@@ -45,9 +45,9 @@
 
                 <div class="map-button-container">
                     <button id="north-america-button" onclick="toLnO('NA')">North America</button>
-                    <button id="north-pole-button">North Pole</button>
-                    <button id="amazon-button">Amazon/ SE Asia</button>
-                    <button id="antarctica-button">Antarctica</button>
+                    <button id="north-pole-button" onclick="toLnO('NP')">North Pole</button>
+                    <button id="amazon-button" onclick="toLnO('Amzn')">Amazon/ SE Asia</button>
+                    <button id="antarctica-button" onclick="toLnO('Ant')">Antarctica</button>
                 </div>
             </div>
         </div>
@@ -70,24 +70,24 @@
             <!-- land animals -->
             <div class="land-animals">
               <div class="animal1">
-                <img src="img/northamerica/otter-silouette.svg" alt="beaver" onclick="toAnimal()" />
-                <button onclick="toAnimal()" type="button">Predator</button>
+                <img src="img/northamerica/otter-silouette.svg" alt="beaver" onclick="toAnimal(1)" />
+                <button onclick="toAnimal(1)" type="button">Predator</button>
               </div>
               <div class="animal2">
-                <img src="img/northamerica/beaver-silouette.svg" alt="beaver" onclick="goAni2()"/>
-                <button onclick="goAni2()">Prey</button>
+                <img src="img/northamerica/beaver-silouette.svg" alt="beaver" onclick="toAnimal(2)"/>
+                <button onclick="toAnimal(2)">Prey</button>
               </div>
             </div>
 
             <!-- ocean animals -->
             <div class="ocean-animals">
               <div class="animal3">
-                <button onclick="goAni3()">Prey</button>
-                <img  src="img/northamerica/jellyfish-silouette.svg" alt="jelly fish" onclick="goAni3()"/>
+                <button onclick="toAnimal(3)">Prey</button>
+                <img  src="img/northamerica/jellyfish-silouette.svg" alt="jelly fish" onclick="toAnimal(3)"/>
               </div>
               <div class="animal4">
-               <button onclick="goAni4()">Predator</button>
-               <img src="img/northamerica/orca-silouette.svg" alt="orca" onclick="goAni4()"/>
+               <button onclick="toAnimal(4)">Predator</button>
+               <img src="img/northamerica/orca-silouette.svg" alt="orca" onclick="toAnimal(4)"/>
 
               </div>
 
