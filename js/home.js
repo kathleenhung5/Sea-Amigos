@@ -1,4 +1,72 @@
-function toHome(){
+//----- State ----- //
+pkg = {
+    page: "home", // home map lno aniaml quiz 
+    continent: "none"
+}
+
+
+
+
+
+//---- Proxy ---- // 
+var handler = {
+    set: function(obj, props, value){
+        if(props == "page"){
+            if (value == "map"){
+                toMapUI();
+            }
+            if (value == "home"){
+                toHomeUI();
+            }
+            if (value == "lno"){
+                toLnOUI();
+            }
+        }
+        
+        if(props == "continent"){
+            changeLnOBg(value);
+        }
+    
+    
+    
+    
+    
+    
+    
+    }  
+}
+
+var proxyPkg = new Proxy(pkg, handler);
+
+
+//---- Function State ----//
+
+function toMap (){
+    pkg.page = "map";
+    proxyPkg.page = pkg.page;
+}
+
+function toHome (){
+    pkg.page = "home";
+    proxyPkg.page = pkg.page;
+}
+
+function toLnO (x){
+    pkg.page = "lno";
+    pkg.continent = x;
+    proxyPkg.page = pkg.page;
+    proxyPkg.continent = pkg.continent;
+}
+
+function toAnimal (){
+    pkg.page = "animal";
+    proxyPkg.page = pkg.page;
+}
+
+
+//---- Function UI ---------//
+
+function toHomeUI(){
     
     document.querySelector(".map-page").style.left = "100%";
     document.querySelector(".L-n-O-page").style.left = "100%";
@@ -10,7 +78,7 @@ function toHome(){
     document.querySelector("#feedButton").src = "../img/northamerica/animal-page/feedDefault_NA.svg";
 }
 
-function toMap (){
+function toMapUI (){
     document.querySelector(".homepage").style.left = "-100%";
     document.querySelector(".map-page").style.left = "0px";
     document.querySelector(".L-n-O-page").style.left = "100%";
@@ -24,7 +92,7 @@ function toTutorial(){
     window.location.href = "./ATutorial/tutorial-welcome.html";
 }
 
-function toLnO(){
+function toLnOUI(){
     document.querySelector(".L-n-O-page").style.left = "0px";
      document.querySelector(".homepage").style.left = "-100%";
     document.querySelector(".map-page").style.left = "-100%px";
@@ -34,7 +102,13 @@ function toLnO(){
     document.querySelector("#feedButton").src = "../img/northamerica/animal-page/feedDefault_NA.svg";
 }
 
-function toAnimal(){
+function changeLnOBg(x){
+    if (x == "NA"){
+        document.querySelector(".L-n-O-pagewrap").style.backgroundImage = "url(../img/northamerica/NA-bg.svg)";
+    }
+}
+
+function toAnimalUI(){
     document.querySelector(".homepage").style.left = "-100%";
     document.querySelector(".map-page").style.left = "-100%";
     document.querySelector(".L-n-O-page").style.left = "-100%";
