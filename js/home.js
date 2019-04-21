@@ -43,12 +43,18 @@ var proxyPkg = new Proxy(pkg, handler);
 
 function toMap (){
     pkg.page = "map";
+    pkg.continent = "none";
     proxyPkg.page = pkg.page;
+    proxyPkg.continent = pkg.continent;
+    save();
 }
 
 function toHome (){
     pkg.page = "home";
+    pkg.continent = "none";
     proxyPkg.page = pkg.page;
+    proxyPkg.continent = pkg.continent;
+    save();
 }
 
 function toLnO (x){
@@ -56,11 +62,17 @@ function toLnO (x){
     pkg.continent = x;
     proxyPkg.page = pkg.page;
     proxyPkg.continent = pkg.continent;
+    save();
 }
 
 function toAnimal (){
     pkg.page = "animal";
     proxyPkg.page = pkg.page;
+    save();
+}
+
+function save(){
+    localStorage.setItem("pkg",JSON.stringify(pkg));
 }
 
 
