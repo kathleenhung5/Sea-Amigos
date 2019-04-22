@@ -3,15 +3,36 @@ pkg = {
     page: "home", // home map lno aniaml quiz 
     continent: "none", // NA NP Ant Amzn
     animal: "none", // 1 2 3 4
-    animalvisit: {
+    animalvisit: { // 1 for visited, 0 for no
+        //NA
         otter: 0,
         beaver: 0,
         jellyfish: 0,
-        orca: 0
+        orca: 0,
+        //NP
+        walrus: 0,
+        bear: 0,
+        narwhal: 0,
+        beluga: 0,
+        //Ant
+        penguin: 0,
+        seal: 0,
+        whale: 0,
+        squid: 0,
+        //Amzn
+        crocodile: 0,
+        crab: 0,
+        dolphin: 0,
+        manatee: 0
     } 
 }
 
 
+//load data
+var spkg = localStorage.getItem("pkg");
+if(spkg){
+    pkg = JSON.parse(spkg);
+}
 
 
 
@@ -52,6 +73,7 @@ var proxyPkg = new Proxy(pkg, handler);
 
 //---- Function State ----//
 
+
 function toMap(){
     pkg.page = "map";
     pkg.continent = "none";
@@ -87,6 +109,66 @@ function toAnimal (x){
     pkg.animal = x;
     proxyPkg.page = pkg.page;
     proxyPkg.animal = pkg.animal;
+    
+    // document visit
+    console.log("document visit");
+    if (pkg.continent == "NA"){
+        if(x==1){
+            pkg.animalvisit.otter = 1;
+        }
+        if(x==2){
+            pkg.animalvisit.beaver = 1;
+        }
+        if(x==3){
+            pkg.animalvisit.jellyfish = 1;
+        }
+        if(x==4){
+            pkg.animalvisit.orca = 1;
+        }
+    }
+    if (pkg.continent == "NP"){
+        if(x==1){
+            pkg.animalvisit.walrus = 1;
+        }
+        if(x==2){
+            pkg.animalvisit.bear = 1;
+        }
+        if(x==3){
+            pkg.animalvisit.narwhal = 1;
+        }
+        if(x==4){
+            pkg.animalvisit.beluga = 1;
+        }
+    }
+    if (pkg.continent == "Amzn"){
+        if(x==1){
+            pkg.animalvisit.crocodile = 1;
+        }
+        if(x==2){
+            pkg.animalvisit.crab = 1;
+        }
+        if(x==3){
+            pkg.animalvisit.dolphin = 1;
+        }
+        if(x==4){
+            pkg.animalvisit.manatee = 1;
+        } 
+    }
+    if (pkg.continent == "Ant"){
+        if(x==1){
+            pkg.animalvisit.seal = 1;
+        }
+        if(x==2){
+            pkg.animalvisit.penguin = 1;
+        }
+        if(x==3){
+            pkg.animalvisit.squid = 1;
+        }
+        if(x==4){
+            pkg.animalvisit.whale = 1;
+        }    
+    }
+    
     save();
 }
 
@@ -99,6 +181,7 @@ function save(){
 
 //---- Function UI ---------//
 
+// -- JUMP TO PAGES UI
 function toHomeUI(){
     
     document.querySelector(".map-page").style.left = "100%";
@@ -118,14 +201,12 @@ function toMapUI (){
     document.querySelector(".hbg-menu").style.display = "block";
     document.querySelector(".hbg-menu-list").style.top = "-100vh";
     document.querySelector("#aniaml-page").style.left = "100%";
-    document.querySelector("#feedButton").src = "../img/northamerica/animal-page/feedDefault_NA.svg";
+    document.querySelector("#feedButton").src = "img/northamerica/animal-page/feedDefault_NA.svg";
 }
 
 function toTutorial(){
     window.location.href = "./ATutorial/tutorial-welcome.html";
 }
-
-
 
 function toLnOUI(){
     document.querySelector(".L-n-O-page").style.left = "0px";
@@ -137,24 +218,6 @@ function toLnOUI(){
     document.querySelector("#feedButton").src = "../img/northamerica/animal-page/feedDefault_NA.svg";
 }
 
-var animal1 = document.querySelector(".animal1 img"),
-    animal2 = document.querySelector(".animal2 img"),
-    animal3 = document.querySelector(".animal3 img"),
-    animal4 = document.querySelector(".animal4 img");
-
-function changeLnOContent(x){
-    if (x == "NA"){
-        console.log("animals");
-        document.querySelector(".L-n-O-pagewrap").style.backgroundImage = "url(../img/northamerica/NA-bg.svg)";
-        animal1.src = "img/northamerica/otter-silouette.svg";
-        animal2.src = "img/northamerica/beaver-silouette.svg";
-        animal3.src = "img/northamerica/jellyfish-silouette.svg";
-        animal4.src = "img/northamerica/orca-silouette.svg";
-    }
-}
-
-
-
 function toAnimalUI(x){
     document.querySelector(".homepage").style.left = "-100%";
     document.querySelector(".map-page").style.left = "-100%";
@@ -164,31 +227,8 @@ function toAnimalUI(x){
     document.querySelector("#aniaml-page").style.left = "0px"; 
 }
 
-var talkBut = document.querySelector("#talkButton"),
-    feedBut = document.querySelector("#feedButton"),
-    quizBut = document.querySelector("#quizButton"),
-    theAnimal = document.querySelector("#animal");
 
-function changeAniamlContent(x){
-    if (pkg.continent == "NA"){
-        //north american buttons
-        console.log("NA talk buttons");
-        talkBut.src = "img/northamerica/animal-page/TalkDefault_NA.svg";
-        feedBut.src = "img/northamerica/animal-page/FeedDefault_NA.svg";
-        quizBut.src = "img/northamerica/animal-page/QuizDefault_NA.svg";
-        
-        //the animal
-        if (x == 1){
-            console.log("got otter");
-            theAnimal.src = "img/northamerica/Otter.svg";
-        }
-        if (x == 2){
-            theAnimal.src = "img/northamerica/Beaver.svg";
-        }
-    }
-}
-
-
+// -- MENU UI
 function expMenu(){
     document.querySelector(".hbg-menu-list").style.top = "0px";
 }
@@ -197,7 +237,41 @@ function closeMenu(){
     document.querySelector(".hbg-menu-list").style.top = "-100%";
 }
 
-// --------- land and ocean page -----------
+// -- LAND AND OCEAN UI
+
+var animal1 = document.querySelector(".animal1 img"),
+    animal2 = document.querySelector(".animal2 img"),
+    animal3 = document.querySelector(".animal3 img"),
+    animal4 = document.querySelector(".animal4 img");
+
+function changeLnOContent(x){
+    if (x == "NA"){
+        // bg
+        document.querySelector(".L-n-O-pagewrap").style.backgroundImage = "url(img/northamerica/NA-bg.svg)";
+        // animals
+        if(pkg.animalvisit.otter == 1){
+            animal1.src = "img/northamerica/Otter.svg";
+        } else {
+            animal1.src = "img/northamerica/otter-silouette.svg";
+        }
+        if(pkg.animalvisit.beaver == 1){
+            animal2.src = "img/northamerica/Beaver.svg";
+        } else {
+            animal2.src = "img/northamerica/beaver-silouette.svg";
+        }
+        if(pkg.animalvisit.jellyfish == 1){
+            animal3.src = "img/northamerica/jellyfish.svg";
+        } else {
+            animal3.src = "img/northamerica/jellyfish-silouette.svg";
+        }
+        if(pkg.animalvisit.orca == 1){
+            animal4.src = "img/northamerica/Orca.svg";
+        } else {
+            animal4.src = "img/northamerica/orca-silouette.svg";
+        } 
+    }
+}
+
 var lnoPagewrap = document.querySelector(".L-n-O-pagewrap");
 var sun = document.querySelector(".sun");
 var landAni = document.querySelector(".land-animals"),
@@ -232,22 +306,99 @@ function goOcean(){
     cloudL.style.left = "-150%";
 }
 
-//
+// -- ANIMAL UI
 
-//function goAni2(){
-//    document.querySelector(".animal2 img").src = "img/northamerica/Beaver.svg";
-//    //window.location.href = "";
-//}
-//
-//function goAni3(){
-//    document.querySelector(".animal3 img").src = "img/northamerica/jellyfish.svg";
-//    //window.location.href = "";
-//}
-//
-//function goAni4(){
-//    document.querySelector(".animal4 img").src = "img/northamerica/Orca.svg";
-//    //window.location.href = "";
-//}
+var talkBut = document.querySelector("#talkButton"),
+    feedBut = document.querySelector("#feedButton"),
+    quizBut = document.querySelector("#quizButton"),
+    theAnimal = document.querySelector("#animal");
+
+function changeAniamlContent(x){
+    if (pkg.continent == "NA"){
+        //north american buttons
+        talkBut.src = "img/northamerica/animal-page/TalkDefault_NA.svg";
+        feedBut.src = "img/northamerica/animal-page/FeedDefault_NA.svg";
+        quizBut.src = "img/northamerica/animal-page/QuizDefault_NA.svg";
+        
+        //the animal
+        if (x == 1){
+            theAnimal.src = "img/northamerica/Otter.svg";
+        }
+        if (x == 2){
+            theAnimal.src = "img/northamerica/Beaver.svg";
+        }
+        if (x == 3){
+            theAnimal.src = "img/northamerica/jellyfish.svg";
+        }
+        if (x == 4){
+            theAnimal.src = "img/northamerica/Orca.svg";
+        }
+    }
+    
+    if (pkg.continent == "NP"){
+        //north pole buttons
+        talkBut.src = "img/northamerica/animal-page/TalkDefault_NA.svg";
+        feedBut.src = "img/northamerica/animal-page/FeedDefault_NA.svg";
+        quizBut.src = "img/northamerica/animal-page/QuizDefault_NA.svg";
+        
+        //the animal
+        if (x == 1){
+            theAnimal.src = "img/northpole/walrus.svg";
+        }
+        if (x == 2){
+            theAnimal.src = "img/northpole/bear.svg";
+        }
+        if (x == 3){
+            theAnimal.src = "img/northpole/narwhal.svg";
+        }
+        if (x == 4){
+            theAnimal.src = "img/northpole/beluga.svg";
+        }
+    }
+    
+    if (pkg.continent == "Amzn"){
+        //Amazon buttons
+        talkBut.src = "img/northamerica/animal-page/TalkDefault_NA.svg";
+        feedBut.src = "img/northamerica/animal-page/FeedDefault_NA.svg";
+        quizBut.src = "img/northamerica/animal-page/QuizDefault_NA.svg";
+        
+        //the animal
+        if (x == 1){
+            theAnimal.src = "img/amazon/crocodile.svg";
+        }
+        if (x == 2){
+            theAnimal.src = "img/amazon/crab.svg";
+        }
+        if (x == 3){
+            theAnimal.src = "img/amazon/dolphin.svg";
+        }
+        if (x == 4){
+            theAnimal.src = "img/amazon/manatee.svg";
+        }
+    }
+    
+    if (pkg.continent == "Ant"){
+        //Antarctica buttons
+        talkBut.src = "img/northamerica/animal-page/TalkDefault_NA.svg";
+        feedBut.src = "img/northamerica/animal-page/FeedDefault_NA.svg";
+        quizBut.src = "img/northamerica/animal-page/QuizDefault_NA.svg";
+        
+        //the animal
+        if (x == 1){
+            console.log("got otter");
+            theAnimal.src = "img/antarctica/penguin.svg";
+        }
+        if (x == 2){
+            theAnimal.src = "img/antarctica/whale.svg";
+        }
+        if (x == 3){
+            theAnimal.src = "img/antarctica/squid.svg";
+        }
+        if (x == 4){
+            theAnimal.src = "img/antarctica/seal.svg";
+        }
+    }
+}
 
 
 
@@ -262,7 +413,7 @@ var otterTalk = [ "Hi! I'm Ophie the Otter!", "I have the thickest fur of all an
 var mtimer = null;
 
 talkBut.addEventListener("touchstart", function(){
-     talkBut.src = "../img/northamerica/animal-page/TalkSelected_NA.svg";
+     talkBut.src = "img/northamerica/animal-page/TalkSelected_NA.svg";
      
     var talkRes = otterTalk[Math.floor(Math.random() * otterTalk.length)];
      speech.style.display = "flex";
@@ -285,19 +436,19 @@ talkBut.addEventListener("touchstart", function(){
 });
 
 talkBut.addEventListener("touchend", function() {
-    talkBut.src = "../img/northamerica/animal-page/TalkDefault_NA.svg";
+    talkBut.src = "img/northamerica/animal-page/TalkDefault_NA.svg";
  });
 
 
 feedBut.addEventListener("click", function() {
     if(But == 0){
         console.log("clickagain");
-        feedBut.src = "../img/northamerica/animal-page/FeedSelected_NA.svg";
+        feedBut.src = "img/northamerica/animal-page/FeedSelected_NA.svg";
         foodMenu.style.display = "block";
         But = 1;
     } else {
         console.log("clickme");
-        feedBut.src = "../img/northamerica/animal-page/FeedDefault_NA.svg";
+        feedBut.src = "img/northamerica/animal-page/FeedDefault_NA.svg";
         foodMenu.style.display = "none";
         But = 0;
     }
