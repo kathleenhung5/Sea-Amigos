@@ -48,6 +48,8 @@ var handler = {
             }
             if (value == "lno"){
                 toLnOUI();
+                changeLnOContent(pkg.continent);
+                console.log("tolno");
             }
             if (value == "animal"){
                 toAnimalUI(value);
@@ -55,7 +57,7 @@ var handler = {
         }
         
         if(props == "continent"){
-            changeLnOContent(value);
+            //changeLnOContent(value);
         }
         
         if(props == "animal"){
@@ -172,7 +174,17 @@ function toAnimal (x){
     save();
 }
 
-
+function toLast(){
+    if (pkg.page == "map"){
+        toHome();
+    } else if (pkg.page == "lno"){
+        toMap();
+    } else if (pkg.page == "animal"){
+        toLnO(pkg.continent);
+    }
+    
+    save();   
+}
 
 function save(){
     localStorage.setItem("pkg",JSON.stringify(pkg));
@@ -187,6 +199,7 @@ function toHomeUI(){
     document.querySelector(".map-page").style.left = "100%";
     document.querySelector(".L-n-O-page").style.left = "100%";
     document.querySelector("#animal-page").style.left = "100%";
+    document.querySelector(".back-button").style.display = "none";
     document.querySelector(".hbg-menu").style.display = "none";
     document.querySelector(".hbg-menu-list").style.top = "-100vh";
     document.querySelector(".food").style.display = "none";
@@ -198,6 +211,7 @@ function toMapUI (){
     document.querySelector(".homepage").style.left = "-100%";
     document.querySelector(".map-page").style.left = "0px";
     document.querySelector(".L-n-O-page").style.left = "100%";
+    document.querySelector(".back-button").style.display = "block";
     document.querySelector(".hbg-menu").style.display = "block";
     document.querySelector(".hbg-menu-list").style.top = "-100vh";
     document.querySelector("#animal-page").style.left = "100%";
@@ -211,7 +225,8 @@ function toTutorial(){
 function toLnOUI(){
     document.querySelector(".L-n-O-page").style.left = "0px";
      document.querySelector(".homepage").style.left = "-100%";
-    document.querySelector(".map-page").style.left = "-100%px";
+    document.querySelector(".map-page").style.left = "-100%";
+    document.querySelector(".back-button").style.display = "block";
     document.querySelector(".hbg-menu-list").style.top = "-100vh";
     document.querySelector("#animal-page").style.left = "100%";
     document.querySelector(".food").style.display = "none";
@@ -222,6 +237,7 @@ function toAnimalUI(x){
     document.querySelector(".homepage").style.left = "-100%";
     document.querySelector(".map-page").style.left = "-100%";
     document.querySelector(".L-n-O-page").style.left = "-100%";
+    document.querySelector(".back-button").style.display = "block";
     document.querySelector(".hbg-menu").style.display = "block";
     document.querySelector(".hbg-menu-list").style.top = "-100vh";
     document.querySelector("#animal-page").style.left = "0px"; 
@@ -251,7 +267,7 @@ function changeLnOContent(x){
         // animals
         if(pkg.animalvisit.otter == 1){
             animal1.src = "img/northamerica/Otter.svg";
-        } else {
+        } else if (pkg.animalvisit.otter == 0){
             animal1.src = "img/northamerica/otter-silouette.svg";
         }
         if(pkg.animalvisit.beaver == 1){
@@ -325,7 +341,7 @@ function changeLnOContent(x){
     
     if (x == "Amzn"){
         // bg
-        document.querySelector(".L-n-O-pagewrap").style.backgroundImage = "url(img/northamerica/NA-bg.svg)";
+        document.querySelector(".L-n-O-pagewrap").style.backgroundImage = "url(img/amazon/Amazon-bg.svg)";
         // animals
         if(pkg.animalvisit.crocodile == 1){
             animal1.src = "img/amazon/crocodile.svg";

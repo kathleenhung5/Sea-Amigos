@@ -125,6 +125,16 @@ body {
 
 
 /*-----Menu-----*/
+.back-button {
+    z-index: 31;
+    position: fixed;
+    width: 30px;
+    height: auto;
+    top: 10px;
+    left: 10px;
+    display: none;
+}
+
 .hbg-menu {
     z-index: 30;
     position: fixed;
@@ -402,12 +412,12 @@ body {
 }
 
 .animal2 {
-    width: 40%;
+    width: 50%;
     padding-left: 30px;
 }
 
 .animal3 {
-    width: 30%;
+    width: 50%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -424,7 +434,7 @@ body {
 }
 
 .animal4 {
-    width: 40%;
+    width: 50%;
 }
 
 
