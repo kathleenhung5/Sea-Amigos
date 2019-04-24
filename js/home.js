@@ -258,12 +258,30 @@ function closeMenu(){
 var animal1 = document.querySelector(".animal1 img"),
     animal2 = document.querySelector(".animal2 img"),
     animal3 = document.querySelector(".animal3 img"),
-    animal4 = document.querySelector(".animal4 img");
+    animal4 = document.querySelector(".animal4 img"),
+    animal1but = document.querySelector(".animal1 button"),
+    animal2but = document.querySelector(".animal2 button"),
+    animal3but = document.querySelector(".animal3 button"),
+    animal4but = document.querySelector(".animal4 button"),
+    land = document.getElementById("land"),
+    ocean = document.getElementById("ocean"),
+    ppbut = document.querySelectorAll(".ppbut");
 
 function changeLnOContent(x){
     if (x == "NA"){
         // bg
         document.querySelector(".L-n-O-pagewrap").style.backgroundImage = "url(img/northamerica/NA-bg.svg)";
+        land.src = "img/northamerica/land-button.svg";
+        ocean.src = "img/northamerica/ocean-button.svg";
+        // button colours
+        var i;
+        for (i=0;i<ppbut.length;i++){
+        ppbut[i].style.backgroundColor = "#F78330";
+        }
+        animal1but.innerHTML = "Predator";
+        animal2but.innerHTML = "Prey";
+        animal3but.innerHTML = "Prey";
+        animal4but.innerHTML = "Predator";
         // animals
         if(pkg.animalvisit.otter == 1){
             animal1.src = "img/northamerica/Otter.svg";
@@ -290,6 +308,17 @@ function changeLnOContent(x){
     if (x == "NP"){
         // bg
         document.querySelector(".L-n-O-pagewrap").style.backgroundImage = "url(img/northamerica/NA-bg.svg)";
+        land.src = "img/northpole/land-button.svg";
+        ocean.src = "img/northpole/ocean-button.svg";
+        // button colours
+        var i;
+        for (i=0;i<ppbut.length;i++){
+        ppbut[i].style.backgroundColor = "#45ABE1";
+        }
+        animal1but.innerHTML = "Prey";
+        animal2but.innerHTML = "Predator";
+        animal3but.innerHTML = "Predator";
+        animal4but.innerHTML = "Prey";
         // animals
         if(pkg.animalvisit.walrus == 1){
             animal1.src = "img/northpole/walrus.svg";
@@ -316,6 +345,17 @@ function changeLnOContent(x){
     if (x == "Ant"){
         // bg
         document.querySelector(".L-n-O-pagewrap").style.backgroundImage = "url(img/northamerica/NA-bg.svg)";
+        land.src = "img/antarctica/land-button.svg";
+        ocean.src = "img/antarctica/ocean-button.svg";
+        // button colours
+        var i;
+        for (i=0;i<ppbut.length;i++){
+        ppbut[i].style.backgroundColor = "#8A77B5";
+        }
+        animal1but.innerHTML = "Predator";
+        animal2but.innerHTML = "Prey";
+        animal3but.innerHTML = "Predator";
+        animal4but.innerHTML = "Prey";
         // animals
         if(pkg.animalvisit.penguin == 1){
             animal1.src = "img/antarctica/penguin.svg";
@@ -342,6 +382,13 @@ function changeLnOContent(x){
     if (x == "Amzn"){
         // bg
         document.querySelector(".L-n-O-pagewrap").style.backgroundImage = "url(img/amazon/Amazon-bg.svg)";
+        land.src = "img/amazon/land-button.svg";
+        ocean.src = "img/amazon/ocean-button.svg";
+        // button colours
+        var i;
+        for (i=0;i<ppbut.length;i++){
+        ppbut[i].style.backgroundColor = "#5FD92B";
+        }
         // animals
         if(pkg.animalvisit.crocodile == 1){
             animal1.src = "img/amazon/crocodile.svg";
@@ -407,6 +454,7 @@ var talkBut = document.querySelector("#talkButton"),
     quizBut = document.querySelector("#quizButton"),
     theAnimal = document.querySelector("#animal"),
     animalbg =  document.querySelector("#animal-page");
+    
 
 function changeAniamlContent(x){
     if (pkg.continent == "NA"){
@@ -519,6 +567,7 @@ function changeAniamlContent(x){
 
 var foodMenu = document.querySelector(".food");
 var But = 0;
+/* North America Animals */ 
 var otterTalk = [ "Hi! I'm Ophie the Otter!", "I have the thickest fur of all animals.", "I like to carry one small rock with me all the time.", "I use rocks to smash open shells.", "I keep the same rock with me for my whole life!", "When I go to sleep, I like to wrap myself and my family in seaweed and float together with them."]
 
 var mtimer = null;
