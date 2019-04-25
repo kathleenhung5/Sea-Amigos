@@ -353,7 +353,7 @@ function changeLnOContent(x){
         ppbut[i].style.backgroundColor = "#8A77B5";
         }
         animal1but.innerHTML = "Predator";
-        animal2but.innerHTML = "Prey";
+        animal2but.innerHTML = "Predator";
         animal3but.innerHTML = "Predator";
         animal4but.innerHTML = "Prey";
         // animals
@@ -389,6 +389,10 @@ function changeLnOContent(x){
         for (i=0;i<ppbut.length;i++){
         ppbut[i].style.backgroundColor = "#5FD92B";
         }
+        animal1but.innerHTML = "Predator";
+        animal2but.innerHTML = "Predator";
+        animal3but.innerHTML = "Prey";
+        animal4but.innerHTML = "Prey";
         // animals
         if(pkg.animalvisit.crocodile == 1){
             animal1.src = "img/amazon/crocodile.svg";
@@ -564,13 +568,51 @@ function changeAniamlContent(x){
 
 
 //--------  Aniaml Page ------------//
+var foodMenu = document.querySelector(".food"),
+    fish = document.querySelector("#fish"),
+    fruit = document.querySelector("#fruit"),
+    seaweed = document.querySelector("#seaweed"),
+    plankton = document.querySelector("#plankton"),
+    speech = document.querySelector("#speechbubble");
 
-var foodMenu = document.querySelector(".food");
-var But = 0;
 /* North America Animals */ 
 var otterTalk = [ "Hi! I'm Ophie the Otter!", "I have the thickest fur of all animals.", "I like to carry one small rock with me all the time.", "I use rocks to smash open shells.", "I keep the same rock with me for my whole life!", "When I go to sleep, I like to wrap myself and my family in seaweed and float together with them."]
 
+
+
+
+
+
+
+var negRes = ["No, thank you.", "I don't eat that.", "I don't like those!", "I'm sure someone else would like that."];
+var posRes = ["Mmm! Yummy!", "Thank you!", "My favourite! Thanks!", "I like this!"]; 
+
 var mtimer = null;
+var But = 0;
+
+function timing(){
+    if (mtimer == null){
+            mtimer = setTimeout(function() {
+            speech.style.display = "none";
+            mtimer = null;
+        }, 5000);
+    } else {
+        clearTimeout(mtimer);
+        console.log("force stop and restart");
+        mtimer = setTimeout(function() {
+            speech.style.display = "none";
+            },5000);
+    }
+}
+
+function talk(){
+    //button look
+    if (pkg.continent == "NA"){
+        talkBut.src = "img/northamerica/animal-page/TalkSelected_NA.svg";
+    }
+    //sentences
+    
+}
 
 talkBut.addEventListener("touchstart", function(){
      talkBut.src = "img/northamerica/animal-page/TalkSelected_NA.svg";
@@ -621,7 +663,7 @@ feedBut.addEventListener("click", function() {
     var speech = document.querySelector("#speechbubble");
     var negRes = ["No, thank you.", "I don't eat that.", "I don't like those!", "I'm sure someone else would like that."];
     var posRes = ["Mmm! Yummy!", "Thank you!", "My favourite! Thanks!", "I like this!"]; 
-    var speechTimeout;
+   
     fish.addEventListener("click", function() {
         var yes = posRes[Math.floor(Math.random() * posRes.length)];
         speech.style.display = "flex";
