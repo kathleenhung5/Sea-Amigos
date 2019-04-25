@@ -587,6 +587,7 @@ var otterTalk = [ "Hi! I'm Ophie the Otter!", "I have the thickest fur of all an
 var negRes = ["No, thank you.", "I don't eat that.", "I don't like those!", "I'm sure someone else would like that."];
 var posRes = ["Mmm! Yummy!", "Thank you!", "My favourite! Thanks!", "I like this!"]; 
 
+
 var mtimer = null;
 var But = 0;
 
@@ -598,72 +599,130 @@ function timing(){
         }, 5000);
     } else {
         clearTimeout(mtimer);
-        console.log("force stop and restart");
         mtimer = setTimeout(function() {
             speech.style.display = "none";
             },5000);
     }
 }
 
-function talk(){
+function talk1(){
     //button look
     if (pkg.continent == "NA"){
         talkBut.src = "img/northamerica/animal-page/TalkSelected_NA.svg";
     }
     //sentences
+    var talkRes;
+    if (pkg.continent == "NA"){
+        if(pkg.animal == 1){
+            talkRes = otterTalk;
+        } else if (pkg.animal == 2){
+            talkRes = beaverTalk;
+        } else if (pkg.animal == 3){
+            talkRes = squidTalk;
+        } else if (pkg.animal == 4){
+            talkRes = orcaTalk;
+        }
+    }
+    speech.innerHTML = talkRes[Math.floor(Math.random()* talkRes.length)];
+    speech.style.display = "flex";
+    timing();
+}
+
+function talk2(){
+    if(pkg.continent == "NA"){
+       talkBut.src = "img/northamerica/animal-page/TalkDefault_NA.svg";
+    }
     
 }
 
-talkBut.addEventListener("touchstart", function(){
-     talkBut.src = "img/northamerica/animal-page/TalkSelected_NA.svg";
-     
-    var talkRes = otterTalk[Math.floor(Math.random() * otterTalk.length)];
-     speech.style.display = "flex";
-     speech.innerHTML = talkRes;
-//    console.log("start");
-    if (mtimer == null){
-            mtimer = setTimeout(function() {
-            speech.style.display = "none";
-            mtimer = null;
-//            console.log("stop");
-        }, 5000);
-    } else {
-        clearTimeout(mtimer);
-        console.log("force stop and restart");
-        mtimer = setTimeout(function() {
-            speech.style.display = "none";
-//            console.log("stop");
-            },5000);
-    }
-});
+//talkBut.addEventListener("touchstart", function(){
+//     talkBut.src = "img/northamerica/animal-page/TalkSelected_NA.svg";
+//     
+//    var talkRes = otterTalk[Math.floor(Math.random() * otterTalk.length)];
+//     speech.style.display = "flex";
+//     speech.innerHTML = talkRes;
+//    if (mtimer == null){
+//            mtimer = setTimeout(function() {
+//            speech.style.display = "none";
+//            mtimer = null;
+//        }, 5000);
+//    } else {
+//        clearTimeout(mtimer);
+//        console.log("force stop and restart");
+//        mtimer = setTimeout(function() {
+//            speech.style.display = "none";
+//            },5000);
+//    }
+//});
 
-talkBut.addEventListener("touchend", function() {
-    talkBut.src = "img/northamerica/animal-page/TalkDefault_NA.svg";
- });
+//talkBut.addEventListener("touchend", function() {
+//    talkBut.src = "img/northamerica/animal-page/TalkDefault_NA.svg";
+// });
 
-
-feedBut.addEventListener("click", function() {
+function feed(){
     if(But == 0){
-        console.log("clickagain");
-        feedBut.src = "img/northamerica/animal-page/FeedSelected_NA.svg";
+        if(pkg.continent == "NA"){
+            feedBut.src = "img/northamerica/animal-page/FeedSelected_NA.svg";
+        }
         foodMenu.style.display = "block";
         But = 1;
     } else {
-        console.log("clickme");
-        feedBut.src = "img/northamerica/animal-page/FeedDefault_NA.svg";
+        if(pkg.continent == "NA"){
+            feedBut.src = "img/northamerica/animal-page/FeedDefault_NA.svg";
+        }
         foodMenu.style.display = "none";
         But = 0;
     }
- }); 
+}
 
-    var fish = document.querySelector("#fish"),
-        fruit = document.querySelector("#fruit"),
-        seaweed = document.querySelector("#seaweed"),
-        plankton = document.querySelector("#plankton");
-    var speech = document.querySelector("#speechbubble");
-    var negRes = ["No, thank you.", "I don't eat that.", "I don't like those!", "I'm sure someone else would like that."];
-    var posRes = ["Mmm! Yummy!", "Thank you!", "My favourite! Thanks!", "I like this!"]; 
-   
+//feedBut.addEventListener("click", function() {
+//    if(But == 0){
+//        feedBut.src = "img/northamerica/animal-page/FeedSelected_NA.svg";
+//        foodMenu.style.display = "block";
+//        But = 1;
+//    } else {
+//        console.log("clickme");
+//        feedBut.src = "img/northamerica/animal-page/FeedDefault_NA.svg";
+//        foodMenu.style.display = "none";
+//        But = 0;
+//    }
+// }); 
+
+//    var fish = document.querySelector("#fish"),
+//        fruit = document.querySelector("#fruit"),
+//        seaweed = document.querySelector("#seaweed"),
+//        plankton = document.querySelector("#plankton");
+//    var speech = document.querySelector("#speechbubble");
+
+function sayyes(){
+    var yes = posRes[Math.floor(Math.random() * posRes.length)];
+    speech.innerHTML = yes;
+    speech.style.display = "flex";
+    timing();
+}
+
+function sayno(){
+    var no = negRes[Math.floor(Math.random() * negRes.length)];
+    speech.style.display = "flex";
+    speech.innerHTML = no;
+    timing();
+}
+
+function foodres(elid){
+    if(elid == "fish"){
+        if(pkg.continent == "NA" && (pkg.animal == 1 || pkg.animal == 3){
+           sayyes();
+           } 
+    } else if (elid == "fruit"){
+        
+    } else if (elid == "seaweed"){
+        
+    } else if (elid == "plankton"){
+        
+    }
+    
+}
+
     fish.addEventListener("click", function() {
         var yes = posRes[Math.floor(Math.random() * posRes.length)];
         speech.style.display = "flex";
@@ -738,6 +797,6 @@ feedBut.addEventListener("click", function() {
             },5000);
     }});
 
-    function resetTimeout() {
-        clearTimeout(speechTimeout);
-    };
+//    function resetTimeout() {
+//        clearTimeout(speechTimeout);
+//    };

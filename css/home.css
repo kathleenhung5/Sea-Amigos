@@ -550,6 +550,20 @@ body {
     font-family: 'Montserrat Medium';
 }
 
+/* ------ Quiz Page ---------*/
+.quiz-page {
+    z-index: 13;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 100%;
+    top: 0px;
+}
+
+.quiz-animal{
+    width: 70%;
+}
+
 
 
 
