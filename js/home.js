@@ -578,7 +578,7 @@ var foodMenu = document.querySelector(".food"),
 /* North America Animals */ 
 var otterTalk = [ "Hi! I'm Ophie the Otter!", "I have the thickest fur of all animals.", "I like to carry one small rock with me all the time.", "I use rocks to smash open shells.", "I keep the same rock with me for my whole life!", "When I go to sleep, I like to wrap myself and my family in seaweed and float together with them."]
 
-
+var beaverTalk = ["Hello! I'm Bev the Beaver.", "I do most of my work during the evening", "I slap the water with my tail to tell my family when there is danger.", "I don't see well, but I can see underwater!", "I can stay underwater for up to 15 minutes.", "I make dams by chewing on and moving them around."]
 
 
 
