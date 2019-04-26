@@ -580,9 +580,37 @@ var otterTalk = [ "Hi! I'm Ophie the Otter!", "I have the thickest fur of all an
 
 var beaverTalk = ["Hello! I'm Bev the Beaver.", "I do most of my work during the evening", "I slap the water with my tail to tell my family when there is danger.", "I don't see well, but I can see underwater!", "I can stay underwater for up to 15 minutes.", "I make dams by chewing on and moving them around."]
 
+var jellyTalk = ["Hey! I'm Belly the Jellyfish.", "Jellyfish can be as small as a peanut, or as big as a human!", "Did you know, we don't have brains!", "Some jellyfish can sting, and some are poisonous", "We are transluscent! That means we're almost see-through."]
 
+var orcaTalk = ["Hello, I'm Ollie the Orca.", "Another name for us is the 'Killer Whale'", "We might look cute, but we're one of the most powerful predators in the world!", "We're not a whale or a fish! We're a type of dolphin.", "We can't smell anything!", "We use our sense of sight and hearing to help us hunt for food."]
 
+/*Antartica Animals*/
 
+var penguinTalk = ["Hi! I'm Peggy the Emperor Penguin", "We are the tallest and heaviest of all penguins.", "When I was little, my parents would take turns getting food and taking care of me.", "We're the only penguins that breed in the winter.", "We can dive deep! We can swim up to 500 metres underwater.", "We can stay underwater for as long as 22 minutes."]
+
+var sealTalk = ["Hello! My name is Nelly, I'm a seal.", "I spend most of my time in the water.", "We have lots of blubber, which helps us stay warm in the cold", "We're colourblind, but we see blue and green really well!", "We sleep underwater, but we come up to breathe sometimes.", "Underwater, we have really good hearing."]
+
+var whaleTalk = ["Hello, I'm Flo the Blue Whale.", "I'm the largest animal in the world!", "We travel in groups called 'pods'.", "When I want to talk to my friends, I make noises such as clicks, whistles and pulsed calls.", "We might be big, but we eat a lot of small things, like krill.", "I look like a fish, but I don't lay eggs."]
+
+var squidTalk = ["Hi, I'm Squishy, the Squid.", "I can change colour to hide from my predators.", "When I'm in danger, I shoot a cloud of ink as a distraction.", "Our arms are called tentacles.", "If we lose an arm, we can grow it back!", "Sometimes we're mistaken for our cousin, the octopus."]
+
+/* North Pole Animals */
+var walrusTalk = ["Hello, I'm Waldo. I'm a Walrus.", "Both boy and girl walruses have large tusks.", "I'm very social, I love hanging out with my friends.", "We use our tusks to cut ice and defend ourselves.", "Most of us can live up to 40 years old.", "We're really heavy, we can weigh up to 4,000 pounds"]
+
+var bearTalk = ["Hi, I'm Pablo, the Polar Bear!", "My fur might look white, but it's actually transparent.", "My skin under my fur is black in colour.", "I can swim in the water for several days at a time.", "I spend a lot of time on the ice to look for food.", "We have a thick layer of blubber to keep us warm."]
+
+var narwhalTalk = ["Hello! My name is Nora, the Narwhal.", "My tusk is my left tooth!", "My tooth spirals and grows for my whole life!", "Not all narwhals have tusks, we are all different.", "Our tusks can grow up to 10 feet long.", "Our skin starts off dark, and turns white as we get older."]
+
+var belugaTalk = ["Hi! I'm Bobby the Beluga.", "I can swim backwards! It's a lot of fun.", "When we are born, our skin is grey.", "I like to make funny noises, like whistling, and clicking.", "The bump on our heads is called a 'melon'!", "When I go exploring, I use something called 'echolocation' to help me find my way in the water."]
+
+/* Amazon Animals */
+var crabTalk = ["Hello, I'm Cas, the Coconut Crab.", "Sometimes we're called the 'robber crab', because we take things without asking.", "I don't like living with others. I need my privacy!", "We're called coconut crabs because we like to eat and hide in coconuts.", "We have a strong sense of smell.", "We're nocturnal, that means we like to hunt at night."]
+
+var crocodileTalk = ["Hi! My name is Rocky. I'm a Crocodile!", "We have very good night vision. We can see clearly in the dark.", "We cry when we eat, not because we're sad, it's because we don't chew our food.", "We can weigh up to 1000 pounds!", "We lay lots of eggs, anywhere between 20 and 80 eggs.", "We take care of our eggs for 3 months before they hatch."]
+
+var manateeTalk = ["Hello, I'm Manny the Manatee. Nice to meet you.", "I spend half my day eating.", "We like to hang out in warm water, we don't have much protection against the cold.", "We might be called 'sea cows', but we're actually related to the elephant!", "Our brains are smooth, not bumpy like yours!", "Our teeth fall out in the front and grow at the back all the time."]
+
+var dolphinTalk = ["Hey! I'm Wisp, the Amazon River Dolphin!", "We have 2 stomachs, one for storing food and the other for digesting food.", "We talk to our friends and family by whistling and clicking.", "I'm really smart. Our brains are 40% bigger than a human's brain.", "There are lots of legends about us, some cultures think we are magical!", "I like being alone. Sometimes I'm with 2-4 of my other friends, but I rarely travel in large groups."]
 
 var negRes = ["No, thank you.", "I don't eat that.", "I don't like those!", "I'm sure someone else would like that."];
 var posRes = ["Mmm! Yummy!", "Thank you!", "My favourite! Thanks!", "I like this!"]; 
