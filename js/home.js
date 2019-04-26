@@ -24,13 +24,10 @@ pkg = {
         crab: 0,
         dolphin: 0,
         manatee: 0
-    },
-    food:{
-        NA:{
-            fish:[1,2,4]
-        }
     }
+    
 }
+
 
 
 //load data
@@ -58,6 +55,9 @@ var handler = {
             }
             if (value == "animal"){
                 toAnimalUI(value);
+            }
+            if (value == "quiz"){
+                toQuizUI();
             }
         }
         
@@ -116,10 +116,8 @@ function toAnimal (x){
     pkg.animal = x;
     proxyPkg.page = pkg.page;
     proxyPkg.animal = pkg.animal;
-    console.log(pkg);
     
     // document visit
-    console.log("document visit");
     if (pkg.continent == "NA"){
         if(x==1){
             pkg.animalvisit.otter = 1;
@@ -164,10 +162,10 @@ function toAnimal (x){
     }
     if (pkg.continent == "Ant"){
         if(x==1){
-            pkg.animalvisit.seal = 1;
+            pkg.animalvisit.penguin = 1;
         }
         if(x==2){
-            pkg.animalvisit.penguin = 1;
+            pkg.animalvisit.seal = 1;
         }
         if(x==3){
             pkg.animalvisit.squid = 1;
@@ -180,6 +178,12 @@ function toAnimal (x){
     save();
 }
 
+function toQuiz(){
+    pkg.page = "quiz";
+    proxyPkg.page = pkg.page;
+    save();
+}
+
 function toLast(){
     if (pkg.page == "map"){
         toHome();
@@ -187,8 +191,9 @@ function toLast(){
         toMap();
     } else if (pkg.page == "animal"){
         toLnO(pkg.continent);
-    }
-   // save();   
+    } else if (pkg.page == "quiz"){
+        toAnimal(pkg.animal);
+    }   
 }
 
 function save(){
@@ -209,7 +214,8 @@ function toHomeUI(){
     document.querySelector(".hbg-menu-list").style.top = "-100vh";
     document.querySelector(".food").style.display = "none";
     document.querySelector(".homepage").style.left = "0px";
-    //document.querySelector("#feedButton").src = "../img/northamerica/animal-page/feedDefault_NA.svg";
+    document.querySelector(".quiz-page").style.left = "100%";
+    closePopup();
 }
 
 function toMapUI (){
@@ -220,7 +226,8 @@ function toMapUI (){
     document.querySelector(".hbg-menu").style.display = "block";
     document.querySelector(".hbg-menu-list").style.top = "-100vh";
     document.querySelector("#animal-page").style.left = "100%";
-    //document.querySelector("#feedButton").src = "img/northamerica/animal-page/feedDefault_NA.svg";
+    document.querySelector(".quiz-page").style.left = "100%";
+    closePopup();
 }
 
 function toTutorial(){
@@ -229,13 +236,14 @@ function toTutorial(){
 
 function toLnOUI(){
     document.querySelector(".L-n-O-page").style.left = "0px";
-     document.querySelector(".homepage").style.left = "-100%";
+    document.querySelector(".homepage").style.left = "-100%";
     document.querySelector(".map-page").style.left = "-100%";
     document.querySelector(".back-button").style.display = "block";
     document.querySelector(".hbg-menu-list").style.top = "-100vh";
     document.querySelector("#animal-page").style.left = "100%";
     document.querySelector(".food").style.display = "none";
-    //document.querySelector("#feedButton").src = "../img/northamerica/animal-page/feedDefault_NA.svg";
+    document.querySelector(".quiz-page").style.left = "100%";
+    closePopup();
 }
 
 function toAnimalUI(x){
@@ -245,7 +253,21 @@ function toAnimalUI(x){
     document.querySelector(".back-button").style.display = "block";
     document.querySelector(".hbg-menu").style.display = "block";
     document.querySelector(".hbg-menu-list").style.top = "-100vh";
-    document.querySelector("#animal-page").style.left = "0px"; 
+    document.querySelector("#animal-page").style.left = "0px";
+    document.querySelector(".quiz-page").style.left = "100%";
+    closePopup();
+}
+
+function toQuizUI(){
+    document.querySelector(".L-n-O-page").style.left = "-100%";
+    document.querySelector(".homepage").style.left = "-100%";
+    document.querySelector(".map-page").style.left = "-100%";
+    document.querySelector(".back-button").style.display = "block";
+    document.querySelector(".hbg-menu-list").style.top = "-100vh";
+    document.querySelector(".quiz-page").style.left = "0px";
+    document.querySelector("#animal-page").style.left = "-100%";
+    document.querySelector(".food").style.display = "none";
+    closePopup();
 }
 
 
@@ -462,16 +484,19 @@ var talkBut = document.querySelector("#talkButton"),
     feedBut = document.querySelector("#feedButton"),
     quizBut = document.querySelector("#quizButton"),
     theAnimal = document.querySelector("#animal"),
-    animalbg =  document.querySelector("#animal-page");
+    animalbg =  document.querySelector("#animal-page"),
+    quizyes = document.querySelector(".quiz-popup button:nth-child(3)");
     
 
 function changeAniamlContent(x){
     if (pkg.continent == "NA"){
-        //north american buttons
+        //theme
         talkBut.src = "img/northamerica/animal-page/TalkDefault_NA.svg";
         feedBut.src = "img/northamerica/animal-page/FeedDefault_NA.svg";
         quizBut.src = "img/northamerica/animal-page/QuizSelected_NA.svg";
-        
+        speech.style.border = "3px solid #F78330";
+        document.querySelector(".foodMenu").style.border = "3px solid #F78330";
+        quizyes.style.backgroundColor = "#F78330";
         //the animal and background
         if (x == 1){
             theAnimal.src = "img/northamerica/Otter.svg";
@@ -492,11 +517,13 @@ function changeAniamlContent(x){
     }
     
     if (pkg.continent == "NP"){
-        //north pole buttons
+        //theme 
         talkBut.src = "img/northpole/TalkDefault_NP.svg";
         feedBut.src = "img/northpole/FeedDefault_NP.svg";
         quizBut.src = "img/northpole/Quiz_NP.svg";
-        
+        speech.style.border = "3px solid #45ABE1";
+        document.querySelector(".foodMenu").style.border = "3px solid #45ABE1";
+        quizyes.style.backgroundColor = "#45ABE1";
         //the animal
         if (x == 1){
             theAnimal.src = "img/northpole/walrus.svg";
@@ -517,11 +544,13 @@ function changeAniamlContent(x){
     }
     
     if (pkg.continent == "Amzn"){
-        //Amazon buttons
+        //theme
         talkBut.src = "img/amazon/TalkDefault_AZ.svg";
         feedBut.src = "img/amazon/FeedDefault_AZ.svg";
         quizBut.src = "img/amazon/Quiz_AZ.svg";
-        
+        speech.style.border = "3px solid #5FD92B";
+        document.querySelector(".foodMenu").style.border = "3px solid #5FD92B";
+        quizyes.style.backgroundColor = "#5FD92B";
         //the animal
         if (x == 1){
             theAnimal.src = "img/amazon/crocodile.svg";
@@ -542,14 +571,15 @@ function changeAniamlContent(x){
     }
     
     if (pkg.continent == "Ant"){
-        //Antarctica buttons
+        //theme
         talkBut.src = "img/antarctica/TalkDefault_AT.svg";
         feedBut.src = "img/antarctica/FeedDefault_AT.svg";
         quizBut.src = "img/antarctica/Quiz_AT.svg";
-        
+        speech.style.border = "3px solid #8A77B5";
+        document.querySelector(".foodMenu").style.border = "3px solid #8A77B5";
+        quizyes.style.backgroundColor = "#8A77B5";
         //the animal
         if (x == 1){
-            console.log("got otter");
             theAnimal.src = "img/antarctica/penguin.svg";
             animalbg.style.backgroundImage = "url(img/antarctica/animal-page/penguin-bg.svg)";
         }
@@ -568,11 +598,7 @@ function changeAniamlContent(x){
     }
 }
 
-
-
-
-
-//--------  Aniaml Page ------------//
+// ------- Animal talk, feed, quiz
 var foodMenu = document.querySelector(".food"),
     fish = document.querySelector("#fish"),
     fruit = document.querySelector("#fruit"),
@@ -598,14 +624,14 @@ var pengQuiz = [
     {
         q:"What do penguins eat?",
         a:1,
-        but1:"<img src='img/northamerica/animal-page/Fruit/svg'/>",
+        but1:"<img src='img/northamerica/animal-page/Fruit.svg'/>",
         but2:"Choice 2",
         but3:"Choice 3",
         but4:"Choice 4"
     },
     {
-        q: "Who will take care of little penguins?",
-        a: 
+        q: "Who will take care of little penguins?"
+        
     }
 ]
 
@@ -731,31 +757,6 @@ function talk2(){
 }
 
 
-
-//talkBut.addEventListener("touchstart", function(){
-//     talkBut.src = "img/northamerica/animal-page/TalkSelected_NA.svg";
-//     
-//    var talkRes = otterTalk[Math.floor(Math.random() * otterTalk.length)];
-//     speech.style.display = "flex";
-//     speech.innerHTML = talkRes;
-//    if (mtimer == null){
-//            mtimer = setTimeout(function() {
-//            speech.style.display = "none";
-//            mtimer = null;
-//        }, 5000);
-//    } else {
-//        clearTimeout(mtimer);
-//        console.log("force stop and restart");
-//        mtimer = setTimeout(function() {
-//            speech.style.display = "none";
-//            },5000);
-//    }
-//});
-
-//talkBut.addEventListener("touchend", function() {
-//    talkBut.src = "img/northamerica/animal-page/TalkDefault_NA.svg";
-// });
-
 function feed(){
     if(But == 0){
         if(pkg.continent == "NA"){
@@ -784,24 +785,6 @@ function feed(){
     }
 }
 
-//feedBut.addEventListener("click", function() {
-//    if(But == 0){
-//        feedBut.src = "img/northamerica/animal-page/FeedSelected_NA.svg";
-//        foodMenu.style.display = "block";
-//        But = 1;
-//    } else {
-//        console.log("clickme");
-//        feedBut.src = "img/northamerica/animal-page/FeedDefault_NA.svg";
-//        foodMenu.style.display = "none";
-//        But = 0;
-//    }
-// }); 
-
-//    var fish = document.querySelector("#fish"),
-//        fruit = document.querySelector("#fruit"),
-//        seaweed = document.querySelector("#seaweed"),
-//        plankton = document.querySelector("#plankton");
-//    var speech = document.querySelector("#speechbubble");
 
 function sayyes(){
     var yes = posRes[Math.floor(Math.random() * posRes.length)];
@@ -854,84 +837,16 @@ function foodres(elid){
            } else {
                sayno();
            }
-    }
-    
+    } 
 }
 
-//    fish.addEventListener("click", function() {
-//        var yes = posRes[Math.floor(Math.random() * posRes.length)];
-//        speech.style.display = "flex";
-//        speech.innerHTML = yes;
-//        if (mtimer == null){
-//            mtimer = setTimeout(function() {
-//            speech.style.display = "none";
-//            mtimer = null;
-////            console.log("stop");
-//        }, 5000);
-//        } else {
-//        clearTimeout(mtimer);
-//        console.log("force stop and restart");
-//        mtimer = setTimeout(function() {
-//            speech.style.display = "none";
-////            console.log("stop");
-//            },5000);
-//    }});
-//        
-//   fruit.addEventListener("click", function() {
-//        var no = negRes[Math.floor(Math.random() * negRes.length)];
-//        speech.style.display = "flex";
-//        speech.innerHTML = no;
-//        if (mtimer == null){
-//            mtimer = setTimeout(function() {
-//            speech.style.display = "none";
-//            mtimer = null;
-////            console.log("stop");
-//        }, 5000);
-//        } else {
-//        clearTimeout(mtimer);
-//        console.log("force stop and restart");
-//        mtimer = setTimeout(function() {
-//            speech.style.display = "none";
-////            console.log("stop");
-//            },5000);
-//    }});
-//   seaweed.addEventListener("click", function() {
-//        var no = negRes[Math.floor(Math.random() * negRes.length)];
-//        speech.style.display = "flex";
-//        speech.innerHTML = no;
-//        if (mtimer == null){
-//            mtimer = setTimeout(function() {
-//            speech.style.display = "none";
-//            mtimer = null;
-////            console.log("stop");
-//        }, 5000);
-//        } else {
-//        clearTimeout(mtimer);
-//        console.log("force stop and restart");
-//        mtimer = setTimeout(function() {
-//            speech.style.display = "none";
-////            console.log("stop");
-//            },5000);
-//    }});
-//   plankton.addEventListener("click", function() {
-//        var no = negRes[Math.floor(Math.random() * negRes.length)];
-//        speech.style.display = "flex";
-//        speech.innerHTML = no;
-//        if (mtimer == null){
-//            mtimer = setTimeout(function() {
-//            speech.style.display = "none";
-//            mtimer = null;
-////            console.log("stop");
-//        }, 5000);
-//        } else {
-//        clearTimeout(mtimer);
-//        console.log("force stop and restart");
-//        mtimer = setTimeout(function() {
-//            speech.style.display = "none";
-////            console.log("stop");
-//            },5000);
-//    }});
+var popup = document.querySelector(".quiz-popup");
 
-//    function resetTimeout() {
-//        clearTimeout(speechTimeout);
-//    };
+function openPopup(){
+    popup.style.display = "block";
+}
+
+function closePopup(){
+    popup.style.display = "none";
+}
+

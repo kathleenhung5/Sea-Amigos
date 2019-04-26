@@ -584,6 +584,41 @@ body {
     margin: 0;
     font-family: 'Montserrat Medium';
 }
+/*---- pop up -----*/
+.quiz-popup {
+    z-index: 20;
+    background-color: white;
+    position: absolute;
+    width: 80%;
+    left: 10%;
+    top: 35%;
+    border-radius: 25px;
+    text-align: center;
+    font-family: 'Montserrat Medium';
+    font-size: 1.3em;
+    display: none;
+}
+
+.quiz-popup p {
+    margin: 20px 15px 0px 15px;
+}
+
+.quiz-popup button {
+    font-size: 1.3em;
+    padding: 5px 20px;
+    margin: 10px 5px;
+    font-family: 'Montserrat Medium';
+    border-radius: 30px;
+    border:none;
+    color: white;
+    background-color: darkgrey;
+}
+
+.quiz-popup button:nth-child(3){
+    background-color: #5FD92B;
+}
+
+
 
 /* ------ Quiz Page ---------*/
 .quiz-page {
@@ -595,6 +630,8 @@ body {
     top: 0px;
     font-family: 'Montserrat Medium';
     font-size: 1.3em;
+    background-color: orange;
+    transition: left 0.5s;
 }
 
 .quiz-wrap {
