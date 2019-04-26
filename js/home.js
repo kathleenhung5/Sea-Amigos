@@ -204,7 +204,7 @@ function toHomeUI(){
     document.querySelector(".hbg-menu-list").style.top = "-100vh";
     document.querySelector(".food").style.display = "none";
     document.querySelector(".homepage").style.left = "0px";
-    document.querySelector("#feedButton").src = "../img/northamerica/animal-page/feedDefault_NA.svg";
+    //document.querySelector("#feedButton").src = "../img/northamerica/animal-page/feedDefault_NA.svg";
 }
 
 function toMapUI (){
@@ -215,7 +215,7 @@ function toMapUI (){
     document.querySelector(".hbg-menu").style.display = "block";
     document.querySelector(".hbg-menu-list").style.top = "-100vh";
     document.querySelector("#animal-page").style.left = "100%";
-    document.querySelector("#feedButton").src = "img/northamerica/animal-page/feedDefault_NA.svg";
+    //document.querySelector("#feedButton").src = "img/northamerica/animal-page/feedDefault_NA.svg";
 }
 
 function toTutorial(){
@@ -230,7 +230,7 @@ function toLnOUI(){
     document.querySelector(".hbg-menu-list").style.top = "-100vh";
     document.querySelector("#animal-page").style.left = "100%";
     document.querySelector(".food").style.display = "none";
-    document.querySelector("#feedButton").src = "../img/northamerica/animal-page/feedDefault_NA.svg";
+    //document.querySelector("#feedButton").src = "../img/northamerica/animal-page/feedDefault_NA.svg";
 }
 
 function toAnimalUI(x){
@@ -307,7 +307,7 @@ function changeLnOContent(x){
     
     if (x == "NP"){
         // bg
-        document.querySelector(".L-n-O-pagewrap").style.backgroundImage = "url(img/northamerica/NA-bg.svg)";
+        document.querySelector(".L-n-O-pagewrap").style.backgroundImage = "url(img/northpole/NP-bg.svg)";
         land.src = "img/northpole/land-button.svg";
         ocean.src = "img/northpole/ocean-button.svg";
         // button colours
@@ -323,28 +323,28 @@ function changeLnOContent(x){
         if(pkg.animalvisit.walrus == 1){
             animal1.src = "img/northpole/walrus.svg";
         } else {
-            animal1.src = "img/northpole/walrus.svg";
+            animal1.src = "img/northpole/walrus-silouette.svg";
         }
         if(pkg.animalvisit.bear == 1){
             animal2.src = "img/northpole/bear.svg";
         } else {
-            animal2.src = "img/northpole/bear.svg";
+            animal2.src = "img/northpole/bear-silouette.svg";
         }
         if(pkg.animalvisit.narwhal == 1){
             animal3.src = "img/northpole/narwhal.svg";
         } else {
-            animal3.src = "img/northpole/narwhal.svg";
+            animal3.src = "img/northpole/narwhal-silouette.svg";
         }
         if(pkg.animalvisit.beluga == 1){
             animal4.src = "img/northpole/beluga.svg";
         } else {
-            animal4.src = "img/northpole/beluga.svg";
+            animal4.src = "img/northpole/beluga-silouette.svg";
         } 
     }
     
     if (x == "Ant"){
         // bg
-        document.querySelector(".L-n-O-pagewrap").style.backgroundImage = "url(img/northamerica/NA-bg.svg)";
+        document.querySelector(".L-n-O-pagewrap").style.backgroundImage = "url(img/antarctica/Antarctica-bg.svg)";
         land.src = "img/antarctica/land-button.svg";
         ocean.src = "img/antarctica/ocean-button.svg";
         // button colours
@@ -360,22 +360,22 @@ function changeLnOContent(x){
         if(pkg.animalvisit.penguin == 1){
             animal1.src = "img/antarctica/penguin.svg";
         } else {
-            animal1.src = "img/antarctica/penguin.svg";
+            animal1.src = "img/antarctica/penguin-silouette.svg";
         }
         if(pkg.animalvisit.seal == 1){
             animal2.src = "img/antarctica/seal.svg";
         } else {
-            animal2.src = "img/antarctica/seal.svg";
+            animal2.src = "img/antarctica/seal-silouette.svg";
         }
         if(pkg.animalvisit.squid == 1){
             animal3.src = "img/antarctica/squid.svg";
         } else {
-            animal3.src = "img/antarctica/squid.svg";
+            animal3.src = "img/antarctica/squid-silouette.svg";
         }
         if(pkg.animalvisit.whale == 1){
             animal4.src = "img/antarctica/whale.svg";
         } else {
-            animal4.src ="img/antarctica/whale.svg";
+            animal4.src ="img/antarctica/whale-silouette.svg";
         } 
     }
     
@@ -397,22 +397,22 @@ function changeLnOContent(x){
         if(pkg.animalvisit.crocodile == 1){
             animal1.src = "img/amazon/crocodile.svg";
         } else {
-            animal1.src = "img/amazon/crocodile.svg";
+            animal1.src = "img/amazon/crocodile-silouette.svg";
         }
         if(pkg.animalvisit.crab == 1){
             animal2.src = "img/amazon/crab.svg";
         } else {
-            animal2.src = "img/amazon/crab.svg";
+            animal2.src = "img/amazon/crab-silouette.svg";
         }
         if(pkg.animalvisit.dolphin == 1){
             animal3.src = "img/amazon/dolphin.svg";
         } else {
-            animal3.src = "img/amazon/dolphin.svg";
+            animal3.src = "img/amazon/dolphin-silouette.svg";
         }
         if(pkg.animalvisit.manatee == 1){
             animal4.src = "img/amazon/manatee.svg";
         } else {
-            animal4.src ="img/amazon/manatee.svg";
+            animal4.src ="img/amazon/manatee-silouette.svg";
         } 
     }
 }
@@ -465,7 +465,7 @@ function changeAniamlContent(x){
         //north american buttons
         talkBut.src = "img/northamerica/animal-page/TalkDefault_NA.svg";
         feedBut.src = "img/northamerica/animal-page/FeedDefault_NA.svg";
-        quizBut.src = "img/northamerica/animal-page/QuizDefault_NA.svg";
+        quizBut.src = "img/northamerica/animal-page/QuizSelected_NA.svg";
         
         //the animal and background
         if (x == 1){
@@ -488,9 +488,9 @@ function changeAniamlContent(x){
     
     if (pkg.continent == "NP"){
         //north pole buttons
-        talkBut.src = "img/northamerica/animal-page/TalkDefault_NA.svg";
-        feedBut.src = "img/northamerica/animal-page/FeedDefault_NA.svg";
-        quizBut.src = "img/northamerica/animal-page/QuizDefault_NA.svg";
+        talkBut.src = "img/northpole/TalkDefault_NP.svg";
+        feedBut.src = "img/northpole/FeedDefault_NP.svg";
+        quizBut.src = "img/northpole/Quiz_NP.svg";
         
         //the animal
         if (x == 1){
@@ -513,9 +513,9 @@ function changeAniamlContent(x){
     
     if (pkg.continent == "Amzn"){
         //Amazon buttons
-        talkBut.src = "img/northamerica/animal-page/TalkDefault_NA.svg";
-        feedBut.src = "img/northamerica/animal-page/FeedDefault_NA.svg";
-        quizBut.src = "img/northamerica/animal-page/QuizDefault_NA.svg";
+        talkBut.src = "img/amazon/TalkDefault_AZ.svg";
+        feedBut.src = "img/amazon/FeedDefault_AZ.svg";
+        quizBut.src = "img/amazon/Quiz_AZ.svg";
         
         //the animal
         if (x == 1){
@@ -538,9 +538,9 @@ function changeAniamlContent(x){
     
     if (pkg.continent == "Ant"){
         //Antarctica buttons
-        talkBut.src = "img/northamerica/animal-page/TalkDefault_NA.svg";
-        feedBut.src = "img/northamerica/animal-page/FeedDefault_NA.svg";
-        quizBut.src = "img/northamerica/animal-page/QuizDefault_NA.svg";
+        talkBut.src = "img/antarctica/TalkDefault_AT.svg";
+        feedBut.src = "img/antarctica/FeedDefault_AT.svg";
+        quizBut.src = "img/antarctica/Quiz_AT.svg";
         
         //the animal
         if (x == 1){
@@ -609,6 +609,12 @@ function talk1(){
     //button look
     if (pkg.continent == "NA"){
         talkBut.src = "img/northamerica/animal-page/TalkSelected_NA.svg";
+    } else if (pkg.continent == "NP"){
+        talkBut.src = "img/northpole/TalkSelected_NP.svg";
+    } else if (pkg.continent == "Amzn"){
+        talkBut.src = "img/amazon/TalkSelected_AZ.svg";
+    } else if (pkg.continent == "Ant"){
+        talkBut.src = "img/antarctica/TalkSelected_AT.svg";
     }
     //sentences
     var talkRes;
@@ -622,7 +628,37 @@ function talk1(){
         } else if (pkg.animal == 4){
             talkRes = orcaTalk;
         }
-    }
+    } else if (pkg.continent = "NP"){
+        if(pkg.animal == 1){
+            talkRes = walrusTalk;
+        } else if (pkg.animal == 2){
+            talkRes = bearTalk;
+        } else if (pkg.animal == 3){
+            talkRes = narwhalTalk;
+        } else if (pkg.animal == 4){
+            talkRes = belugaTalk;
+        }
+    } else if (pkg.continent = "Amzn"){
+        if(pkg.animal == 1){
+            talkRes = crocodileTalk;
+        } else if (pkg.animal == 2){
+            talkRes = crabTalk;
+        } else if (pkg.animal == 3){
+            talkRes = dolphinTalk;
+        } else if (pkg.animal == 4){
+            talkRes = manateeTalk;
+        }
+    } else if (pkg.continent = "Ant"){
+        if(pkg.animal == 1){
+            talkRes = penguinTalk;
+        } else if (pkg.animal == 2){
+            talkRes = sealTalk;
+        } else if (pkg.animal == 3){
+            talkRes = squidTalk;
+        } else if (pkg.animal == 4){
+            talkRes = whaleTalk;
+        }
+    } 
     speech.innerHTML = talkRes[Math.floor(Math.random()* talkRes.length)];
     speech.style.display = "flex";
     timing();
@@ -631,6 +667,12 @@ function talk1(){
 function talk2(){
     if(pkg.continent == "NA"){
        talkBut.src = "img/northamerica/animal-page/TalkDefault_NA.svg";
+    } else if (pkg.continent == "NP"){
+        talkBut.src = "img/northpole/TalkDefault_NP.svg";
+    } else if (pkg.continent == "Amzn"){
+        talkBut.src = "img/amazon/TalkDefault_AZ.svg";
+    } else if (pkg.continent == "Ant"){
+        talkBut.src = "img/antarctica/TalkDefault_AT.svg";
     }
     
 }
@@ -663,12 +705,24 @@ function feed(){
     if(But == 0){
         if(pkg.continent == "NA"){
             feedBut.src = "img/northamerica/animal-page/FeedSelected_NA.svg";
+        } else if (pkg.continent == "NP"){
+        feedBut.src = "img/northpole/FeedSelected_NP.svg";
+        } else if (pkg.continent == "Amzn"){
+        feedBut.src = "img/amazon/FeedSelected_AZ.svg";
+        } else if (pkg.continent == "Ant"){
+        feedBut.src = "img/antarctica/FeedSelected_AT.svg";
         }
         foodMenu.style.display = "block";
         But = 1;
     } else {
         if(pkg.continent == "NA"){
             feedBut.src = "img/northamerica/animal-page/FeedDefault_NA.svg";
+        } else if (pkg.continent == "NP"){
+        feedBut.src = "img/northpole/FeedDefault_NP.svg";
+        } else if (pkg.continent == "Amzn"){
+        feedBut.src = "img/amazon/FeedDefault_AZ.svg";
+        } else if (pkg.continent == "Ant"){
+        feedBut.src = "img/antarctica/FeedDefault_AT.svg";
         }
         foodMenu.style.display = "none";
         But = 0;
@@ -710,92 +764,118 @@ function sayno(){
 
 function foodres(elid){
     if(elid == "fish"){
-        if(pkg.continent == "NA" && (pkg.animal == 1 || pkg.animal == 3)){
+        if(
+            (pkg.continent == "NA" && (pkg.animal == 1 || pkg.animal == 3 || pkg.animal == 4)) ||
+            pkg.continent == "NP" ||
+            (pkg.continent == "Amzn" && (pkg.animal == 1||pkg.animal == 3)) ||
+            (pkg.continent == "Ant" && (pkg.animal == 1 || pkg.animal ==2 || pkg.animal == 3))
+            ){
            sayyes();
-           } 
+           } else {
+               sayno();
+           }
     } else if (elid == "fruit"){
-        
+        if(pkg.continent == "Amzn" && pkg.animal == 2){
+           sayyes();
+           } else {
+               sayno();
+           }
     } else if (elid == "seaweed"){
-        
+        if(
+            (pkg.continent == "NA" && pkg.animal == 2)||
+            (pkg.continent == "Amzn" && pkg.animal == 4)
+            ){
+           sayyes();
+           } else {
+               sayno();
+           }
     } else if (elid == "plankton"){
-        
+         if(
+            (pkg.continent == "NA" && (pkg.animal == 1 || pkg.animal == 3)) ||
+            (pkg.continent == "NP" && pkg.animal == 4)||
+            (pkg.continent == "Ant" && (pkg.animal == 1 || pkg.animal ==3 || pkg.animal == 4))
+            ){
+           sayyes();
+           } else {
+               sayno();
+           }
     }
     
 }
 
-    fish.addEventListener("click", function() {
-        var yes = posRes[Math.floor(Math.random() * posRes.length)];
-        speech.style.display = "flex";
-        speech.innerHTML = yes;
-        if (mtimer == null){
-            mtimer = setTimeout(function() {
-            speech.style.display = "none";
-            mtimer = null;
-//            console.log("stop");
-        }, 5000);
-        } else {
-        clearTimeout(mtimer);
-        console.log("force stop and restart");
-        mtimer = setTimeout(function() {
-            speech.style.display = "none";
-//            console.log("stop");
-            },5000);
-    }});
-        
-   fruit.addEventListener("click", function() {
-        var no = negRes[Math.floor(Math.random() * negRes.length)];
-        speech.style.display = "flex";
-        speech.innerHTML = no;
-        if (mtimer == null){
-            mtimer = setTimeout(function() {
-            speech.style.display = "none";
-            mtimer = null;
-//            console.log("stop");
-        }, 5000);
-        } else {
-        clearTimeout(mtimer);
-        console.log("force stop and restart");
-        mtimer = setTimeout(function() {
-            speech.style.display = "none";
-//            console.log("stop");
-            },5000);
-    }});
-   seaweed.addEventListener("click", function() {
-        var no = negRes[Math.floor(Math.random() * negRes.length)];
-        speech.style.display = "flex";
-        speech.innerHTML = no;
-        if (mtimer == null){
-            mtimer = setTimeout(function() {
-            speech.style.display = "none";
-            mtimer = null;
-//            console.log("stop");
-        }, 5000);
-        } else {
-        clearTimeout(mtimer);
-        console.log("force stop and restart");
-        mtimer = setTimeout(function() {
-            speech.style.display = "none";
-//            console.log("stop");
-            },5000);
-    }});
-   plankton.addEventListener("click", function() {
-        var no = negRes[Math.floor(Math.random() * negRes.length)];
-        speech.style.display = "flex";
-        speech.innerHTML = no;
-        if (mtimer == null){
-            mtimer = setTimeout(function() {
-            speech.style.display = "none";
-            mtimer = null;
-//            console.log("stop");
-        }, 5000);
-        } else {
-        clearTimeout(mtimer);
-        console.log("force stop and restart");
-        mtimer = setTimeout(function() {
-            speech.style.display = "none";
-//            console.log("stop");
-            },5000);
-    }});
+//    fish.addEventListener("click", function() {
+//        var yes = posRes[Math.floor(Math.random() * posRes.length)];
+//        speech.style.display = "flex";
+//        speech.innerHTML = yes;
+//        if (mtimer == null){
+//            mtimer = setTimeout(function() {
+//            speech.style.display = "none";
+//            mtimer = null;
+////            console.log("stop");
+//        }, 5000);
+//        } else {
+//        clearTimeout(mtimer);
+//        console.log("force stop and restart");
+//        mtimer = setTimeout(function() {
+//            speech.style.display = "none";
+////            console.log("stop");
+//            },5000);
+//    }});
+//        
+//   fruit.addEventListener("click", function() {
+//        var no = negRes[Math.floor(Math.random() * negRes.length)];
+//        speech.style.display = "flex";
+//        speech.innerHTML = no;
+//        if (mtimer == null){
+//            mtimer = setTimeout(function() {
+//            speech.style.display = "none";
+//            mtimer = null;
+////            console.log("stop");
+//        }, 5000);
+//        } else {
+//        clearTimeout(mtimer);
+//        console.log("force stop and restart");
+//        mtimer = setTimeout(function() {
+//            speech.style.display = "none";
+////            console.log("stop");
+//            },5000);
+//    }});
+//   seaweed.addEventListener("click", function() {
+//        var no = negRes[Math.floor(Math.random() * negRes.length)];
+//        speech.style.display = "flex";
+//        speech.innerHTML = no;
+//        if (mtimer == null){
+//            mtimer = setTimeout(function() {
+//            speech.style.display = "none";
+//            mtimer = null;
+////            console.log("stop");
+//        }, 5000);
+//        } else {
+//        clearTimeout(mtimer);
+//        console.log("force stop and restart");
+//        mtimer = setTimeout(function() {
+//            speech.style.display = "none";
+////            console.log("stop");
+//            },5000);
+//    }});
+//   plankton.addEventListener("click", function() {
+//        var no = negRes[Math.floor(Math.random() * negRes.length)];
+//        speech.style.display = "flex";
+//        speech.innerHTML = no;
+//        if (mtimer == null){
+//            mtimer = setTimeout(function() {
+//            speech.style.display = "none";
+//            mtimer = null;
+////            console.log("stop");
+//        }, 5000);
+//        } else {
+//        clearTimeout(mtimer);
+//        console.log("force stop and restart");
+//        mtimer = setTimeout(function() {
+//            speech.style.display = "none";
+////            console.log("stop");
+//            },5000);
+//    }});
 
 //    function resetTimeout() {
 //        clearTimeout(speechTimeout);
