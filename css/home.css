@@ -487,8 +487,8 @@ body {
     height: auto;
     display: none;
     position: fixed;
-    top: 62%;
-    left: 9%;
+    top: 60%;
+    left: 6%;
     z-index: 15;
 }
 
@@ -505,11 +505,21 @@ body {
     padding-right: 20px;
 }
 
+.foodItem {
+    text-align: center;
+}
+
 .foodItem > img {
     z-index: 15;
     height: 7vh;
-    padding: 20px 10px 20px 10px;
+    padding: 20px 10px 14px 10px;
     margin: -10px;
+}
+
+.foodItem p {
+    font-family: 'Montserrat Medium';
+    margin: 0px 0px 8px 0px;
+    
 }
 
 .buttons {

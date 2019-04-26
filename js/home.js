@@ -580,7 +580,7 @@ var otterTalk = [ "Hi! I'm Ophie the Otter!", "I have the thickest fur of all an
 
 var beaverTalk = ["Hello! I'm Bev the Beaver.", "I do most of my work during the evening", "I slap the water with my tail to tell my family when there is danger.", "I don't see well, but I can see underwater!", "I can stay underwater for up to 15 minutes.", "I make dams by chewing on and moving them around."]
 
-var jellyTalk = ["Hey! I'm Belly the Jellyfish.", "Jellyfish can be as small as a peanut, or as big as a human!", "Did you know, we don't have brains!", "Some jellyfish can sting, and some are poisonous", "We are transluscent! That means we're almost see-through."]
+var jellyfishTalk = ["Hey! I'm Belly the Jellyfish.", "Jellyfish can be as small as a peanut, or as big as a human!", "Did you know, we don't have brains!", "Some jellyfish can sting, and some are poisonous", "We are transluscent! That means we're almost see-through."]
 
 var orcaTalk = ["Hello, I'm Ollie the Orca.", "Another name for us is the 'Killer Whale'", "We might look cute, but we're one of the most powerful predators in the world!", "We're not a whale or a fish! We're a type of dolphin.", "We can't smell anything!", "We use our sense of sight and hearing to help us hunt for food."]
 
@@ -637,12 +637,12 @@ function talk1(){
     //button look
     if (pkg.continent == "NA"){
         talkBut.src = "img/northamerica/animal-page/TalkSelected_NA.svg";
-    } else if (pkg.continent == "NP"){
-        talkBut.src = "img/northpole/TalkSelected_NP.svg";
     } else if (pkg.continent == "Amzn"){
         talkBut.src = "img/amazon/TalkSelected_AZ.svg";
     } else if (pkg.continent == "Ant"){
         talkBut.src = "img/antarctica/TalkSelected_AT.svg";
+    } else if (pkg.continent == "NP"){
+        talkBut.src = "img/northpole/TalkSelected_NP.svg";
     }
     //sentences
     var talkRes;
@@ -652,7 +652,7 @@ function talk1(){
         } else if (pkg.animal == 2){
             talkRes = beaverTalk;
         } else if (pkg.animal == 3){
-            talkRes = squidTalk;
+            talkRes = jellyfishTalk;
         } else if (pkg.animal == 4){
             talkRes = orcaTalk;
         }
@@ -695,15 +695,17 @@ function talk1(){
 function talk2(){
     if(pkg.continent == "NA"){
        talkBut.src = "img/northamerica/animal-page/TalkDefault_NA.svg";
-    } else if (pkg.continent == "NP"){
-        talkBut.src = "img/northpole/TalkDefault_NP.svg";
     } else if (pkg.continent == "Amzn"){
         talkBut.src = "img/amazon/TalkDefault_AZ.svg";
     } else if (pkg.continent == "Ant"){
         talkBut.src = "img/antarctica/TalkDefault_AT.svg";
+    } else if (pkg.continent == "NP"){
+        talkBut.src = "img/northpole/TalkDefault_NP.svg";
     }
     
 }
+
+
 
 //talkBut.addEventListener("touchstart", function(){
 //     talkBut.src = "img/northamerica/animal-page/TalkSelected_NA.svg";
