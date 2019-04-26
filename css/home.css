@@ -23,11 +23,18 @@
   to {-webkit-transform: rotate(360deg);transform: rotate(360deg);}
 }
 
+@-webkit-keyframes cloud-anima {
+    0% {-webkit-transform: translate(0px, 0px);transform: translate(0px, 0px);}
+    50% {-webkit-transform: translate(20px, 0px);transform: translate(20px, 0px);}
+    100% {-webkit-transform: translate(0px, 0px);transform: translate(0px, 0px);}
+
+}
+
 @keyframes cloud-anima {
-    0% {transform: translate(0px, 0px);}
-    50% {transform: translate(20px, 0px);}
-    100% {transform: translate(0px, 0px);}
- 
+    0% {-webkit-transform: translate(0px, 0px);transform: translate(0px, 0px);}
+    50% {-webkit-transform: translate(20px, 0px);transform: translate(20px, 0px);}
+    100% {-webkit-transform: translate(0px, 0px);transform: translate(0px, 0px);}
+
 }
 
 
@@ -450,7 +457,10 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     z-index: 9;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+   -webkit-transition: left 0.5s;
    transition: left 0.5s;
 }
 
@@ -464,8 +474,12 @@ body {
     margin-top: 60px;
     position: absolute;
     display: none;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     text-align: center;
     padding: 10px 10px 10px 10px;
     font-size: 14pt;
@@ -496,11 +510,16 @@ body {
     background-color: white;
     border: #F78330 solid 3px;
     border-radius: 500px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     max-width: 80%;
     position: absolute;
-    align-content: flex-end;
-    justify-content: center;
+    -ms-flex-line-pack: end;
+        align-content: flex-end;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     padding-left: 20px;
     padding-right: 20px;
 }
@@ -519,22 +538,31 @@ body {
 .foodItem p {
     font-family: 'Montserrat Medium';
     margin: 0px 0px 8px 0px;
-    
+
 }
 
 .buttons {
     z-index: 8;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     position: absolute;
-    justify-content: center;
-    align-items: flex-end;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
     height: 95%;
     width: 100%;
 }
 
 .animal-button > img {
     padding: 2vw;
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     height: 13vh;
     bottom: 100px;
 }
@@ -542,9 +570,15 @@ body {
 .animal-button > p {
     color: white;
     font-size: 16pt;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
     height: 100%;
     width: 100%;
     margin: 0;
@@ -569,25 +603,43 @@ body {
     top: 5%;
     width: 80%;
     height: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .quiz-animal{
-    flex: 1; 
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     width: 100%;
 }
 
 .quiz-area {
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 .quiz-q {
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     background-color: white;
     margin-bottom: 8px;
     border-radius: 20px;
@@ -602,16 +654,11 @@ body {
 }
 
 .quiz-a {
-    flex: 4;
+    -webkit-box-flex: 4;
+        -ms-flex: 4;
+            flex: 4;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 8px;
     grid-row-gap: 8px;
 }
-
-
-
-
-
-
-

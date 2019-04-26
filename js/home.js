@@ -24,7 +24,12 @@ pkg = {
         crab: 0,
         dolphin: 0,
         manatee: 0
-    } 
+    },
+    food:{
+        NA:{
+            fish:[1,2,4]
+        }
+    }
 }
 
 
@@ -111,6 +116,7 @@ function toAnimal (x){
     pkg.animal = x;
     proxyPkg.page = pkg.page;
     proxyPkg.animal = pkg.animal;
+    console.log(pkg);
     
     // document visit
     console.log("document visit");
@@ -182,8 +188,7 @@ function toLast(){
     } else if (pkg.page == "animal"){
         toLnO(pkg.continent);
     }
-    
-    save();   
+   // save();   
 }
 
 function save(){
@@ -635,14 +640,17 @@ function timing(){
 
 function talk1(){
     //button look
+     console.log(pkg);
     if (pkg.continent == "NA"){
         talkBut.src = "img/northamerica/animal-page/TalkSelected_NA.svg";
     } else if (pkg.continent == "Amzn"){
+        console.log("amazon talk selected");
         talkBut.src = "img/amazon/TalkSelected_AZ.svg";
     } else if (pkg.continent == "Ant"){
         talkBut.src = "img/antarctica/TalkSelected_AT.svg";
     } else if (pkg.continent == "NP"){
         talkBut.src = "img/northpole/TalkSelected_NP.svg";
+        console.log("northpole talk selected");
     }
     //sentences
     var talkRes;
@@ -656,7 +664,7 @@ function talk1(){
         } else if (pkg.animal == 4){
             talkRes = orcaTalk;
         }
-    } else if (pkg.continent = "NP"){
+    } else if (pkg.continent == "NP"){
         if(pkg.animal == 1){
             talkRes = walrusTalk;
         } else if (pkg.animal == 2){
@@ -666,7 +674,7 @@ function talk1(){
         } else if (pkg.animal == 4){
             talkRes = belugaTalk;
         }
-    } else if (pkg.continent = "Amzn"){
+    } else if (pkg.continent == "Amzn"){
         if(pkg.animal == 1){
             talkRes = crocodileTalk;
         } else if (pkg.animal == 2){
@@ -676,7 +684,7 @@ function talk1(){
         } else if (pkg.animal == 4){
             talkRes = manateeTalk;
         }
-    } else if (pkg.continent = "Ant"){
+    } else if (pkg.continent == "Ant"){
         if(pkg.animal == 1){
             talkRes = penguinTalk;
         } else if (pkg.animal == 2){
@@ -687,6 +695,7 @@ function talk1(){
             talkRes = whaleTalk;
         }
     } 
+    console.log(pkg);
     speech.innerHTML = talkRes[Math.floor(Math.random()* talkRes.length)];
     speech.style.display = "flex";
     timing();
