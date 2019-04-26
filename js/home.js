@@ -710,9 +710,9 @@ function sayno(){
 
 function foodres(elid){
     if(elid == "fish"){
-     //   if(pkg.continent == "NA" && (pkg.animal == 1 || pkg.animal == 3){
-      //     sayyes();
-       //    } 
+        if(pkg.continent == "NA" && (pkg.animal == 1 || pkg.animal == 3)){
+           sayyes();
+           } 
     } else if (elid == "fruit"){
         
     } else if (elid == "seaweed"){
