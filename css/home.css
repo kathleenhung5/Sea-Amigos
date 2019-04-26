@@ -23,11 +23,18 @@
   to {-webkit-transform: rotate(360deg);transform: rotate(360deg);}
 }
 
+@-webkit-keyframes cloud-anima {
+    0% {-webkit-transform: translate(0px, 0px);transform: translate(0px, 0px);}
+    50% {-webkit-transform: translate(20px, 0px);transform: translate(20px, 0px);}
+    100% {-webkit-transform: translate(0px, 0px);transform: translate(0px, 0px);}
+
+}
+
 @keyframes cloud-anima {
-    0% {transform: translate(0px, 0px);}
-    50% {transform: translate(20px, 0px);}
-    100% {transform: translate(0px, 0px);}
- 
+    0% {-webkit-transform: translate(0px, 0px);transform: translate(0px, 0px);}
+    50% {-webkit-transform: translate(20px, 0px);transform: translate(20px, 0px);}
+    100% {-webkit-transform: translate(0px, 0px);transform: translate(0px, 0px);}
+
 }
 
 
@@ -128,10 +135,10 @@ body {
 .back-button {
     z-index: 31;
     position: fixed;
-    width: 30px;
+    width: 23px;
     height: auto;
     top: 10px;
-    left: 10px;
+    left: 13px;
     display: none;
 }
 
@@ -450,37 +457,35 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     z-index: 9;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+   -webkit-transition: left 0.5s;
    transition: left 0.5s;
 }
 
 #speechbubble {
+    z-index: 50;
     background-color: white;
     border: #F78330 solid 3px;
     border-radius: 30px;
     width: 90%;
     margin-left: 2%;
-    margin-top: 10%;
+    margin-top: 60px;
     position: absolute;
     display: none;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     text-align: center;
     padding: 10px 10px 10px 10px;
     font-size: 14pt;
     overflow: auto;
     font-family: 'Montserrat Medium';
 }
-
-/*
-.otter {
-    height: 75%;
-    width: 100%;
-    display: flex;
-    position: absolute;
-    justify-content: center;
-}
-*/
 
 #animal {
     height: auto;
@@ -496,8 +501,8 @@ body {
     height: auto;
     display: none;
     position: fixed;
-    top: 62%;
-    left: 9%;
+    top: 60%;
+    left: 6%;
     z-index: 15;
 }
 
@@ -505,35 +510,59 @@ body {
     background-color: white;
     border: #F78330 solid 3px;
     border-radius: 500px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     max-width: 80%;
     position: absolute;
-    align-content: flex-end;
-    justify-content: center;
+    -ms-flex-line-pack: end;
+        align-content: flex-end;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     padding-left: 20px;
     padding-right: 20px;
+}
+
+.foodItem {
+    text-align: center;
 }
 
 .foodItem > img {
     z-index: 15;
     height: 7vh;
-    padding: 20px 10px 20px 10px;
+    padding: 20px 10px 14px 10px;
     margin: -10px;
+}
+
+.foodItem p {
+    font-family: 'Montserrat Medium';
+    margin: 0px 0px 8px 0px;
+
 }
 
 .buttons {
     z-index: 8;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     position: absolute;
-    justify-content: center;
-    align-items: flex-end;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
     height: 95%;
     width: 100%;
 }
 
 .animal-button > img {
     padding: 2vw;
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     height: 13vh;
     bottom: 100px;
 }
@@ -541,16 +570,95 @@ body {
 .animal-button > p {
     color: white;
     font-size: 16pt;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
     height: 100%;
     width: 100%;
     margin: 0;
     font-family: 'Montserrat Medium';
 }
 
+/* ------ Quiz Page ---------*/
+.quiz-page {
+    z-index: 13;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 100%;
+    top: 0px;
+    font-family: 'Montserrat Medium';
+    font-size: 1.3em;
+}
 
+.quiz-wrap {
+    position: absolute;
+    left: 10%;
+    top: 5%;
+    width: 80%;
+    height: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
 
+.quiz-animal{
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    width: 100%;
+}
 
+.quiz-area {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
 
+.quiz-q {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    background-color: white;
+    margin-bottom: 8px;
+    border-radius: 20px;
+    border: 4px solid #F78330;
+    padding: 10px;
+}
+
+.quiz-a div {
+    border: 4px solid #F78330;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.quiz-a {
+    -webkit-box-flex: 4;
+        -ms-flex: 4;
+            flex: 4;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 8px;
+    grid-row-gap: 8px;
+}

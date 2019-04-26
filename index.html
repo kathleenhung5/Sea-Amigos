@@ -107,27 +107,31 @@
         <div class="food">
           <div class="foodMenu">
             <div class="foodItem"> 
-                <img src="img/northamerica/animal-page/Fish.svg" id="fish">
+                <img src="img/northamerica/animal-page/Fish.svg" id="fish" onclick="foodres(this.id)">
+                <p>Fish</p>
             </div>
             <div class="foodItem"> 
-                <img src="img/northamerica/animal-page/Fruit.svg" id="fruit">
+                <img src="img/northamerica/animal-page/Fruit.svg" id="fruit" onclick="foodres(this.id)">
+                <p>Fruit</p>
             </div>
             <div class="foodItem"> 
-                <img src="img/northamerica/animal-page/Seaweed.svg" id="seaweed">
+                <img src="img/northamerica/animal-page/Seaweed.svg" id="seaweed" onclick="foodres(this.id)">
+                <p>Seaweed</p>
             </div>
             <div class="foodItem"> 
-                <img src="img/northamerica/animal-page/Plankton.svg" id="plankton">
+                <img src="img/northamerica/animal-page/Plankton.svg" id="plankton" onclick="foodres(this.id)">
+                <p>Krill</p>
             </div>
           </div>
         </div>
             
         <div class="buttons"> 
             <div class="animal-button">
-                 <img src="img/northamerica/animal-page/TalkDefault_NA.svg" id="talkButton">
+                 <img src="img/amazon/TalkDefault_AZ.svg" id="talkButton" ontouchstart="talk1()" ontouchend="talk2()">
                  <p> Talk </p> 
             </div>
             <div class="animal-button"> 
-                <img src="img/northamerica/animal-page/FeedDefault_NA.svg" id="feedButton"> 
+                <img src="img/northamerica/animal-page/FeedDefault_NA.svg" id="feedButton" onclick="feed()"> 
                 <p> Feed </p>
             </div>
             <div class="animal-button"> 
@@ -135,10 +139,26 @@
                 <p> Quiz </p>
             </div>
         </div>
-       
     </div>
         
         
+        <!--  Quiz Page   -->
+    <div class="quiz-page">
+    <div class="quiz-wrap">
+        <img class="quiz-animal" src="img/northamerica/Otter.svg" />
+        <div class="quiz-area">
+            <div class="quiz-q">What do otters like to eat?</div>
+            <div class="quiz-a">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        
+        </div>
+        
+    </div>  
+    </div>
         
         
         

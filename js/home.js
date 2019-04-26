@@ -24,7 +24,12 @@ pkg = {
         crab: 0,
         dolphin: 0,
         manatee: 0
-    } 
+    },
+    food:{
+        NA:{
+            fish:[1,2,4]
+        }
+    }
 }
 
 
@@ -111,6 +116,7 @@ function toAnimal (x){
     pkg.animal = x;
     proxyPkg.page = pkg.page;
     proxyPkg.animal = pkg.animal;
+    console.log(pkg);
     
     // document visit
     console.log("document visit");
@@ -182,8 +188,7 @@ function toLast(){
     } else if (pkg.page == "animal"){
         toLnO(pkg.continent);
     }
-    
-    save();   
+   // save();   
 }
 
 function save(){
@@ -204,7 +209,7 @@ function toHomeUI(){
     document.querySelector(".hbg-menu-list").style.top = "-100vh";
     document.querySelector(".food").style.display = "none";
     document.querySelector(".homepage").style.left = "0px";
-    document.querySelector("#feedButton").src = "../img/northamerica/animal-page/feedDefault_NA.svg";
+    //document.querySelector("#feedButton").src = "../img/northamerica/animal-page/feedDefault_NA.svg";
 }
 
 function toMapUI (){
@@ -215,7 +220,7 @@ function toMapUI (){
     document.querySelector(".hbg-menu").style.display = "block";
     document.querySelector(".hbg-menu-list").style.top = "-100vh";
     document.querySelector("#animal-page").style.left = "100%";
-    document.querySelector("#feedButton").src = "img/northamerica/animal-page/feedDefault_NA.svg";
+    //document.querySelector("#feedButton").src = "img/northamerica/animal-page/feedDefault_NA.svg";
 }
 
 function toTutorial(){
@@ -230,7 +235,7 @@ function toLnOUI(){
     document.querySelector(".hbg-menu-list").style.top = "-100vh";
     document.querySelector("#animal-page").style.left = "100%";
     document.querySelector(".food").style.display = "none";
-    document.querySelector("#feedButton").src = "../img/northamerica/animal-page/feedDefault_NA.svg";
+    //document.querySelector("#feedButton").src = "../img/northamerica/animal-page/feedDefault_NA.svg";
 }
 
 function toAnimalUI(x){
@@ -307,7 +312,7 @@ function changeLnOContent(x){
     
     if (x == "NP"){
         // bg
-        document.querySelector(".L-n-O-pagewrap").style.backgroundImage = "url(img/northamerica/NA-bg.svg)";
+        document.querySelector(".L-n-O-pagewrap").style.backgroundImage = "url(img/northpole/NP-bg.svg)";
         land.src = "img/northpole/land-button.svg";
         ocean.src = "img/northpole/ocean-button.svg";
         // button colours
@@ -323,28 +328,28 @@ function changeLnOContent(x){
         if(pkg.animalvisit.walrus == 1){
             animal1.src = "img/northpole/walrus.svg";
         } else {
-            animal1.src = "img/northpole/walrus.svg";
+            animal1.src = "img/northpole/walrus-silouette.svg";
         }
         if(pkg.animalvisit.bear == 1){
             animal2.src = "img/northpole/bear.svg";
         } else {
-            animal2.src = "img/northpole/bear.svg";
+            animal2.src = "img/northpole/bear-silouette.svg";
         }
         if(pkg.animalvisit.narwhal == 1){
             animal3.src = "img/northpole/narwhal.svg";
         } else {
-            animal3.src = "img/northpole/narwhal.svg";
+            animal3.src = "img/northpole/narwhal-silouette.svg";
         }
         if(pkg.animalvisit.beluga == 1){
             animal4.src = "img/northpole/beluga.svg";
         } else {
-            animal4.src = "img/northpole/beluga.svg";
+            animal4.src = "img/northpole/beluga-silouette.svg";
         } 
     }
     
     if (x == "Ant"){
         // bg
-        document.querySelector(".L-n-O-pagewrap").style.backgroundImage = "url(img/northamerica/NA-bg.svg)";
+        document.querySelector(".L-n-O-pagewrap").style.backgroundImage = "url(img/antarctica/Antarctica-bg.svg)";
         land.src = "img/antarctica/land-button.svg";
         ocean.src = "img/antarctica/ocean-button.svg";
         // button colours
@@ -353,29 +358,29 @@ function changeLnOContent(x){
         ppbut[i].style.backgroundColor = "#8A77B5";
         }
         animal1but.innerHTML = "Predator";
-        animal2but.innerHTML = "Prey";
+        animal2but.innerHTML = "Predator";
         animal3but.innerHTML = "Predator";
         animal4but.innerHTML = "Prey";
         // animals
         if(pkg.animalvisit.penguin == 1){
             animal1.src = "img/antarctica/penguin.svg";
         } else {
-            animal1.src = "img/antarctica/penguin.svg";
+            animal1.src = "img/antarctica/penguin-silouette.svg";
         }
         if(pkg.animalvisit.seal == 1){
             animal2.src = "img/antarctica/seal.svg";
         } else {
-            animal2.src = "img/antarctica/seal.svg";
+            animal2.src = "img/antarctica/seal-silouette.svg";
         }
         if(pkg.animalvisit.squid == 1){
             animal3.src = "img/antarctica/squid.svg";
         } else {
-            animal3.src = "img/antarctica/squid.svg";
+            animal3.src = "img/antarctica/squid-silouette.svg";
         }
         if(pkg.animalvisit.whale == 1){
             animal4.src = "img/antarctica/whale.svg";
         } else {
-            animal4.src ="img/antarctica/whale.svg";
+            animal4.src ="img/antarctica/whale-silouette.svg";
         } 
     }
     
@@ -389,26 +394,30 @@ function changeLnOContent(x){
         for (i=0;i<ppbut.length;i++){
         ppbut[i].style.backgroundColor = "#5FD92B";
         }
+        animal1but.innerHTML = "Predator";
+        animal2but.innerHTML = "Predator";
+        animal3but.innerHTML = "Prey";
+        animal4but.innerHTML = "Prey";
         // animals
         if(pkg.animalvisit.crocodile == 1){
             animal1.src = "img/amazon/crocodile.svg";
         } else {
-            animal1.src = "img/amazon/crocodile.svg";
+            animal1.src = "img/amazon/crocodile-silouette.svg";
         }
         if(pkg.animalvisit.crab == 1){
             animal2.src = "img/amazon/crab.svg";
         } else {
-            animal2.src = "img/amazon/crab.svg";
+            animal2.src = "img/amazon/crab-silouette.svg";
         }
         if(pkg.animalvisit.dolphin == 1){
             animal3.src = "img/amazon/dolphin.svg";
         } else {
-            animal3.src = "img/amazon/dolphin.svg";
+            animal3.src = "img/amazon/dolphin-silouette.svg";
         }
         if(pkg.animalvisit.manatee == 1){
             animal4.src = "img/amazon/manatee.svg";
         } else {
-            animal4.src ="img/amazon/manatee.svg";
+            animal4.src ="img/amazon/manatee-silouette.svg";
         } 
     }
 }
@@ -461,7 +470,7 @@ function changeAniamlContent(x){
         //north american buttons
         talkBut.src = "img/northamerica/animal-page/TalkDefault_NA.svg";
         feedBut.src = "img/northamerica/animal-page/FeedDefault_NA.svg";
-        quizBut.src = "img/northamerica/animal-page/QuizDefault_NA.svg";
+        quizBut.src = "img/northamerica/animal-page/QuizSelected_NA.svg";
         
         //the animal and background
         if (x == 1){
@@ -484,9 +493,9 @@ function changeAniamlContent(x){
     
     if (pkg.continent == "NP"){
         //north pole buttons
-        talkBut.src = "img/northamerica/animal-page/TalkDefault_NA.svg";
-        feedBut.src = "img/northamerica/animal-page/FeedDefault_NA.svg";
-        quizBut.src = "img/northamerica/animal-page/QuizDefault_NA.svg";
+        talkBut.src = "img/northpole/TalkDefault_NP.svg";
+        feedBut.src = "img/northpole/FeedDefault_NP.svg";
+        quizBut.src = "img/northpole/Quiz_NP.svg";
         
         //the animal
         if (x == 1){
@@ -509,9 +518,9 @@ function changeAniamlContent(x){
     
     if (pkg.continent == "Amzn"){
         //Amazon buttons
-        talkBut.src = "img/northamerica/animal-page/TalkDefault_NA.svg";
-        feedBut.src = "img/northamerica/animal-page/FeedDefault_NA.svg";
-        quizBut.src = "img/northamerica/animal-page/QuizDefault_NA.svg";
+        talkBut.src = "img/amazon/TalkDefault_AZ.svg";
+        feedBut.src = "img/amazon/FeedDefault_AZ.svg";
+        quizBut.src = "img/amazon/Quiz_AZ.svg";
         
         //the animal
         if (x == 1){
@@ -534,9 +543,9 @@ function changeAniamlContent(x){
     
     if (pkg.continent == "Ant"){
         //Antarctica buttons
-        talkBut.src = "img/northamerica/animal-page/TalkDefault_NA.svg";
-        feedBut.src = "img/northamerica/animal-page/FeedDefault_NA.svg";
-        quizBut.src = "img/northamerica/animal-page/QuizDefault_NA.svg";
+        talkBut.src = "img/antarctica/TalkDefault_AT.svg";
+        feedBut.src = "img/antarctica/FeedDefault_AT.svg";
+        quizBut.src = "img/antarctica/Quiz_AT.svg";
         
         //the animal
         if (x == 1){
@@ -564,138 +573,349 @@ function changeAniamlContent(x){
 
 
 //--------  Aniaml Page ------------//
+var foodMenu = document.querySelector(".food"),
+    fish = document.querySelector("#fish"),
+    fruit = document.querySelector("#fruit"),
+    seaweed = document.querySelector("#seaweed"),
+    plankton = document.querySelector("#plankton"),
+    speech = document.querySelector("#speechbubble");
 
-var foodMenu = document.querySelector(".food");
-var But = 0;
 /* North America Animals */ 
 var otterTalk = [ "Hi! I'm Ophie the Otter!", "I have the thickest fur of all animals.", "I like to carry one small rock with me all the time.", "I use rocks to smash open shells.", "I keep the same rock with me for my whole life!", "When I go to sleep, I like to wrap myself and my family in seaweed and float together with them."]
 
-var mtimer = null;
+var beaverTalk = ["Hello! I'm Bev the Beaver.", "I do most of my work during the evening", "I slap the water with my tail to tell my family when there is danger.", "I don't see well, but I can see underwater!", "I can stay underwater for up to 15 minutes.", "I make dams by chewing on and moving them around."]
 
-talkBut.addEventListener("touchstart", function(){
-     talkBut.src = "img/northamerica/animal-page/TalkSelected_NA.svg";
-     
-    var talkRes = otterTalk[Math.floor(Math.random() * otterTalk.length)];
-     speech.style.display = "flex";
-     speech.innerHTML = talkRes;
-//    console.log("start");
+var jellyfishTalk = ["Hey! I'm Belly the Jellyfish.", "Jellyfish can be as small as a peanut, or as big as a human!", "Did you know, we don't have brains!", "Some jellyfish can sting, and some are poisonous", "We are transluscent! That means we're almost see-through."]
+
+var orcaTalk = ["Hello, I'm Ollie the Orca.", "Another name for us is the 'Killer Whale'", "We might look cute, but we're one of the most powerful predators in the world!", "We're not a whale or a fish! We're a type of dolphin.", "We can't smell anything!", "We use our sense of sight and hearing to help us hunt for food."]
+
+/*Antartica Animals*/
+
+var penguinTalk = ["Hi! I'm Peggy the Emperor Penguin", "We are the tallest and heaviest of all penguins.", "When I was little, my parents would take turns getting food and taking care of me.", "We're the only penguins that breed in the winter.", "We can dive deep! We can swim up to 500 metres underwater.", "We can stay underwater for as long as 22 minutes."]
+
+var sealTalk = ["Hello! My name is Nelly, I'm a seal.", "I spend most of my time in the water.", "We have lots of blubber, which helps us stay warm in the cold", "We're colourblind, but we see blue and green really well!", "We sleep underwater, but we come up to breathe sometimes.", "Underwater, we have really good hearing."]
+
+var whaleTalk = ["Hello, I'm Flo the Blue Whale.", "I'm the largest animal in the world!", "We travel in groups called 'pods'.", "When I want to talk to my friends, I make noises such as clicks, whistles and pulsed calls.", "We might be big, but we eat a lot of small things, like krill.", "I look like a fish, but I don't lay eggs."]
+
+var squidTalk = ["Hi, I'm Squishy, the Squid.", "I can change colour to hide from my predators.", "When I'm in danger, I shoot a cloud of ink as a distraction.", "Our arms are called tentacles.", "If we lose an arm, we can grow it back!", "Sometimes we're mistaken for our cousin, the octopus."]
+
+/* North Pole Animals */
+var walrusTalk = ["Hello, I'm Waldo. I'm a Walrus.", "Both boy and girl walruses have large tusks.", "I'm very social, I love hanging out with my friends.", "We use our tusks to cut ice and defend ourselves.", "Most of us can live up to 40 years old.", "We're really heavy, we can weigh up to 4,000 pounds"]
+
+var bearTalk = ["Hi, I'm Pablo, the Polar Bear!", "My fur might look white, but it's actually transparent.", "My skin under my fur is black in colour.", "I can swim in the water for several days at a time.", "I spend a lot of time on the ice to look for food.", "We have a thick layer of blubber to keep us warm."]
+
+var narwhalTalk = ["Hello! My name is Nora, the Narwhal.", "My tusk is my left tooth!", "My tooth spirals and grows for my whole life!", "Not all narwhals have tusks, we are all different.", "Our tusks can grow up to 10 feet long.", "Our skin starts off dark, and turns white as we get older."]
+
+var belugaTalk = ["Hi! I'm Bobby the Beluga.", "I can swim backwards! It's a lot of fun.", "When we are born, our skin is grey.", "I like to make funny noises, like whistling, and clicking.", "The bump on our heads is called a 'melon'!", "When I go exploring, I use something called 'echolocation' to help me find my way in the water."]
+
+/* Amazon Animals */
+var crabTalk = ["Hello, I'm Cas, the Coconut Crab.", "Sometimes we're called the 'robber crab', because we take things without asking.", "I don't like living with others. I need my privacy!", "We're called coconut crabs because we like to eat and hide in coconuts.", "We have a strong sense of smell.", "We're nocturnal, that means we like to hunt at night."]
+
+var crocodileTalk = ["Hi! My name is Rocky. I'm a Crocodile!", "We have very good night vision. We can see clearly in the dark.", "We cry when we eat, not because we're sad, it's because we don't chew our food.", "We can weigh up to 1000 pounds!", "We lay lots of eggs, anywhere between 20 and 80 eggs.", "We take care of our eggs for 3 months before they hatch."]
+
+var manateeTalk = ["Hello, I'm Manny the Manatee. Nice to meet you.", "I spend half my day eating.", "We like to hang out in warm water, we don't have much protection against the cold.", "We might be called 'sea cows', but we're actually related to the elephant!", "Our brains are smooth, not bumpy like yours!", "Our teeth fall out in the front and grow at the back all the time."]
+
+var dolphinTalk = ["Hey! I'm Wisp, the Amazon River Dolphin!", "We have 2 stomachs, one for storing food and the other for digesting food.", "We talk to our friends and family by whistling and clicking.", "I'm really smart. Our brains are 40% bigger than a human's brain.", "There are lots of legends about us, some cultures think we are magical!", "I like being alone. Sometimes I'm with 2-4 of my other friends, but I rarely travel in large groups."]
+
+var negRes = ["No, thank you.", "I don't eat that.", "I don't like those!", "I'm sure someone else would like that."];
+var posRes = ["Mmm! Yummy!", "Thank you!", "My favourite! Thanks!", "I like this!"]; 
+
+
+var mtimer = null;
+var But = 0;
+
+function timing(){
     if (mtimer == null){
             mtimer = setTimeout(function() {
             speech.style.display = "none";
             mtimer = null;
-//            console.log("stop");
         }, 5000);
     } else {
         clearTimeout(mtimer);
-        console.log("force stop and restart");
         mtimer = setTimeout(function() {
             speech.style.display = "none";
-//            console.log("stop");
             },5000);
     }
-});
+}
 
-talkBut.addEventListener("touchend", function() {
-    talkBut.src = "img/northamerica/animal-page/TalkDefault_NA.svg";
- });
+function talk1(){
+    //button look
+     console.log(pkg);
+    if (pkg.continent == "NA"){
+        talkBut.src = "img/northamerica/animal-page/TalkSelected_NA.svg";
+    } else if (pkg.continent == "Amzn"){
+        console.log("amazon talk selected");
+        talkBut.src = "img/amazon/TalkSelected_AZ.svg";
+    } else if (pkg.continent == "Ant"){
+        talkBut.src = "img/antarctica/TalkSelected_AT.svg";
+    } else if (pkg.continent == "NP"){
+        talkBut.src = "img/northpole/TalkSelected_NP.svg";
+        console.log("northpole talk selected");
+    }
+    //sentences
+    var talkRes;
+    if (pkg.continent == "NA"){
+        if(pkg.animal == 1){
+            talkRes = otterTalk;
+        } else if (pkg.animal == 2){
+            talkRes = beaverTalk;
+        } else if (pkg.animal == 3){
+            talkRes = jellyfishTalk;
+        } else if (pkg.animal == 4){
+            talkRes = orcaTalk;
+        }
+    } else if (pkg.continent == "NP"){
+        if(pkg.animal == 1){
+            talkRes = walrusTalk;
+        } else if (pkg.animal == 2){
+            talkRes = bearTalk;
+        } else if (pkg.animal == 3){
+            talkRes = narwhalTalk;
+        } else if (pkg.animal == 4){
+            talkRes = belugaTalk;
+        }
+    } else if (pkg.continent == "Amzn"){
+        if(pkg.animal == 1){
+            talkRes = crocodileTalk;
+        } else if (pkg.animal == 2){
+            talkRes = crabTalk;
+        } else if (pkg.animal == 3){
+            talkRes = dolphinTalk;
+        } else if (pkg.animal == 4){
+            talkRes = manateeTalk;
+        }
+    } else if (pkg.continent == "Ant"){
+        if(pkg.animal == 1){
+            talkRes = penguinTalk;
+        } else if (pkg.animal == 2){
+            talkRes = sealTalk;
+        } else if (pkg.animal == 3){
+            talkRes = squidTalk;
+        } else if (pkg.animal == 4){
+            talkRes = whaleTalk;
+        }
+    } 
+    console.log(pkg);
+    speech.innerHTML = talkRes[Math.floor(Math.random()* talkRes.length)];
+    speech.style.display = "flex";
+    timing();
+}
+
+function talk2(){
+    if(pkg.continent == "NA"){
+       talkBut.src = "img/northamerica/animal-page/TalkDefault_NA.svg";
+    } else if (pkg.continent == "Amzn"){
+        talkBut.src = "img/amazon/TalkDefault_AZ.svg";
+    } else if (pkg.continent == "Ant"){
+        talkBut.src = "img/antarctica/TalkDefault_AT.svg";
+    } else if (pkg.continent == "NP"){
+        talkBut.src = "img/northpole/TalkDefault_NP.svg";
+    }
+    
+}
 
 
-feedBut.addEventListener("click", function() {
+
+//talkBut.addEventListener("touchstart", function(){
+//     talkBut.src = "img/northamerica/animal-page/TalkSelected_NA.svg";
+//     
+//    var talkRes = otterTalk[Math.floor(Math.random() * otterTalk.length)];
+//     speech.style.display = "flex";
+//     speech.innerHTML = talkRes;
+//    if (mtimer == null){
+//            mtimer = setTimeout(function() {
+//            speech.style.display = "none";
+//            mtimer = null;
+//        }, 5000);
+//    } else {
+//        clearTimeout(mtimer);
+//        console.log("force stop and restart");
+//        mtimer = setTimeout(function() {
+//            speech.style.display = "none";
+//            },5000);
+//    }
+//});
+
+//talkBut.addEventListener("touchend", function() {
+//    talkBut.src = "img/northamerica/animal-page/TalkDefault_NA.svg";
+// });
+
+function feed(){
     if(But == 0){
-        console.log("clickagain");
-        feedBut.src = "img/northamerica/animal-page/FeedSelected_NA.svg";
+        if(pkg.continent == "NA"){
+            feedBut.src = "img/northamerica/animal-page/FeedSelected_NA.svg";
+        } else if (pkg.continent == "NP"){
+        feedBut.src = "img/northpole/FeedSelected_NP.svg";
+        } else if (pkg.continent == "Amzn"){
+        feedBut.src = "img/amazon/FeedSelected_AZ.svg";
+        } else if (pkg.continent == "Ant"){
+        feedBut.src = "img/antarctica/FeedSelected_AT.svg";
+        }
         foodMenu.style.display = "block";
         But = 1;
     } else {
-        console.log("clickme");
-        feedBut.src = "img/northamerica/animal-page/FeedDefault_NA.svg";
+        if(pkg.continent == "NA"){
+            feedBut.src = "img/northamerica/animal-page/FeedDefault_NA.svg";
+        } else if (pkg.continent == "NP"){
+        feedBut.src = "img/northpole/FeedDefault_NP.svg";
+        } else if (pkg.continent == "Amzn"){
+        feedBut.src = "img/amazon/FeedDefault_AZ.svg";
+        } else if (pkg.continent == "Ant"){
+        feedBut.src = "img/antarctica/FeedDefault_AT.svg";
+        }
         foodMenu.style.display = "none";
         But = 0;
     }
- }); 
+}
 
-    var fish = document.querySelector("#fish"),
-        fruit = document.querySelector("#fruit"),
-        seaweed = document.querySelector("#seaweed"),
-        plankton = document.querySelector("#plankton");
-    var speech = document.querySelector("#speechbubble");
-    var negRes = ["No, thank you.", "I don't eat that.", "I don't like those!", "I'm sure someone else would like that."];
-    var posRes = ["Mmm! Yummy!", "Thank you!", "My favourite! Thanks!", "I like this!"]; 
-    var speechTimeout;
-    fish.addEventListener("click", function() {
-        var yes = posRes[Math.floor(Math.random() * posRes.length)];
-        speech.style.display = "flex";
-        speech.innerHTML = yes;
-        if (mtimer == null){
-            mtimer = setTimeout(function() {
-            speech.style.display = "none";
-            mtimer = null;
-//            console.log("stop");
-        }, 5000);
-        } else {
-        clearTimeout(mtimer);
-        console.log("force stop and restart");
-        mtimer = setTimeout(function() {
-            speech.style.display = "none";
-//            console.log("stop");
-            },5000);
-    }});
-        
-   fruit.addEventListener("click", function() {
-        var no = negRes[Math.floor(Math.random() * negRes.length)];
-        speech.style.display = "flex";
-        speech.innerHTML = no;
-        if (mtimer == null){
-            mtimer = setTimeout(function() {
-            speech.style.display = "none";
-            mtimer = null;
-//            console.log("stop");
-        }, 5000);
-        } else {
-        clearTimeout(mtimer);
-        console.log("force stop and restart");
-        mtimer = setTimeout(function() {
-            speech.style.display = "none";
-//            console.log("stop");
-            },5000);
-    }});
-   seaweed.addEventListener("click", function() {
-        var no = negRes[Math.floor(Math.random() * negRes.length)];
-        speech.style.display = "flex";
-        speech.innerHTML = no;
-        if (mtimer == null){
-            mtimer = setTimeout(function() {
-            speech.style.display = "none";
-            mtimer = null;
-//            console.log("stop");
-        }, 5000);
-        } else {
-        clearTimeout(mtimer);
-        console.log("force stop and restart");
-        mtimer = setTimeout(function() {
-            speech.style.display = "none";
-//            console.log("stop");
-            },5000);
-    }});
-   plankton.addEventListener("click", function() {
-        var no = negRes[Math.floor(Math.random() * negRes.length)];
-        speech.style.display = "flex";
-        speech.innerHTML = no;
-        if (mtimer == null){
-            mtimer = setTimeout(function() {
-            speech.style.display = "none";
-            mtimer = null;
-//            console.log("stop");
-        }, 5000);
-        } else {
-        clearTimeout(mtimer);
-        console.log("force stop and restart");
-        mtimer = setTimeout(function() {
-            speech.style.display = "none";
-//            console.log("stop");
-            },5000);
-    }});
+//feedBut.addEventListener("click", function() {
+//    if(But == 0){
+//        feedBut.src = "img/northamerica/animal-page/FeedSelected_NA.svg";
+//        foodMenu.style.display = "block";
+//        But = 1;
+//    } else {
+//        console.log("clickme");
+//        feedBut.src = "img/northamerica/animal-page/FeedDefault_NA.svg";
+//        foodMenu.style.display = "none";
+//        But = 0;
+//    }
+// }); 
 
-    function resetTimeout() {
-        clearTimeout(speechTimeout);
-    };
+//    var fish = document.querySelector("#fish"),
+//        fruit = document.querySelector("#fruit"),
+//        seaweed = document.querySelector("#seaweed"),
+//        plankton = document.querySelector("#plankton");
+//    var speech = document.querySelector("#speechbubble");
+
+function sayyes(){
+    var yes = posRes[Math.floor(Math.random() * posRes.length)];
+    speech.innerHTML = yes;
+    speech.style.display = "flex";
+    timing();
+}
+
+function sayno(){
+    var no = negRes[Math.floor(Math.random() * negRes.length)];
+    speech.style.display = "flex";
+    speech.innerHTML = no;
+    timing();
+}
+
+function foodres(elid){
+    if(elid == "fish"){
+        if(
+            (pkg.continent == "NA" && (pkg.animal == 1 || pkg.animal == 3 || pkg.animal == 4)) ||
+            pkg.continent == "NP" ||
+            (pkg.continent == "Amzn" && (pkg.animal == 1||pkg.animal == 3)) ||
+            (pkg.continent == "Ant" && (pkg.animal == 1 || pkg.animal ==2 || pkg.animal == 3))
+            ){
+           sayyes();
+           } else {
+               sayno();
+           }
+    } else if (elid == "fruit"){
+        if(pkg.continent == "Amzn" && pkg.animal == 2){
+           sayyes();
+           } else {
+               sayno();
+           }
+    } else if (elid == "seaweed"){
+        if(
+            (pkg.continent == "NA" && pkg.animal == 2)||
+            (pkg.continent == "Amzn" && pkg.animal == 4)
+            ){
+           sayyes();
+           } else {
+               sayno();
+           }
+    } else if (elid == "plankton"){
+         if(
+            (pkg.continent == "NA" && (pkg.animal == 1 || pkg.animal == 3)) ||
+            (pkg.continent == "NP" && pkg.animal == 4)||
+            (pkg.continent == "Ant" && (pkg.animal == 1 || pkg.animal ==3 || pkg.animal == 4))
+            ){
+           sayyes();
+           } else {
+               sayno();
+           }
+    }
+    
+}
+
+//    fish.addEventListener("click", function() {
+//        var yes = posRes[Math.floor(Math.random() * posRes.length)];
+//        speech.style.display = "flex";
+//        speech.innerHTML = yes;
+//        if (mtimer == null){
+//            mtimer = setTimeout(function() {
+//            speech.style.display = "none";
+//            mtimer = null;
+////            console.log("stop");
+//        }, 5000);
+//        } else {
+//        clearTimeout(mtimer);
+//        console.log("force stop and restart");
+//        mtimer = setTimeout(function() {
+//            speech.style.display = "none";
+////            console.log("stop");
+//            },5000);
+//    }});
+//        
+//   fruit.addEventListener("click", function() {
+//        var no = negRes[Math.floor(Math.random() * negRes.length)];
+//        speech.style.display = "flex";
+//        speech.innerHTML = no;
+//        if (mtimer == null){
+//            mtimer = setTimeout(function() {
+//            speech.style.display = "none";
+//            mtimer = null;
+////            console.log("stop");
+//        }, 5000);
+//        } else {
+//        clearTimeout(mtimer);
+//        console.log("force stop and restart");
+//        mtimer = setTimeout(function() {
+//            speech.style.display = "none";
+////            console.log("stop");
+//            },5000);
+//    }});
+//   seaweed.addEventListener("click", function() {
+//        var no = negRes[Math.floor(Math.random() * negRes.length)];
+//        speech.style.display = "flex";
+//        speech.innerHTML = no;
+//        if (mtimer == null){
+//            mtimer = setTimeout(function() {
+//            speech.style.display = "none";
+//            mtimer = null;
+////            console.log("stop");
+//        }, 5000);
+//        } else {
+//        clearTimeout(mtimer);
+//        console.log("force stop and restart");
+//        mtimer = setTimeout(function() {
+//            speech.style.display = "none";
+////            console.log("stop");
+//            },5000);
+//    }});
+//   plankton.addEventListener("click", function() {
+//        var no = negRes[Math.floor(Math.random() * negRes.length)];
+//        speech.style.display = "flex";
+//        speech.innerHTML = no;
+//        if (mtimer == null){
+//            mtimer = setTimeout(function() {
+//            speech.style.display = "none";
+//            mtimer = null;
+////            console.log("stop");
+//        }, 5000);
+//        } else {
+//        clearTimeout(mtimer);
+//        console.log("force stop and restart");
+//        mtimer = setTimeout(function() {
+//            speech.style.display = "none";
+////            console.log("stop");
+//            },5000);
+//    }});
+
+//    function resetTimeout() {
+//        clearTimeout(speechTimeout);
+//    };
