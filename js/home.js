@@ -593,6 +593,22 @@ var orcaTalk = ["Hello, I'm Ollie the Orca.", "Another name for us is the 'Kille
 
 var penguinTalk = ["Hi! I'm Peggy the Emperor Penguin", "We are the tallest and heaviest of all penguins.", "When I was little, my parents would take turns getting food and taking care of me.", "We're the only penguins that breed in the winter.", "We can dive deep! We can swim up to 500 metres underwater.", "We can stay underwater for as long as 22 minutes."]
 
+var qnum = 0;
+var pengQuiz = [
+    {
+        q:"What do penguins eat?",
+        a:1,
+        but1:"<img src='img/northamerica/animal-page/Fruit/svg'/>",
+        but2:"Choice 2",
+        but3:"Choice 3",
+        but4:"Choice 4"
+    },
+    {
+        q: "Who will take care of little penguins?",
+        a: 
+    }
+]
+
 var sealTalk = ["Hello! My name is Nelly, I'm a seal.", "I spend most of my time in the water.", "We have lots of blubber, which helps us stay warm in the cold", "We're colourblind, but we see blue and green really well!", "We sleep underwater, but we come up to breathe sometimes.", "Underwater, we have really good hearing."]
 
 var whaleTalk = ["Hello, I'm Flo the Blue Whale.", "I'm the largest animal in the world!", "We travel in groups called 'pods'.", "When I want to talk to my friends, I make noises such as clicks, whistles and pulsed calls.", "We might be big, but we eat a lot of small things, like krill.", "I look like a fish, but I don't lay eggs."]
