@@ -24,6 +24,28 @@ pkg = {
         crab: 0,
         dolphin: 0,
         manatee: 0
+    },
+    quiz: { // 1-4
+        //NA
+        otter: [],
+        beaver: [],
+        jellyfish: [],
+        orca: [],
+        //NP
+        walrus: [],
+        bear: [],
+        narwhal: [],
+        beluga: [],
+        //Ant
+        penguin: [],
+        seal: [],
+        whale: [],
+        squid: [],
+        //Amzn
+        crocodile: [],
+        crab: [],
+        dolphin: [],
+        manatee: []
     }
     
 }
@@ -51,13 +73,13 @@ var handler = {
             if (value == "lno"){
                 toLnOUI();
                 changeLnOContent(pkg.continent);
-                console.log("tolno");
             }
             if (value == "animal"){
                 toAnimalUI(value);
             }
             if (value == "quiz"){
                 toQuizUI();
+                quizContent();
             }
         }
         
@@ -619,22 +641,6 @@ var orcaTalk = ["Hello, I'm Ollie the Orca.", "Another name for us is the 'Kille
 
 var penguinTalk = ["Hi! I'm Peggy the Emperor Penguin", "We are the tallest and heaviest of all penguins.", "When I was little, my parents would take turns getting food and taking care of me.", "We're the only penguins that breed in the winter.", "We can dive deep! We can swim up to 500 metres underwater.", "We can stay underwater for as long as 22 minutes."]
 
-var qnum = 0;
-var pengQuiz = [
-    {
-        q:"What do penguins eat?",
-        a:1,
-        but1:"<img src='img/northamerica/animal-page/Fruit.svg'/>",
-        but2:"Choice 2",
-        but3:"Choice 3",
-        but4:"Choice 4"
-    },
-    {
-        q: "Who will take care of little penguins?"
-        
-    }
-]
-
 var sealTalk = ["Hello! My name is Nelly, I'm a seal.", "I spend most of my time in the water.", "We have lots of blubber, which helps us stay warm in the cold", "We're colourblind, but we see blue and green really well!", "We sleep underwater, but we come up to breathe sometimes.", "Underwater, we have really good hearing."]
 
 var whaleTalk = ["Hello, I'm Flo the Blue Whale.", "I'm the largest animal in the world!", "We travel in groups called 'pods'.", "When I want to talk to my friends, I make noises such as clicks, whistles and pulsed calls.", "We might be big, but we eat a lot of small things, like krill.", "I look like a fish, but I don't lay eggs."]
@@ -848,5 +854,122 @@ function openPopup(){
 
 function closePopup(){
     popup.style.display = "none";
+}
+
+//------ Quiz Page --------//
+
+// -- Quiz Questions----
+var OtterQuiz = [
+    {
+        q:"What do I eat?",
+        a:2,
+        but1:"<img src='img/northamerica/animal-page/Fruit.svg'/>",
+        but2:"<img src='img/northamerica/animal-page/Fish.svg'/>",
+        but3:"<img src='img/northamerica/animal-page/Plankton.svg'/>",
+        but4:"<img src='img/northamerica/animal-page/Seaweed.svg'/>"
+    },
+    {
+        q: "What do I like to keep?",
+        a: 3,
+        but1: "Fish",
+        but2: "Baby otters",
+        but3: "Rocks",
+        but4: "Branches"
+    },
+    {
+        q: "Where do I like to sleep on?",
+        a: 1,
+        but1: "Seaweed",
+        but2: "Rocks",
+        but3: "The beach",
+        but4: "Underwater"
+    }
+]
+
+
+//--- Quiz UI ----
+var qnum = 0,
+    quizani = document.querySelector(".quiz-animal"),
+    quizq = document.querySelector(".quiz-q"),
+    abox = document.querySelector(".quiz-a div"),
+    but1 = document.querySelector(".quiz-but1"),
+    but2 = document.querySelector(".quiz-but2"),
+    but3 = document.querySelector(".quiz-but3"),
+    but4 = document.querySelector(".quiz-but4");
+
+function quizContent(){
+    if(pkg.continent == "NA"){
+    //border colors
+        var i;
+        for (i=0;i<abox.length;i++){
+        abox[i].style.border = "4px solid #F78330";
+        }
+        quizq.style.border = "4px solid #F78330";
+    //animal
+        if(pkg.animal == 1){
+           quizani.src = "img/northamerica/Otter.svg";
+           checkq(pkg.quiz.otter);
+        }
+        
+    }
+    
+    qna();
+}
+
+function qna(){    
+
+    if (pkg.continent == "NA"){
+        if (pkg.animal == 1){
+            quizq.innerHTML = OtterQuiz[qnum].q;
+            but1.innerHTML = OtterQuiz[qnum].but1;
+            but2.innerHTML = OtterQuiz[qnum].but2;
+            but3.innerHTML = OtterQuiz[qnum].but3;
+            but4.innerHTML = OtterQuiz[qnum].but4;  
+        }
+        if (pkg.animal == 2){
+            quizani.src = "img/northamerica/Beaver.svg";
+        }
+        if (pkg.animal == 3){
+            quizani.src = "img/northamerica/jellyfish.svg";
+        }
+        if (pkg.animal == 4){
+            quizani.src = "img/northamerica/Orca.svg";
+        }
+    }
+
+}
+
+function checkq(x){
+    var i = 0;
+    while(x.includes(i) == true){
+        i = i + 1;
+    }
+    if(i == 4){
+        expert();
+    } else {
+        qnum = i;
+    }
+}
+
+function checka (butnum){
+    console.log("checking answer");
+    if (pkg.continent == "NA"){
+        if (pkg.animal == 1){
+            if (butnum == OtterQuiz[qnum].a){
+                console.log('right');
+                pkg.quiz.otter.push(qnum);
+            } else {
+                console.log('wrong');
+            }
+        }
+    }
+    
+    save();
+    qnum = qnum + 1;
+    qna();
+}
+
+function expert(){
+    console.log("you're an expert");
 }
 
