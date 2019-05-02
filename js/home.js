@@ -319,15 +319,15 @@ var animal1 = document.querySelector(".animal1 img"),
 
 function changeLnOContent(x){
     //bring everything back to default position
-    document.querySelector(".L-n-O-pagewrap").style.backgroundPosition = "center";
-    sun.style.left = "30%";
-    landBut.style.opacity = "1";
-    oceanBut.style.opacity = "1";
-    oceanAni.style.left = "150%";
-    landAni.style.left = "-100%";
-    cloudR.style.left = "70%";
-    cloudM.style.left = "30%";
-    cloudL.style.left = "-100%";
+//    document.querySelector(".L-n-O-pagewrap").style.backgroundPosition = "center";
+//    sun.style.left = "30%";
+//    landBut.style.opacity = "1";
+//    oceanBut.style.opacity = "1";
+//    oceanAni.style.left = "150%";
+//    landAni.style.left = "-100%";
+//    cloudR.style.left = "70%";
+//    cloudM.style.left = "30%";
+//    cloudL.style.left = "-100%";
     
     if (x == "NA"){
         // bg
@@ -1468,6 +1468,7 @@ var qnum = 0,
     but4 = document.querySelector(".quiz-but4");
 
 function quizContent(){
+    document.querySelector(".quiz-page").style.backgroundImage = "url(img/quiz-bg.svg)";
     if(pkg.continent == "NA"){
     //border colors
         var i;
@@ -1565,21 +1566,57 @@ function qna(){
 
 }
 
+var rnwtimer = null;
+function right(butnum){
+    console.log(".quiz-but"+butnum);
+    document.querySelector(".quiz-but" + butnum).style.backgroundImage = "url(img/right.svg)";
+     if (rnwtimer == null){
+            rnwtimer = setTimeout(function() {
+            document.querySelector(".quiz-but" + butnum).style.backgroundImage = "none";
+            mtimer = null;
+        }, 1000);
+    } else {
+        clearTimeout(rnwtimer);
+        rnwtimer = setTimeout(function() {
+            document.querySelector(".quiz-but" + butnum).style.backgroundImage = "none";
+            },1000);
+    }
+}
+
+function wrong(butnum){
+    console.log(".quiz-but"+butnum);
+    document.querySelector(".quiz-but" + butnum).style.backgroundImage = "url(img/wrong.svg)";
+     if (rnwtimer == null){
+            rnwtimer = setTimeout(function() {
+            document.querySelector(".quiz-but" + butnum).style.backgroundImage = "none";
+            mtimer = null;
+        }, 1000);
+    } else {
+        clearTimeout(rnwtimer);
+        rnwtimer = setTimeout(function() {
+            document.querySelector(".quiz-but" + butnum).style.backgroundImage = "none";
+            },1000);
+    }
+}
+
+
 function checka (butnum){
     if (pkg.continent == "NA"){
         if (pkg.animal == 1){
             if (butnum == OtterQuiz[qnum].a){
-                console.log('right');
+                //console.log('right');
+                right(butnum);
                 pkg.quiz.otter.push(qnum);
                 if (pkg.quiz.otter.length >= 3){
-                    expert();
+                     expert();
                 } else if (qnum == 3){
                     nicetry();
                 } else {
                     qnum = qnum + 1;
                 }
             } else {
-                console.log('wrong');
+                //console.log('wrong');
+                wrong(butnum);
                 if (qnum == 3){
                     nicetry();
                 } else {
@@ -1588,7 +1625,7 @@ function checka (butnum){
             }
         }
         
-         if (pkg.animal == 2){
+        else if (pkg.animal == 2){
             if (butnum == BeaverQuiz[qnum].a){
                 console.log('right');
                 pkg.quiz.beaver.push(qnum);
@@ -1609,7 +1646,7 @@ function checka (butnum){
             }
         }
         
-        if (pkg.animal == 3){
+        else if (pkg.animal == 3){
             if (butnum == JellyfishQuiz[qnum].a){
                 console.log('right');
                 pkg.quiz.jellyfish.push(qnum);
@@ -1630,7 +1667,7 @@ function checka (butnum){
             }
         }
         
-        if (pkg.animal == 4){
+        else if (pkg.animal == 4){
             if (butnum == OrcaQuiz[qnum].a){
                 console.log('right');
                 pkg.quiz.orca.push(qnum);
