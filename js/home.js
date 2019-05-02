@@ -403,8 +403,8 @@ function changeLnOContent(x){
         }
         animal1but.innerHTML = "Predator";
         animal2but.innerHTML = "Predator";
-        animal3but.innerHTML = "Predator";
-        animal4but.innerHTML = "Prey";
+        animal3but.innerHTML = "Prey";
+        animal4but.innerHTML = "Predator";
         // animals
         if(pkg.animalvisit.penguin == 1){
             animal1.src = "img/antarctica/penguin.svg";
@@ -631,7 +631,7 @@ var foodMenu = document.querySelector(".food"),
 /* North America Animals */ 
 var otterTalk = [ "Hi! I'm Ophie the Otter!", "I have the thickest fur of all animals.", "I like to carry one small rock with me all the time.", "I use rocks to smash open shells.", "I keep the same rock with me for my whole life!", "When I go to sleep, I like to wrap myself and my family in seaweed and float together with them."]
 
-var beaverTalk = ["Hello! I'm Bev the Beaver.", "I do most of my work during the evening", "I slap the water with my tail to tell my family when there is danger.", "I don't see well, but I can see underwater!", "I can stay underwater for up to 15 minutes.", "I make dams by chewing on and moving them around."]
+var beaverTalk = ["Hello! I'm Bev the Beaver.", "I do most of my work during the evening", "I slap the water with my tail to tell my family when there is danger.", "I don't see well, but I can see underwater!", "I can stay underwater for up to 15 minutes.", "I make dams by chewing on trees and moving them around."]
 
 var jellyfishTalk = ["Hey! I'm Belly the Jellyfish.", "Jellyfish can be as small as a peanut, or as big as a human!", "Did you know, we don't have brains!", "Some jellyfish can sting, and some are poisonous", "We are transluscent! That means we're almost see-through."]
 
@@ -883,6 +883,14 @@ var OtterQuiz = [
         but2: "Rocks",
         but3: "The beach",
         but4: "Underwater"
+    },
+    {
+        q: "What is the texture of my fur?",
+        a: 2,
+        but1: "Thin",
+        but2: "Thick",
+        but3: "Smooth",
+        but4: "Rough"
     }
 ]
 
@@ -907,17 +915,62 @@ function quizContent(){
         quizq.style.border = "4px solid #F78330";
     //animal
         if(pkg.animal == 1){
-           quizani.src = "img/northamerica/Otter.svg";
-           checkq(pkg.quiz.otter);
+            quizani.src = "img/northamerica/Otter.svg";
+            if (pkg.quiz.otter.length >=3){
+                expert();
+            } else {
+                pkg.quiz.otter = [];
+                save();
+                qnum = 0;
+                qna();
+            }
+            
+           //checkq(pkg.quiz.otter); 
         }
-        
     }
-    
-    qna();
 }
 
-function qna(){    
+//function checkq(x){
+//check if all questions are completed
+//    var zero = 0,
+//        one = 0,
+//        two = 0,
+//        three = 0;
+//    for (i=0;i<x.length;i++){
+//        if(x[i] == 0){
+//            zero = 1;
+//        } else if (x[i] == 1){
+//            one = 1;
+//        } else if (x[i] == 2){
+//            two = 1;
+//        } else if (x[i] == 3){
+//            three = 1;
+//        }
+//    }
+//    
+//    if (zero==1 && one==1 && two==1 && three==1){
+//        expert();
+//    } else {
+//        var y = 0;
+//        while(x.includes(y) == true){
+//            y=y+1;
+//        }
+//        qnum = y;
+//        qna();
+//    }  
+//    if(x.length >= 3){
+//        expert();
+//    } else {
+//        var y = 0;
+//        while(x.includes(y) == true){
+//            y=y+1;
+//        }
+//        qnum = y;
+//        qna();
+//    }
+//}
 
+function qna(){    
     if (pkg.continent == "NA"){
         if (pkg.animal == 1){
             quizq.innerHTML = OtterQuiz[qnum].q;
@@ -939,37 +992,44 @@ function qna(){
 
 }
 
-function checkq(x){
-    var i = 0;
-    while(x.includes(i) == true){
-        i = i + 1;
-    }
-    if(i == 4){
-        expert();
-    } else {
-        qnum = i;
-    }
-}
-
 function checka (butnum){
-    console.log("checking answer");
     if (pkg.continent == "NA"){
         if (pkg.animal == 1){
             if (butnum == OtterQuiz[qnum].a){
                 console.log('right');
                 pkg.quiz.otter.push(qnum);
+                if (pkg.quiz.otter.length >= 3){
+                    expert();
+                } else if (qnum == 3){
+                    nicetry();
+                } else {
+                    qnum = qnum + 1;
+                }
+                //nextq(pkg.quiz.otter);
             } else {
                 console.log('wrong');
+                if (qnum == 3){
+                    nicetry();
+                } else {
+                    qnum = qnum + 1;
+                }
+                //nextq(pkg.quiz.otter);
             }
         }
     }
     
     save();
-    qnum = qnum + 1;
     qna();
 }
 
+
+
 function expert(){
     console.log("you're an expert");
+    
+}
+
+function nicetry(){
+    console.log('nice try');
 }
 

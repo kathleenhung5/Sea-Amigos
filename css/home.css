@@ -696,6 +696,10 @@ body {
     align-items: center;
 }
 
+.quiz-a div img {
+    width: 60%;
+}
+
 .quiz-a {
     -webkit-box-flex: 4;
         -ms-flex: 4;
