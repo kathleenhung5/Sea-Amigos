@@ -71,8 +71,8 @@ var handler = {
                 toHomeUI();
             }
             if (value == "lno"){
-                toLnOUI();
                 changeLnOContent(pkg.continent);
+                toLnOUI();
             }
             if (value == "animal"){
                 toAnimalUI(value);
@@ -312,14 +312,31 @@ var animal1 = document.querySelector(".animal1 img"),
     animal2but = document.querySelector(".animal2 button"),
     animal3but = document.querySelector(".animal3 button"),
     animal4but = document.querySelector(".animal4 button"),
+    clouds = document.querySelectorAll(".cloud"),
     land = document.getElementById("land"),
     ocean = document.getElementById("ocean"),
     ppbut = document.querySelectorAll(".ppbut");
 
 function changeLnOContent(x){
+    //bring everything back to default position
+    document.querySelector(".L-n-O-pagewrap").style.backgroundPosition = "center";
+    sun.style.left = "30%";
+    landBut.style.opacity = "1";
+    oceanBut.style.opacity = "1";
+    oceanAni.style.left = "150%";
+    landAni.style.left = "-100%";
+    cloudR.style.left = "70%";
+    cloudM.style.left = "30%";
+    cloudL.style.left = "-100%";
+    
     if (x == "NA"){
         // bg
         document.querySelector(".L-n-O-pagewrap").style.backgroundImage = "url(img/northamerica/NA-bg.svg)";
+        sun.style.display = "none";
+        var x;
+        for (x=0;x<clouds.length;x++){
+            clouds[x].style.display = "block";
+        }
         land.src = "img/northamerica/land-button.svg";
         ocean.src = "img/northamerica/ocean-button.svg";
         // button colours
@@ -357,6 +374,11 @@ function changeLnOContent(x){
     if (x == "NP"){
         // bg
         document.querySelector(".L-n-O-pagewrap").style.backgroundImage = "url(img/northpole/NP-bg.svg)";
+        sun.style.display = "block";
+        var x;
+        for (x=0;x<clouds.length;x++){
+            clouds[x].style.display = "block";
+        }
         land.src = "img/northpole/land-button.svg";
         ocean.src = "img/northpole/ocean-button.svg";
         // button colours
@@ -394,6 +416,11 @@ function changeLnOContent(x){
     if (x == "Ant"){
         // bg
         document.querySelector(".L-n-O-pagewrap").style.backgroundImage = "url(img/antarctica/Antarctica-bg.svg)";
+        sun.style.display = "block";
+        var x;
+        for (x=0;x<clouds.length;x++){
+            clouds[x].style.display = "block";
+        }
         land.src = "img/antarctica/land-button.svg";
         ocean.src = "img/antarctica/ocean-button.svg";
         // button colours
@@ -431,6 +458,11 @@ function changeLnOContent(x){
     if (x == "Amzn"){
         // bg
         document.querySelector(".L-n-O-pagewrap").style.backgroundImage = "url(img/amazon/Amazon-bg.svg)";
+        sun.style.display = "block";
+        var x;
+        for (x=0;x<clouds.length;x++){
+            clouds[x].style.display = "none";
+        }
         land.src = "img/amazon/land-button.svg";
         ocean.src = "img/amazon/ocean-button.svg";
         // button colours
