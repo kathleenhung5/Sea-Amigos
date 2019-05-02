@@ -1567,18 +1567,39 @@ function qna(){
 }
 
 var rnwtimer = null;
-function right(butnum){
-    console.log(".quiz-but"+butnum);
+function right(butnum, aniarray){
     document.querySelector(".quiz-but" + butnum).style.backgroundImage = "url(img/right.svg)";
      if (rnwtimer == null){
             rnwtimer = setTimeout(function() {
             document.querySelector(".quiz-but" + butnum).style.backgroundImage = "none";
+            //added    
+             if (aniarray >= 3){
+                     expert();
+                } else if (qnum == 3){
+                    nicetry();
+                } else {
+                    qnum = qnum + 1;
+                }
+            save();
+            qna();
+                     
             mtimer = null;
         }, 1000);
     } else {
         clearTimeout(rnwtimer);
         rnwtimer = setTimeout(function() {
             document.querySelector(".quiz-but" + butnum).style.backgroundImage = "none";
+            //added    
+             if (aniarray >= 3){
+                     expert();
+                } else if (qnum == 3){
+                    nicetry();
+                } else {
+                    qnum = qnum + 1;
+                }
+            save();
+            qna();
+            
             },1000);
     }
 }
@@ -1589,12 +1610,30 @@ function wrong(butnum){
      if (rnwtimer == null){
             rnwtimer = setTimeout(function() {
             document.querySelector(".quiz-but" + butnum).style.backgroundImage = "none";
-            mtimer = null;
+            //added 
+             if (qnum == 3){
+                 nicetry();
+             } else {
+                 qnum = qnum + 1;
+             }
+            save();
+            qna();
+                
+            mtimer = null;     
         }, 1000);
     } else {
         clearTimeout(rnwtimer);
         rnwtimer = setTimeout(function() {
             document.querySelector(".quiz-but" + butnum).style.backgroundImage = "none";
+            //added 
+             if (qnum == 3){
+                 nicetry();
+             } else {
+                 qnum = qnum + 1;
+             }
+            save();
+            qna();
+            
             },1000);
     }
 }
@@ -1605,23 +1644,25 @@ function checka (butnum){
         if (pkg.animal == 1){
             if (butnum == OtterQuiz[qnum].a){
                 //console.log('right');
-                right(butnum);
                 pkg.quiz.otter.push(qnum);
-                if (pkg.quiz.otter.length >= 3){
-                     expert();
-                } else if (qnum == 3){
-                    nicetry();
-                } else {
-                    qnum = qnum + 1;
-                }
+                right(butnum,pkg.quiz.otter.length);
+                
+                //wait one second
+//                if (pkg.quiz.otter.length >= 3){
+//                     expert();
+//                } else if (qnum == 3){
+//                    nicetry();
+//                } else {
+//                    qnum = qnum + 1;
+//                }
             } else {
                 //console.log('wrong');
-                wrong(butnum);
-                if (qnum == 3){
-                    nicetry();
-                } else {
-                    qnum = qnum + 1;
-                }
+                  wrong(butnum);
+//                if (qnum == 3){
+//                    nicetry();
+//                } else {
+//                    qnum = qnum + 1;
+//                }
             }
         }
         
@@ -1689,8 +1730,8 @@ function checka (butnum){
         }
     }
     
-    save();
-    qna();
+//    save();
+//    qna();
 }
 
 var qresult = document.querySelector(".result");
