@@ -318,16 +318,6 @@ var animal1 = document.querySelector(".animal1 img"),
     ppbut = document.querySelectorAll(".ppbut");
 
 function changeLnOContent(x){
-    //bring everything back to default position
-//    document.querySelector(".L-n-O-pagewrap").style.backgroundPosition = "center";
-//    sun.style.left = "30%";
-//    landBut.style.opacity = "1";
-//    oceanBut.style.opacity = "1";
-//    oceanAni.style.left = "150%";
-//    landAni.style.left = "-100%";
-//    cloudR.style.left = "70%";
-//    cloudM.style.left = "30%";
-//    cloudL.style.left = "-100%";
     
     if (x == "NA"){
         // bg
@@ -2087,12 +2077,24 @@ function checka (butnum){
     
 }
 
-var qresult = document.querySelector(".result");
+var qresult = document.querySelector(".result").style.backgroundImage;
 
 function expert(){
     console.log("you're an expert");
     qresult.style.display = "block";
-    qresult.style.backgroundColor = "green";
+    //qresult.style.backgroundColor = "green";
+
+    if (pkg.continent == "NA"){
+        if (pkg.animal == 1){
+            qresult = "url(img/northamerica/sad-otter.svg)";
+        } else if (pkg.animal == 2){
+            qresult = "url(img/northamerica/sad-beaver.svg)";
+        } else if (pkg.animal == 3){
+            qresult = "url(img/northamerica/sad-jellyfish.svg)";
+        } else if (pkg.animal == 4){
+            qresult = "url(img/northamerica/sad-orca.svg)";
+        }
+    }
 }
 
 function nicetry(){
