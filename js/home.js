@@ -1461,7 +1461,7 @@ var DolphinQuiz = [
 var qnum = 0,
     quizani = document.querySelector(".quiz-animal"),
     quizq = document.querySelector(".quiz-q"),
-    abox = document.querySelector(".quiz-a div"),
+    abox = document.querySelectorAll(".quiz-a div"),
     but1 = document.querySelector(".quiz-but1"),
     but2 = document.querySelector(".quiz-but2"),
     but3 = document.querySelector(".quiz-but3"),
@@ -1469,11 +1469,14 @@ var qnum = 0,
 
 function quizContent(){
     document.querySelector(".quiz-page").style.backgroundImage = "url(img/quiz-bg.svg)";
+    
+    
+    
     if(pkg.continent == "NA"){
     //border colors
-        var i;
-        for (i=0;i<abox.length;i++){
-        abox[i].style.border = "4px solid #F78330";
+        var z;
+        for (z=0;z<abox.length;z++){
+        abox[z].style.border = "4px solid #F78330";
         }
         quizq.style.border = "4px solid #F78330";
     //animal
@@ -1529,6 +1532,193 @@ function quizContent(){
             }
         }
     }
+    
+    
+    if(pkg.continent == "NP"){
+    //border colors
+        var i;
+        for (i=0;i<abox.length;i++){
+        abox[i].style.border = "4px solid #45ABE1";
+        }
+        quizq.style.border = "4px solid #45ABE1";
+    //animal
+        if(pkg.animal == 1){
+            quizani.src = "img/northpole/walrus.svg";
+            if (pkg.quiz.walrus.length >=3){
+                expert();
+            } else {
+                qresult.style.display = "none";
+                pkg.quiz.walrus = [];
+                save();
+                qnum = 0;
+                qna();
+            }
+        }
+        
+        if(pkg.animal == 2){
+            quizani.src = "img/northpole/bear.svg";
+            if (pkg.quiz.bear.length >=3){
+                expert();
+            } else {
+                qresult.style.display = "none";
+                pkg.quiz.bear = [];
+                save();
+                qnum = 0;
+                qna();
+            }
+        }
+        
+        if(pkg.animal == 3){
+            quizani.src = "img/northpole/narwhal.svg";
+            if (pkg.quiz.narwhal.length >=3){
+                expert();
+            } else {
+                qresult.style.display = "none";
+                pkg.quiz.narwhal = [];
+                save();
+                qnum = 0;
+                qna();
+            }
+        }
+        
+        if(pkg.animal == 4){
+            quizani.src = "img/northpole/beluga.svg";
+            if (pkg.quiz.beluga.length >=3){
+                expert();
+            } else {
+                qresult.style.display = "none";
+                pkg.quiz.beluga = [];
+                save();
+                qnum = 0;
+                qna();
+            }
+        }
+    }
+    
+    if(pkg.continent == "Amzn"){
+                console.log("in Amaz");
+    //border colors
+        var i;
+        for (i=0;i<abox.length;i++){
+        abox[i].style.border = "4px solid #5FD92B";
+        }
+        quizq.style.border = "4px solid #5FD92B";
+    //animal
+        if(pkg.animal == 1){
+            quizani.src = "img/amazon/crocodile.svg";
+            if (pkg.quiz.crocodile.length >=3){
+                expert();
+            } else {
+                qresult.style.display = "none";
+                pkg.quiz.crocodile = [];
+                save();
+                qnum = 0;
+                qna();
+            }
+        }
+        
+        if(pkg.animal == 2){
+            quizani.src = "img/amazon/crab.svg";
+            if (pkg.quiz.crab.length >=3){
+                expert();
+            } else {
+                qresult.style.display = "none";
+                pkg.quiz.crab = [];
+                save();
+                qnum = 0;
+                qna();
+            }
+        }
+        
+        if(pkg.animal == 3){
+            quizani.src = "img/amazon/dolphin.svg";
+            if (pkg.quiz.dolphin.length >=3){
+                expert();
+            } else {
+                qresult.style.display = "none";
+                pkg.quiz.dolphin = [];
+                save();
+                qnum = 0;
+                qna();
+            }
+        }
+        
+        if(pkg.animal == 4){
+            quizani.src = "img/amazon/manatee.svg";
+            if (pkg.quiz.manatee.length >=3){
+                expert();
+            } else {
+                qresult.style.display = "none";
+                pkg.quiz.manatee = [];
+                save();
+                qnum = 0;
+                qna();
+            }
+        }
+    }
+    
+    
+    if(pkg.continent == "Ant"){
+    //border colors
+        var i;
+        for (i=0;i<abox.length;i++){
+        abox[i].style.border = "4px solid #8A77B5";
+        }
+        quizq.style.border = "4px solid #8A77B5";
+    //animal
+        if(pkg.animal == 1){
+            quizani.src = "img/antarctica/penguin.svg";
+            if (pkg.quiz.penguin.length >=3){
+                expert();
+            } else {
+                qresult.style.display = "none";
+                pkg.quiz.penguin = [];
+                save();
+                qnum = 0;
+                qna();
+            }
+        }
+        
+        if(pkg.animal == 2){
+            quizani.src = "img/antarctica/seal.svg";
+            if (pkg.quiz.seal.length >=3){
+                expert();
+            } else {
+                qresult.style.display = "none";
+                pkg.quiz.seal= [];
+                save();
+                qnum = 0;
+                qna();
+            }
+        }
+        
+        if(pkg.animal == 3){
+            quizani.src = "img/antarctica/squid.svg";
+            if (pkg.quiz.squid.length >=3){
+                expert();
+            } else {
+                qresult.style.display = "none";
+                pkg.quiz.squid = [];
+                save();
+                qnum = 0;
+                qna();
+            }
+        }
+        
+        if(pkg.animal == 4){
+            quizani.src = "img/antarctica/whale.svg";
+            if (pkg.quiz.whale.length >=3){
+                expert();
+            } else {
+                qresult.style.display = "none";
+                pkg.quiz.whale = [];
+                save();
+                qnum = 0;
+                qna();
+            }
+        }
+    }
+    
 }
 
 
@@ -1561,6 +1751,99 @@ function qna(){
             but2.innerHTML = OrcaQuiz[qnum].but2;
             but3.innerHTML = OrcaQuiz[qnum].but3;
             but4.innerHTML = OrcaQuiz[qnum].but4;  
+        }
+    }
+    
+    if (pkg.continent == "NP"){
+        if (pkg.animal == 1){
+            quizq.innerHTML = WalrusQuiz[qnum].q;
+            but1.innerHTML = WalrusQuiz[qnum].but1;
+            but2.innerHTML = WalrusQuiz[qnum].but2;
+            but3.innerHTML = WalrusQuiz[qnum].but3;
+            but4.innerHTML = WalrusQuiz[qnum].but4;  
+        }
+        if (pkg.animal == 2){
+            quizq.innerHTML = BearQuiz[qnum].q;
+            but1.innerHTML = BearQuiz[qnum].but1;
+            but2.innerHTML = BearQuiz[qnum].but2;
+            but3.innerHTML = BearQuiz[qnum].but3;
+            but4.innerHTML = BearQuiz[qnum].but4;  
+        }
+        if (pkg.animal == 3){
+            quizq.innerHTML = NarwhalQuiz[qnum].q;
+            but1.innerHTML = NarwhalQuiz[qnum].but1;
+            but2.innerHTML = NarwhalQuiz[qnum].but2;
+            but3.innerHTML = NarwhalQuiz[qnum].but3;
+            but4.innerHTML = NarwhalQuiz[qnum].but4;  
+        }
+        if (pkg.animal == 4){
+            quizq.innerHTML = BelugaQuiz[qnum].q;
+            but1.innerHTML = BelugaQuiz[qnum].but1;
+            but2.innerHTML = BelugaQuiz[qnum].but2;
+            but3.innerHTML = BelugaQuiz[qnum].but3;
+            but4.innerHTML = BelugaQuiz[qnum].but4;  
+        }
+    }
+    
+    if (pkg.continent == "Amzn"){
+        if (pkg.animal == 1){
+            quizq.innerHTML = CrocodileQuiz[qnum].q;
+            but1.innerHTML = CrocodileQuiz[qnum].but1;
+            but2.innerHTML = CrocodileQuiz[qnum].but2;
+            but3.innerHTML = CrocodileQuiz[qnum].but3;
+            but4.innerHTML = CrocodileQuiz[qnum].but4;  
+        }
+        if (pkg.animal == 2){
+            quizq.innerHTML = CrabQuiz[qnum].q;
+            but1.innerHTML = CrabQuiz[qnum].but1;
+            but2.innerHTML = CrabQuiz[qnum].but2;
+            but3.innerHTML = CrabQuiz[qnum].but3;
+            but4.innerHTML = CrabQuiz[qnum].but4;  
+        }
+        if (pkg.animal == 3){
+            quizq.innerHTML = DolphinQuiz[qnum].q;
+            but1.innerHTML = DolphinQuiz[qnum].but1;
+            but2.innerHTML = DolphinQuiz[qnum].but2;
+            but3.innerHTML = DolphinQuiz[qnum].but3;
+            but4.innerHTML = DolphinQuiz[qnum].but4;  
+        }
+        if (pkg.animal == 4){
+            quizq.innerHTML = ManateeQuiz[qnum].q;
+            but1.innerHTML = ManateeQuiz[qnum].but1;
+            but2.innerHTML = ManateeQuiz[qnum].but2;
+            but3.innerHTML = ManateeQuiz[qnum].but3;
+            but4.innerHTML = ManateeQuiz[qnum].but4;  
+        }
+    }
+    
+    if (pkg.continent == "Ant"){
+        if (pkg.animal == 1){
+            quizq.innerHTML = PenguinQuiz[qnum].q;
+            but1.innerHTML = PenguinQuiz[qnum].but1;
+            but2.innerHTML = PenguinQuiz[qnum].but2;
+            but3.innerHTML = PenguinQuiz[qnum].but3;
+            but4.innerHTML = PenguinQuiz[qnum].but4;  
+        }
+        if (pkg.animal == 2){
+             quizq.innerHTML = SealQuiz[qnum].q;
+            but1.innerHTML = SealQuiz[qnum].but1;
+            but2.innerHTML = SealQuiz[qnum].but2;
+            but3.innerHTML = SealQuiz[qnum].but3;
+            but4.innerHTML = SealQuiz[qnum].but4;  
+        }
+        if (pkg.animal == 3){
+            quizq.innerHTML = SquidQuiz[qnum].q;
+            but1.innerHTML = SquidQuiz[qnum].but1;
+            but2.innerHTML = SquidQuiz[qnum].but2;
+            but3.innerHTML = SquidQuiz[qnum].but3;
+            but4.innerHTML = SquidQuiz[qnum].but4;  
+        }
+        if (pkg.animal == 4){
+            quizq.innerHTML = WhaleQuiz[qnum].q;
+            but1.innerHTML = WhaleQuiz[qnum].but1;
+            but2.innerHTML = WhaleQuiz[qnum].but2;
+            but3.innerHTML = WhaleQuiz[qnum].but3;
+            but4.innerHTML = WhaleQuiz[qnum].but4;  
         }
     }
 
@@ -1640,98 +1923,168 @@ function wrong(butnum){
 
 
 function checka (butnum){
+// North America    
     if (pkg.continent == "NA"){
         if (pkg.animal == 1){
             if (butnum == OtterQuiz[qnum].a){
-                //console.log('right');
                 pkg.quiz.otter.push(qnum);
                 right(butnum,pkg.quiz.otter.length);
-                
-                //wait one second
-//                if (pkg.quiz.otter.length >= 3){
-//                     expert();
-//                } else if (qnum == 3){
-//                    nicetry();
-//                } else {
-//                    qnum = qnum + 1;
-//                }
             } else {
-                //console.log('wrong');
                   wrong(butnum);
-//                if (qnum == 3){
-//                    nicetry();
-//                } else {
-//                    qnum = qnum + 1;
-//                }
             }
         }
         
         else if (pkg.animal == 2){
             if (butnum == BeaverQuiz[qnum].a){
-                console.log('right');
                 pkg.quiz.beaver.push(qnum);
-                if (pkg.quiz.beaver.length >= 3){
-                    expert();
-                } else if (qnum == 3){
-                    nicetry();
-                } else {
-                    qnum = qnum + 1;
-                }
+                right(butnum,pkg.quiz.beaver.length);
             } else {
-                console.log('wrong');
-                if (qnum == 3){
-                    nicetry();
-                } else {
-                    qnum = qnum + 1;
-                }
+                  wrong(butnum);
             }
         }
         
         else if (pkg.animal == 3){
             if (butnum == JellyfishQuiz[qnum].a){
-                console.log('right');
                 pkg.quiz.jellyfish.push(qnum);
-                if (pkg.quiz.jellyfish.length >= 3){
-                    expert();
-                } else if (qnum == 3){
-                    nicetry();
-                } else {
-                    qnum = qnum + 1;
-                }
+                right(butnum,pkg.quiz.jellyfish.length);
             } else {
-                console.log('wrong');
-                if (qnum == 3){
-                    nicetry();
-                } else {
-                    qnum = qnum + 1;
-                }
+                  wrong(butnum);
             }
         }
         
         else if (pkg.animal == 4){
             if (butnum == OrcaQuiz[qnum].a){
-                console.log('right');
                 pkg.quiz.orca.push(qnum);
-                if (pkg.quiz.orca.length >= 3){
-                    expert();
-                } else if (qnum == 3){
-                    nicetry();
-                } else {
-                    qnum = qnum + 1;
-                }
+                right(butnum,pkg.quiz.orca.length);
             } else {
-                console.log('wrong');
-                if (qnum == 3){
-                    nicetry();
-                } else {
-                    qnum = qnum + 1;
-                }
+                  wrong(butnum);
             }
         }
+        
     }
     
-//    save();
-//    qna();
+// North Pole
+    if (pkg.continent == "NP"){
+        if (pkg.animal == 1){
+            if (butnum == WalrusQuiz[qnum].a){
+                pkg.quiz.walrus.push(qnum);
+                right(butnum,pkg.quiz.walrus.length);
+            } else {
+                  wrong(butnum);
+            }
+        }
+        
+        else if (pkg.animal == 2){
+            if (butnum == BearQuiz[qnum].a){
+                pkg.quiz.bear.push(qnum);
+                right(butnum,pkg.quiz.bear.length);
+            } else {
+                  wrong(butnum);
+            }
+        }
+        
+        else if (pkg.animal == 3){
+            if (butnum == NarwhalQuiz[qnum].a){
+                pkg.quiz.narwhal.push(qnum);
+                right(butnum,pkg.quiz.narwhal.length);
+            } else {
+                  wrong(butnum);
+            }
+        }
+        
+        else if (pkg.animal == 4){
+            if (butnum == BelugaQuiz[qnum].a){
+                pkg.quiz.beluga.push(qnum);
+                right(butnum,pkg.quiz.beluga.length);
+            } else {
+                  wrong(butnum);
+            }
+        }
+        
+    }
+    
+    
+//Amazon
+    if (pkg.continent == "Amzn"){
+        if (pkg.animal == 1){
+            if (butnum == CrocodileQuiz[qnum].a){
+                pkg.quiz.crocodile.push(qnum);
+                right(butnum,pkg.quiz.crocodile.length);
+            } else {
+                  wrong(butnum);
+            }
+        }
+        
+        else if (pkg.animal == 2){
+            if (butnum == CrabQuiz[qnum].a){
+                pkg.quiz.crab.push(qnum);
+                right(butnum,pkg.quiz.crab.length);
+            } else {
+                  wrong(butnum);
+            }
+        }
+        
+        else if (pkg.animal == 3){
+            if (butnum == DolphinQuiz[qnum].a){
+                pkg.quiz.dolphin.push(qnum);
+                right(butnum,pkg.quiz.dolphin.length);
+            } else {
+                  wrong(butnum);
+            }
+        }
+        
+        else if (pkg.animal == 4){
+            if (butnum == ManateeQuiz[qnum].a){
+                pkg.quiz.manatee.push(qnum);
+                right(butnum,pkg.quiz.manatee.length);
+            } else {
+                  wrong(butnum);
+            }
+        }
+        
+    }
+    
+//Antarctica
+    if (pkg.continent == "Ant"){
+        if (pkg.animal == 1){
+            if (butnum == PenguinQuiz[qnum].a){
+                pkg.quiz.penguin.push(qnum);
+                right(butnum,pkg.quiz.penguin.length);
+            } else {
+                  wrong(butnum);
+            }
+        }
+        
+        else if (pkg.animal == 2){
+            if (butnum == SealQuiz[qnum].a){
+                pkg.quiz.seal.push(qnum);
+                right(butnum,pkg.quiz.seal.length);
+            } else {
+                  wrong(butnum);
+            }
+        }
+        
+        else if (pkg.animal == 3){
+            if (butnum == DolphinQuiz[qnum].a){
+                pkg.quiz.dolphin.push(qnum);
+                right(butnum,pkg.quiz.dolphin.length);
+            } else {
+                  wrong(butnum);
+            }
+        }
+        
+        else if (pkg.animal == 4){
+            if (butnum == SquidQuiz[qnum].a){
+                pkg.quiz.squid.push(qnum);
+                right(butnum,pkg.quiz.squid.length);
+            } else {
+                  wrong(butnum);
+            }
+        }
+        
+    }
+    
+    
 }
 
 var qresult = document.querySelector(".result");
