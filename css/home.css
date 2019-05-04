@@ -663,6 +663,8 @@ body {
     height: 100%;
     background-position: center;
     z-index:2;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: none;
 }
 

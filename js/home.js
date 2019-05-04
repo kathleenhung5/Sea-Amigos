@@ -1,5 +1,5 @@
 //----- State ----- //
-pkg = {
+var pkg = {
     page: "home", // home map lno aniaml quiz 
     continent: "none", // NA NP Ant Amzn
     animal: "none", // 1 2 3 4
@@ -1456,6 +1456,7 @@ var qnum = 0,
     but2 = document.querySelector(".quiz-but2"),
     but3 = document.querySelector(".quiz-but3"),
     but4 = document.querySelector(".quiz-but4");
+var qresult = document.querySelector(".result");
 
 function quizContent(){
     document.querySelector(".quiz-page").style.backgroundImage = "url(img/quiz-bg.svg)";
@@ -2077,29 +2078,63 @@ function checka (butnum){
     
 }
 
-var qresult = document.querySelector(".result").style.backgroundImage;
+
 
 function expert(){
-    console.log("you're an expert");
     qresult.style.display = "block";
-    //qresult.style.backgroundColor = "green";
-
-    if (pkg.continent == "NA"){
-        if (pkg.animal == 1){
-            qresult = "url(img/northamerica/sad-otter.svg)";
-        } else if (pkg.animal == 2){
-            qresult = "url(img/northamerica/sad-beaver.svg)";
-        } else if (pkg.animal == 3){
-            qresult = "url(img/northamerica/sad-jellyfish.svg)";
-        } else if (pkg.animal == 4){
-            qresult = "url(img/northamerica/sad-orca.svg)";
-        }
-    }
+    qresult.style.backgroundImage = "url(img/Congratulations.svg)";
 }
 
 function nicetry(){
-    console.log('nice try');
     qresult.style.display = "block";
-    qresult.style.backgroundColor = "red";
+   
+    if (pkg.continent == "NA"){
+        if (pkg.animal == 1){
+            qresult.style.backgroundImage = "url(img/northamerica/sad-otter.svg)";
+        } else if (pkg.animal == 2){
+            qresult.style.backgroundImage = "url(img/northamerica/sad-beaver.svg)";
+        } else if (pkg.animal == 3){
+            qresult.style.backgroundImage = "url(img/northamerica/sad-jellyfish.svg)";
+        } else if (pkg.animal == 4){
+            qresult.style.backgroundImage = "url(img/northamerica/sad-orca.svg)";
+        }
+    }
+    
+    if (pkg.continent == "NP"){
+        if (pkg.animal == 1){
+            qresult.style.backgroundImage = "url(img/northpole/sad-walrus.svg)";
+        } else if (pkg.animal == 2){
+            qresult.style.backgroundImage = "url(img/northpole/sad-bear.svg)";
+        } else if (pkg.animal == 3){
+            qresult.style.backgroundImage = "url(img/northpole/sad-narwhal.svg)";
+        } else if (pkg.animal == 4){
+            qresult.style.backgroundImage = "url(img/northpole/sad-beluga.svg)";
+        }
+    }
+    
+    if (pkg.continent == "Amzn"){
+        if (pkg.animal == 1){
+            qresult.style.backgroundImage = "url(img/amazon/sad-crocodile.svg)";
+        } else if (pkg.animal == 2){
+            qresult.style.backgroundImage = "url(img/amazon/sad-crab.svg)";
+        } else if (pkg.animal == 3){
+            qresult.style.backgroundImage = "url(img/amazon/sad-dolphin.svg)";
+        } else if (pkg.animal == 4){
+            qresult.style.backgroundImage = "url(img/amazon/sad-manatee.svg)";
+        }
+    }
+    
+    if (pkg.continent == "Ant"){
+        if (pkg.animal == 1){
+            qresult.style.backgroundImage = "url(img/antarctica/sad-penguin.svg)";
+        } else if (pkg.animal == 2){
+            qresult.style.backgroundImage = "url(img/antarctica/sad-seal.svg)";
+        } else if (pkg.animal == 3){
+            qresult.style.backgroundImage = "url(img/antarctica/sad-squid.svg)";
+        } else if (pkg.animal == 4){
+            qresult.style.backgroundImage = "url(img/antarctica/sad-whale.svg)";
+        }
+    }
+    
 }
 
