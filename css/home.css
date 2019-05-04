@@ -78,7 +78,7 @@ body {
     display:-webkit-box;
     display:-ms-flexbox;
     display:flex;
-
+    transform: translate(0px, -40px);
 }
 
 .logo {
@@ -218,10 +218,11 @@ body {
 
 .map-container {
     width: 90%;
+    transform: translate(0px, -20px);
 }
 
 .map {
-    margin-bottom: 30%;
+    margin-bottom: 15%;
     z-index: 1;
 }
 
@@ -311,7 +312,6 @@ body {
     left: -100%;
 }
 
-
 .sun {
     width: 40%;
     position: absolute;
@@ -333,16 +333,18 @@ body {
 }
 
 #land {
+    z-index:11;
     left: 10%;
-    top: 35%;
+    top: 25%;
     opacity: 1;
     -webkit-transition: opacity 0.5s;
     transition: opacity 0.5s;
 }
 
 #ocean {
+    z-index:11;
     right: 10%;
-    bottom: 10%;
+    bottom: 20%;
     opacity: 1;
     -webkit-transition: opacity 0.5s;
     transition: opacity 0.5s;
@@ -357,7 +359,7 @@ body {
     border-radius: 30px;
     -webkit-box-shadow: 4px 4px 0px white;
             box-shadow: 4px 4px 0px white;
-    margin: 20px 0px;
+    margin-bottom: 10px;
     border: none;
 }
 
