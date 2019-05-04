@@ -334,7 +334,7 @@ body {
 
 #land {
     z-index:11;
-    left: 10%;
+    left: 5%;
     top: 20%;
     opacity: 1;
     -webkit-transition: opacity 0.5s;
@@ -343,7 +343,7 @@ body {
 
 #ocean {
     z-index:11;
-    right: 10%;
+    right: 5%;
     top: 20%;
     opacity: 1;
     -webkit-transition: opacity 0.5s;
@@ -584,7 +584,9 @@ body {
             align-items: flex-end;
     height: 100%;
     width: 100%;
-    margin: 0;
+    margin: -10px;
+    margin-left: 2px;
+    
     font-family: 'Montserrat Medium';
 }
 /*---- pop up -----*/
@@ -690,7 +692,7 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    transform: translate(0px, -40px);
+    transform: translate(0px, -50px);
 }
 
 .quiz-q {
