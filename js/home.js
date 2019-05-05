@@ -857,7 +857,7 @@ function foodres(elid){
            }
     } else if (elid == "plankton"){
          if(
-            (pkg.continent == "NA" && (pkg.animal == 1 || pkg.animal == 3)) ||
+            (pkg.continent == "NA" && pkg.animal == 3) ||
             (pkg.continent == "NP" && pkg.animal == 4)||
             (pkg.continent == "Ant" && (pkg.animal == 1 || pkg.animal ==3 || pkg.animal == 4))
             ){
