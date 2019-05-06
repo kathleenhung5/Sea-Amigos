@@ -1147,7 +1147,7 @@ var SquidQuiz = [
     },
     {
         q: "How do squids hide from predators?",
-        a: 4,
+        a: 1,
         but1: "They change colour",
         but2: "They hide between rocks",
         but3: "They hide with other animals",
@@ -1183,7 +1183,7 @@ var WalrusQuiz = [
     },
     {
         q: "What do walruses like to eat?",
-        a: 1,
+        a: 2,
         but1:"<img src='img/northamerica/animal-page/Fruit.svg'/>",
         but2:"<img src='img/northamerica/animal-page/Fish.svg'/>",
         but3:"<img src='img/northamerica/animal-page/Plankton.svg'/>",
@@ -1191,7 +1191,7 @@ var WalrusQuiz = [
     },
     {    
         q: "What do walruses use their tusks for?",
-        a: 3,
+        a: 4,
         but1:"To scratch each other's backs",
         but2:"To climb rocks",
         but3:"To hunt for food",
@@ -1210,7 +1210,7 @@ var BearQuiz = [
     },
     {
         q: "How long can polar bears swim for?",
-        a: 1,
+        a: 2,
         but1: "Several hours",
         but2: "Several days",
         but3: "A few minutes",
@@ -1281,7 +1281,7 @@ var BelugaQuiz = [
     },
     {
         q: "Name a noise I make when I talk to my friends.",
-        a: 3,
+        a: 2,
         but1: "Yelling",
         but2: "Clicking",
         but3: "Squealing",
@@ -1368,7 +1368,7 @@ var CrocodileQuiz = [
     },
     {
         q: "Crocodiles _______ when they eat",
-        a: 4,
+        a: 2,
         but1:"Chew",
         but2:"Cry",
         but3:"Breathe",
