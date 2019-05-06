@@ -401,6 +401,7 @@ body {
 
 
 .animal1, .animal2, .animal3, .animal4 {
+/*
        display: -webkit-box;
        display: -ms-flexbox;
        display: flex;
@@ -414,6 +415,8 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+*/
+    text-align: center;
 }
 
 .animal1 {
@@ -427,6 +430,7 @@ body {
 
 .animal3 {
     width: 50%;
+/*
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -440,6 +444,7 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+*/
 }
 
 .animal4 {
