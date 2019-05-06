@@ -1026,7 +1026,7 @@ var OrcaQuiz = [
 var PenguinQuiz = [
     {
         q:"What season do we breed?",
-        a:3,
+        a:4,
         but1:"Summer",
         but2:"Autumn",
         but3:"Spring",
@@ -1650,6 +1650,7 @@ function quizContent(){
     
     
     if(pkg.continent == "Ant"){
+        console.log("ant quiz");
     //border colors
         var i;
         for (i=0;i<abox.length;i++){
@@ -2056,18 +2057,18 @@ function checka (butnum){
         }
         
         else if (pkg.animal == 3){
-            if (butnum == DolphinQuiz[qnum].a){
-                pkg.quiz.dolphin.push(qnum);
-                right(butnum,pkg.quiz.dolphin.length);
+            if (butnum == SquidQuiz[qnum].a){
+                pkg.quiz.squid.push(qnum);
+                right(butnum,pkg.quiz.squid.length);
             } else {
                   wrong(butnum);
             }
         }
         
         else if (pkg.animal == 4){
-            if (butnum == SquidQuiz[qnum].a){
-                pkg.quiz.squid.push(qnum);
-                right(butnum,pkg.quiz.squid.length);
+            if (butnum == WhaleQuiz[qnum].a){
+                pkg.quiz.whale.push(qnum);
+                right(butnum,pkg.quiz.whale.length);
             } else {
                   wrong(butnum);
             }
