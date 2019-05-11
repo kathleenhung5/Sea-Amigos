@@ -7,26 +7,30 @@ var talkBut = document.querySelector("#talkButton"),
     quizBut = document.querySelector("#quizButton");
 var foodMenu = document.querySelector(".food");
 var But = 0;
-var otterTalk = ["I have the thickest fur of all animals.", "I like to carry one small rock with me all the time.", "I use rocks to smash open shells.", "I keep the same rock with me for my whole life!", "When I go to sleep, I like to wrap myself and my family in seaweed and float together with them."]
+var otterTalk = ["Hi! I'm Ophie the Otter!", "I have the thickest fur of all animals.", "I like to carry one small rock with me all the time.", "I use rocks to smash open shells.", "I keep the same rock with me for my whole life!", "When I go to sleep, I like to wrap myself and my family in seaweed and float together with them."]
 
 //var mtimer = setTimeout(function() {
 //            speech.style.display = "none";
 //        }, 5000);
 
 var mtimer = null;
+var talknum = 0;
 
 talkBut.addEventListener("touchstart", function(){
     talkBut.style.animation = "none";
     document.getElementById("teachbox").innerHTML = "See what the Otter likes to eat."
-    feedBut.style.animation = "upd 1s infinite";
+//    feedBut.style.animation = "upd 1s infinite";
     
     
     
      talkBut.src = "Otter_SVGs/TalkSelected_NA.svg";
-    var talkRes = otterTalk[Math.floor(Math.random() * otterTalk.length)];
+    if(talknum==otterTalk.length){
+        talknum = 0;
+    }
+    var talkRes = otterTalk[talknum];
      speech.style.display = "flex";
      speech.innerHTML = talkRes;
-    console.log("start");
+    talknum += 1
     if (mtimer == null){
             mtimer = setTimeout(function() {
             speech.style.display = "none";
