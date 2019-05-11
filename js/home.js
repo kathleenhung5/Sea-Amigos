@@ -859,7 +859,7 @@ function foodres(elid){
          if(
             (pkg.continent == "NA" && pkg.animal == 3) ||
             (pkg.continent == "NP" && pkg.animal == 4)||
-            (pkg.continent == "Ant" && (pkg.animal == 1 || pkg.animal ==3 || pkg.animal == 4))
+            (pkg.continent == "Ant" && (pkg.animal == 1 || pkg.animal ==3))
             ){
            sayyes();
            } else {
@@ -997,7 +997,7 @@ var OrcaQuiz = [
         but4:"Hunting Whales"
     },
     {
-        q: "Orcas don't have a sense of __________",
+        q: "We don't have a sense of __________",
         a: 3,
         but1: "Touch",
         but2: "Sight",
@@ -1138,7 +1138,7 @@ var SquidQuiz = [
         but4:"Starfish"
     },
     {
-        q: "What do squids do when they are in danger?",
+        q: "What do we do when we are in danger?",
         a: 2,
         but1: "Use their tentacles",
         but2: "Shoot ink",
@@ -1146,7 +1146,7 @@ var SquidQuiz = [
         but4: "Stay still"
     },
     {
-        q: "How do squids hide from predators?",
+        q: "How do squids hide from our predators?",
         a: 1,
         but1: "They change colour",
         but2: "They hide between rocks",
@@ -1154,19 +1154,19 @@ var SquidQuiz = [
         but4: "They hide under the sand"
     },
     {    
-        q: "What happens when a squid lose an arm?",
+        q: "What happens when we lose an arm?",
         a: 2,
         but1:"It's gone forever",
         but2:"It will grow back",
         but3:"It will grow back with an extra arm",
-        but4:"They can't swim"
+        but4:"We can't swim anymore"
     }
 ]
 
 //NORTH POLE ANIMALS//
 var WalrusQuiz = [
     {
-        q:"How long do walruses live?",
+        q:"How long can walruses live for?",
         a:3,
         but1:"50 years",
         but2:"20 years",
@@ -1201,7 +1201,7 @@ var WalrusQuiz = [
 
 var BearQuiz = [
     {
-        q:"What colour are polar bears' fur?",
+        q:"What colour is our fur?",
         a:4,
         but1:"Black",
         but2:"Grey",
@@ -1209,7 +1209,7 @@ var BearQuiz = [
         but4:"Transparent"
     },
     {
-        q: "How long can polar bears swim for?",
+        q: "How long can I swim for?",
         a: 2,
         but1: "Several hours",
         but2: "Several days",
@@ -1217,7 +1217,7 @@ var BearQuiz = [
         but4: "A few hours"
     },
     {
-        q: "Where do polar bears usually look for food?",
+        q: "Where do we usually look for food?",
         a: 3,
         but1:"Underwater",
         but2:"On rocks",
@@ -1225,7 +1225,7 @@ var BearQuiz = [
         but4:"In the snow"
     },
     {    
-        q: "What colour is a polar bear's skin?",
+        q: "What colour is my skin?",
         a: 4,
         but1:"White",
         but2:"Brown",
@@ -1237,15 +1237,15 @@ var BearQuiz = [
 
 var NarwhalQuiz = [
     {
-        q:"How long does a narwhal's tooth grow for?",
+        q:"How long does my tooth grow for?",
         a:4,
         but1:"10 years",
         but2:"5 years",
         but3:"Until they are old",
-        but4:"Their whole life"
+        but4:"My whole life"
     },
     {
-        q: "What colour does a narwhal's skin become?",
+        q: "What colour does my skin become?",
         a: 3,
         but1: "Black",
         but2: "Pink",
@@ -1253,7 +1253,7 @@ var NarwhalQuiz = [
         but4: "Blue"
     },
     {
-        q: "A narwhal's tusk is their ______ tooth",
+        q: "My tusk is my ______ tooth",
         a: 2,
         but1:"Right",
         but2:"Left",
@@ -1261,18 +1261,18 @@ var NarwhalQuiz = [
         but4:"Back"
     },
     {    
-        q: "A narwhal's tooth can grow up to ___ feet long.",
+        q: "My tooth can grow up to be _______ long.",
         a: 1,
-        but1:"10",
-        but2:"5",
-        but3:"2",
-        but4:"15"
+        but1:"10 feet",
+        but2:"5 feet",
+        but3:"2 feet",
+        but4:"15 feet"
     }
 ]
 
 var BelugaQuiz = [
     {
-        q:"What colour is our skin when we're born?",
+        q:"What colour was my skin when I was born?",
         a:1,
         but1:"Grey",
         but2:"White",
@@ -1316,7 +1316,7 @@ var CrabQuiz = [
         but4:"Robber Crab"
     },
     {
-        q: "Does the Coconut crab like living with others?",
+        q: "Do I like living with others?",
         a: 2,
         but1: "Yes",
         but2: "No",
@@ -1324,7 +1324,7 @@ var CrabQuiz = [
         but4: "Only with family"
     },
     {
-        q: "What does the Coconut crab like to eat?",
+        q: "What's my favourite food?",
         a: 1,
         but1:"<img src='img/northamerica/animal-page/Fruit.svg'/>",
         but2:"<img src='img/northamerica/animal-page/Fish.svg'/>",
@@ -1332,7 +1332,7 @@ var CrabQuiz = [
         but4:"<img src='img/northamerica/animal-page/Seaweed.svg'/>"
     },   
     {
-        q: "What time of day does they like to hunt?",
+        q: "What time of day do we like to hunt?",
         a: 4,
         but1:"Morning",
         but2:"Evening",
@@ -1343,7 +1343,7 @@ var CrabQuiz = [
 
 var CrocodileQuiz = [
     {
-        q:"How many eggs to Crocodiles lay?",
+        q:"How many eggs do Crocodiles lay?",
         a:3,
         but1:"10-20",
         but2: "30-40",
@@ -1351,8 +1351,8 @@ var CrocodileQuiz = [
         but4:"50-100"
     },
     {
-        q: "Crocodiles can see very well in _________",
-        a: 2,
+        q: "We can see very well in _________",
+        a: 4,
         but1: "The day",
         but2: "The water",
         but3: "The fog",
@@ -1378,7 +1378,7 @@ var CrocodileQuiz = [
 
 var ManateeQuiz = [
     {
-        q:"Which animal is related to the manatee?",
+        q:"Which animal are we related to?",
         a:3,
         but1:"Cows",
         but2: "Dolphins",
@@ -1394,7 +1394,7 @@ var ManateeQuiz = [
         but4: "Sea Cows"
     },
     {
-        q: "What is the texture of a manatee's brain?",
+        q: "What is the texture of our brain?",
         a: 1,
         but1:"Smooth",
         but2:"Bumpy",
@@ -1413,7 +1413,7 @@ var ManateeQuiz = [
 
 var DolphinQuiz = [
     {
-        q:"How many stomachs does the Amazonian River Dolphin have?",
+        q:"How many stomachs do I have?",
         a:2,
         but1:"1",
         but2: "2",
@@ -1429,7 +1429,7 @@ var DolphinQuiz = [
         but4: "Pulsed Calls"
     },
     {
-        q: "How big is a dolphin's brain compared to a human brain?",
+        q: "My brain is __________ than a human brain!",
         a: 3,
         but1:"20% larger",
         but2:"20% smaller",
@@ -1437,7 +1437,7 @@ var DolphinQuiz = [
         but4:"40% smaller"
     },
     {
-        q: "Some legends say dolphins are ________",
+        q: "Some legends say we are ________",
         a: 2,
         but1:"Evil",
         but2:"Magical",
