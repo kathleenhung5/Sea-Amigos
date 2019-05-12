@@ -11,14 +11,15 @@ function toNATutorial(){
 function moveToRight(){
     document.querySelector(".talkbox-NA").style.left = "100%";
     document.querySelector(".turtle-NA").style.opacity = "0";
-    document.querySelector("#ocean").style.opacity = "0";
 }
 
 var explBut = document.querySelector(".talkbox button");
 
-explBut.addEventListener("click", function(){
-    window.location.href = "tutorial-map.html";
-})
+function explore(){
+     window.location.href = "tutorial-map.html";
+}
+   
+
 
 
 
@@ -35,7 +36,6 @@ var landBut = document.getElementById("land"),
     lnoPagewrap.style.backgroundPosition = "left";
     sun.style.left = "70%";
     landBut.style.opacity = "0";
-    oceanBut.style.opacity = "1";
     oceanAni.style.left = "260%";
     landAni.style.left = "10%";
     cloudR.style.left = "170%";

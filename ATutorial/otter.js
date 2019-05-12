@@ -15,16 +15,21 @@ var otterTalk = ["Hi! I'm Ophie the Otter!", "I have the thickest fur of all ani
 
 var mtimer = null;
 var talknum = 0;
+var finger = document.getElementById("finger");
+var food1 = 0,
+    food2 = 0,
+    food3 = 0,
+    food4 = 0;
+
 
 talkBut.addEventListener("touchstart", function(){
-    talkBut.style.animation = "none";
-    document.getElementById("teachbox").innerHTML = "See what the Otter likes to eat."
+//    talkBut.style.animation = "none";
+   
 //    feedBut.style.animation = "upd 1s infinite";
-    
-    
-    
-     talkBut.src = "Otter_SVGs/TalkSelected_NA.svg";
+    talkBut.src = "Otter_SVGs/TalkSelected_NA.svg";
     if(talknum==otterTalk.length){
+         document.getElementById("teachbox").innerHTML = "See what the Otter likes to eat."
+        finger.style.left = "45%"; 
         talknum = 0;
     }
     var talkRes = otterTalk[talknum];
@@ -53,21 +58,25 @@ talkBut.addEventListener("touchend", function() {
 
 
 feedBut.addEventListener("click", function() {
-    feedBut.style.animation = "none";
+//    feedBut.style.animation = "none";
     document.getElementById("teachbox").style.display = "none";
-    
-    
-    if(But == 0){
-        console.log("clickagain");
         feedBut.src = "Otter_SVGs/FeedSelected_NA.svg";
         foodMenu.style.display = "flex";
-        But = 1;
-    } else {
-        console.log("clickme");
-        feedBut.src = "Otter_SVGs/FeedDefault_NA.svg";
-        foodMenu.style.display = "none";
-        But = 0;
-    }
+        finger.style.display = "none";
+    
+//    if(But == 0){
+//        console.log("clickagain");
+//        feedBut.src = "Otter_SVGs/FeedSelected_NA.svg";
+//        foodMenu.style.display = "flex";
+//        But = 1;
+//    } else {
+//        console.log("clickme");
+//        feedBut.src = "Otter_SVGs/FeedDefault_NA.svg";
+//        foodMenu.style.display = "none";
+//        But = 0;
+//    }
+    
+    
  }); 
 
     var fish = document.querySelector("#fish"),
@@ -78,10 +87,13 @@ feedBut.addEventListener("click", function() {
     var negRes = ["No, thank you.", "I don't eat that.", "I don't like those!", "I'm sure someone else would like that."];
     var posRes = ["Mmm! Yummy!", "Thank you!", "My favourite! Thanks!", "I like this!"]; 
     var speechTimeout;
+
+
     fish.addEventListener("click", function() {
         var yes = posRes[Math.floor(Math.random() * posRes.length)];
         speech.style.display = "flex";
         speech.innerHTML = yes;
+        food1 += 1;
         if (mtimer == null){
             mtimer = setTimeout(function() {
             speech.style.display = "none";
@@ -95,12 +107,16 @@ feedBut.addEventListener("click", function() {
             speech.style.display = "none";
             console.log("stop");
             },5000);
-    }});
+    }
+   
+    endeat();
+    });
         
    fruit.addEventListener("click", function() {
         var no = negRes[Math.floor(Math.random() * negRes.length)];
         speech.style.display = "flex";
         speech.innerHTML = no;
+       food2 += 1;
         if (mtimer == null){
             mtimer = setTimeout(function() {
             speech.style.display = "none";
@@ -114,11 +130,14 @@ feedBut.addEventListener("click", function() {
             speech.style.display = "none";
             console.log("stop");
             },5000);
-    }});
+        }
+       endeat();
+   });
    seaweed.addEventListener("click", function() {
         var no = negRes[Math.floor(Math.random() * negRes.length)];
         speech.style.display = "flex";
         speech.innerHTML = no;
+       food3 += 1;
         if (mtimer == null){
             mtimer = setTimeout(function() {
             speech.style.display = "none";
@@ -132,11 +151,14 @@ feedBut.addEventListener("click", function() {
             speech.style.display = "none";
             console.log("stop");
             },5000);
-    }});
+    }
+    endeat();
+   });
    plankton.addEventListener("click", function() {
         var no = negRes[Math.floor(Math.random() * negRes.length)];
         speech.style.display = "flex";
         speech.innerHTML = no;
+       food4 += 1;
         if (mtimer == null){
             mtimer = setTimeout(function() {
             speech.style.display = "none";
@@ -150,8 +172,30 @@ feedBut.addEventListener("click", function() {
             speech.style.display = "none";
             console.log("stop");
             },5000);
-    }});
+    }
+        endeat();
+   });
+
+    function endeat (){
+        console.log(food1, food2, food3, food4);
+        if (food1>0 && food2>0 && food3>0 && food4>0){
+        finger.style.display = "block";
+        feedBut.src = "Otter_SVGs/FeedDefault_NA.svg";
+        foodMenu.style.display = "none";
+        finger.style.left = "74%";document.getElementById("teachbox").style.display = "block";
+        document.getElementById("teachbox").innerHTML = "Now we can do the quiz."
+        }
+    }
+
+    function goQuiz(){
+        window.location.href = "tutorial-quiz.html";
+    }
+
+    
 
     function resetTimeout() {
         clearTimeout(speechTimeout);
     };
+
+
+
