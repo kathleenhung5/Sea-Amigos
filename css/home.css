@@ -78,7 +78,8 @@ body {
     display:-webkit-box;
     display:-ms-flexbox;
     display:flex;
-    transform: translate(0px, -40px);
+    -webkit-transform: translate(0px, -40px);
+            transform: translate(0px, -40px);
 }
 
 .logo {
@@ -218,7 +219,8 @@ body {
 
 .map-container {
     width: 90%;
-    transform: translate(0px, -20px);
+    -webkit-transform: translate(0px, -20px);
+            transform: translate(0px, -20px);
 }
 
 .map {
@@ -591,7 +593,7 @@ body {
     width: 100%;
     margin: -10px;
     margin-left: 2px;
-    
+
     font-family: 'Montserrat Medium';
 }
 /*---- pop up -----*/
@@ -711,7 +713,8 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    transform: translate(0px, -50px);
+    -webkit-transform: translate(0px, -50px);
+            transform: translate(0px, -50px);
 }
 
 .quiz-q {
@@ -817,6 +820,5 @@ body {
     .ocean-animals {
         width: 65%;
     }
-  
-  }
 
+  }
