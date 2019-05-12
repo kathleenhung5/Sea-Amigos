@@ -2087,15 +2087,18 @@ function checka (butnum){
 }
 
 
-
+var endquiz = document.querySelector(".end-quiz");
 function expert(){
     qresult.style.display = "block";
     qresult.style.backgroundImage = "url(img/Congratulations.svg)";
+    
+    endquiz.innerHTML = "Explore other animals";
 }
 
 function nicetry(){
     qresult.style.display = "block";
-   
+    endquiz.style.display = "block";
+    endquiz.innerHTML = "Go back";
     if (pkg.continent == "NA"){
         if (pkg.animal == 1){
             qresult.style.backgroundImage = "url(img/northamerica/sad-otter.svg)";
@@ -2146,3 +2149,12 @@ function nicetry(){
     
 }
 
+function endQuiz(){
+    if(endquiz.innerHTML == "Explore other animals"){
+        toMap();
+    } else {
+        toAnimal();
+    }
+    
+    endquiz.style.display = "none";
+}
