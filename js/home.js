@@ -707,7 +707,7 @@ function timing(){
             },5000);
     }
 }
-
+talknum = 0;
 function talk1(){
     //button look
      console.log(pkg);
@@ -766,7 +766,11 @@ function talk1(){
         }
     } 
     console.log(pkg);
-    speech.innerHTML = talkRes[Math.floor(Math.random()* talkRes.length)];
+        if(talknum == talkRes.length){
+            talknum = 0;
+        }
+    speech.innerHTML = talkRes[talknum];
+    talknum = talknum+1;
     speech.style.display = "flex";
     timing();
 }
