@@ -2091,12 +2091,13 @@ var endquiz = document.querySelector(".end-quiz");
 function expert(){
     qresult.style.display = "block";
     qresult.style.backgroundImage = "url(img/Congratulations.svg)";
-    
     endquiz.innerHTML = "Explore other animals";
+    endquiz.style.display = "block";
 }
 
 function nicetry(){
     qresult.style.display = "block";
+    endquiz.style.display = "block";
     endquiz.style.display = "block";
     endquiz.innerHTML = "Go back";
     if (pkg.continent == "NA"){
