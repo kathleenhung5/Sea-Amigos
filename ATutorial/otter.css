@@ -72,7 +72,7 @@ body {
 #finger {
     position: fixed;
     width: 10%;
-    left: 16%;
+    left: 17%;
 /*    left: 74%;*/
     bottom: 25%;
     -webkit-animation:finger 1s infinite;
@@ -214,6 +214,11 @@ body {
     height: 7vh;
     padding: 20px 10px 20px 10px;
     margin: -10px;
+}
+
+.foodItem p {
+    text-align: center;
+    font-size: 1.1em;
 }
 
 .buttons {
@@ -397,4 +402,27 @@ body {
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 8px;
     grid-row-gap: 8px;
+}
+
+
+@media (min-width: 768px) and (max-width: 1025px){
+    
+    #speechbubble {
+        position: absolute;
+        font-size: 1.5em;
+        margin-top: 100px;
+        max-width: 500px;
+        left: calc(50% - 280px);
+    }
+    
+    #teachbox {
+        font-size: 1.6em;
+    }
+    
+    .end-quiz {
+        width: 50%;
+        left: 25%;
+        bottom: 100px;
+    }
+    
 }

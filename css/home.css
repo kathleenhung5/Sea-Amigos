@@ -807,18 +807,58 @@ body {
         font-size: 2.5em;
         border-radius: 50px;
     }
-      /* LAND OCEAN PAGES */
+      
+    /* LAND OCEAN PAGES */
     .land-animals button, .ocean-animals button {
         font-size: 2em;
         padding: 10px 25px;
     }
 
     .land-animals {
-        top: 35%;
+        bottom: 35% !important;
+        z-index: 20;
     }
-
+    
     .ocean-animals {
-        width: 65%;
+        top: 55%;
+    }
+    
+    /* ANIMAL */
+    #speechbubble {
+        position: absolute;
+        font-size: 1.5em;
+        margin-top: 100px;
+        max-width: 500px;
+        left: calc(50% - 280px);
+    }
+    
+    #animal {
+        top: 15%;
+    }
+    
+    .foodMenu {
+        left: 15%;
+    }
+    
+    .quiz-popup {
+        width: 60%;
+        left: 20%;
+    }
+    
+    /* QUIZ   */
+    .quiz-animal {
+         -webkit-box-flex: 2;
+        -ms-flex: 2;
+            flex: 2;
+    }
+    
+    .quiz-area {
+        transform:translate(0px, -120px);
+    }
+    
+    .end-quiz {
+        width: 50%;
+        left: 25%;
     }
 
   }
