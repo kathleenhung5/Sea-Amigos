@@ -110,6 +110,7 @@ function toMap(){
     proxyPkg.page = pkg.page;
     proxyPkg.continent = pkg.continent;
     proxyPkg.animal = pkg.animal;
+    talknum=0;
     save();
 }
 
@@ -120,6 +121,7 @@ function toHome (){
     proxyPkg.page = pkg.page;
     proxyPkg.continent = pkg.continent;
     proxyPkg.animal = pkg.animal;
+    talknum=0;
     save();
 }
 
@@ -130,6 +132,7 @@ function toLnO (x){
     proxyPkg.page = pkg.page;
     proxyPkg.continent = pkg.continent;
     proxyPkg.animal = pkg.animal;
+    talknum=0;
     save();
 }
 
@@ -203,6 +206,7 @@ function toAnimal (x){
 function toQuiz(){
     pkg.page = "quiz";
     proxyPkg.page = pkg.page;
+    talknum=0;
     save();
 }
 
@@ -215,7 +219,8 @@ function toLast(){
         toLnO(pkg.continent);
     } else if (pkg.page == "quiz"){
         toAnimal(pkg.animal);
-    }   
+    }  
+    talknum=0;
 }
 
 function save(){
@@ -710,7 +715,6 @@ function timing(){
 talknum = 0;
 function talk1(){
     //button look
-     console.log(pkg);
     if (pkg.continent == "NA"){
         talkBut.src = "img/northamerica/animal-page/TalkSelected_NA.svg";
     } else if (pkg.continent == "Amzn"){
@@ -765,7 +769,6 @@ function talk1(){
             talkRes = whaleTalk;
         }
     } 
-    console.log(pkg);
         if(talknum == talkRes.length){
             talknum = 0;
         }
@@ -2084,15 +2087,18 @@ function checka (butnum){
 }
 
 
-
+var endquiz = document.querySelector(".end-quiz");
 function expert(){
     qresult.style.display = "block";
     qresult.style.backgroundImage = "url(img/Congratulations.svg)";
+    
+    endquiz.innerHTML = "Explore other animals";
 }
 
 function nicetry(){
     qresult.style.display = "block";
-   
+    endquiz.style.display = "block";
+    endquiz.innerHTML = "Go back";
     if (pkg.continent == "NA"){
         if (pkg.animal == 1){
             qresult.style.backgroundImage = "url(img/northamerica/sad-otter.svg)";
@@ -2143,3 +2149,12 @@ function nicetry(){
     
 }
 
+function endQuiz(){
+    if(endquiz.innerHTML == "Explore other animals"){
+        toMap();
+    } else {
+        toAnimal();
+    }
+    
+    endquiz.style.display = "none";
+}

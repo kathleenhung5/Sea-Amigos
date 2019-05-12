@@ -683,12 +683,13 @@ body {
     color: lightseagreen;
     font-family: 'Montserrat Medium';
     font-size: 1.5em;
-    position: fixed;
+    position: absolute;
     width: 70%;
     border-radius: 30px;
     padding: 5px;
     left: calc(15% - 5px);
     bottom: 100px;
+    border: none;
 }
 
 .quiz-animal{
@@ -721,6 +722,7 @@ body {
     margin-bottom: 8px;
     border-radius: 20px;
     border: 4px solid #F78330;
+    min-height: 50px;
     padding: 10px;
     display: -webkit-box;
     display: -ms-flexbox;
