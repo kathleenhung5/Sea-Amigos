@@ -684,14 +684,15 @@ body {
     background-color: white;
     color: lightseagreen;
     font-family: 'Montserrat Medium';
-    font-size: 1.5em;
+    font-size: 1.2em;
     position: absolute;
     width: 70%;
     border-radius: 30px;
-    padding: 5px;
-    left: calc(15% - 5px);
-    bottom: 100px;
+    padding: 10px;
+    left: calc(15% - 2px);
+    bottom: 70px;
     border: none;
+    min-height: 70px;
 }
 
 .quiz-animal{
@@ -854,6 +855,7 @@ body {
     
     .quiz-area {
         transform:translate(0px, -120px);
+        font-size: 1.3em;
     }
     
     .end-quiz {
