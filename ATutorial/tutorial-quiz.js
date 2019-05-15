@@ -136,12 +136,12 @@ function checka (butnum){
 
 function expert(){
     qresult.style.display = "block";
-    qresult.style.backgroundImage = "url(../img/Congratulations.svg)";
+    qresult.style.backgroundImage = "url(../img/Congratulations-tutorial.svg)";
 }
 
 function nicetry(){
     qresult.style.display = "block";
-   qresult.style.backgroundImage = "url(../img/northamerica/sad-otter.svg)";
+   qresult.style.backgroundImage = "url(../img/northamerica/sad-otter-tutorial.svg)";
 }
 
 function toHome(){
