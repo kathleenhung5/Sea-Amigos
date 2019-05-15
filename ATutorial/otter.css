@@ -419,6 +419,12 @@ body {
         left: calc(50% - 280px);
     }
     
+    .quiz-area {
+        font-size: 1.5em;
+        max-width: 90%;
+    }
+    
+    
     #teachbox {
         font-size: 1.6em;
     }
@@ -426,7 +432,16 @@ body {
     .end-quiz {
         width: 50%;
         left: 25%;
-        bottom: 100px;
+        bottom: 65px;
+        min-height: 70px;
+        
     }
+    
+    .result {
+        background-size: 94% auto;
+        background-repeat: repeat-x;
+    }
+    
+    
     
 }

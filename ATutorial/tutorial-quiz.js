@@ -134,14 +134,16 @@ function checka (butnum){
     console.log(answers);
         }
 
+var endquiz = document.querySelector(".end-quiz");
 function expert(){
     qresult.style.display = "block";
-    qresult.style.backgroundImage = "url(../img/Congratulations-tutorial.svg)";
+    qresult.style.backgroundImage = "url(images/Congratulations-tutorial.svg)";
+    
 }
 
 function nicetry(){
     qresult.style.display = "block";
-   qresult.style.backgroundImage = "url(../img/northamerica/sad-otter-tutorial.svg)";
+   qresult.style.backgroundImage = "url(images/sad-otter-tutorial.svg)";
 }
 
 function toHome(){
